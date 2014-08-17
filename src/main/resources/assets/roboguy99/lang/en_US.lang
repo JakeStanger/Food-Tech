@@ -1,0 +1,6 @@
+itemGroup.tabFoodTech= Food Tech
+tile.blockWindTurbineGround.name= Wind Turbine Base
+item.itemWindTurbine.name= Wind Turbine
+item.itemDebug.name= Coder's debug tool
+tile.blockGrindstone.name= Grindstone
+tile.blockCable.name= Cable
