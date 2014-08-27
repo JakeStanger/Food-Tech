@@ -6,11 +6,13 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import roboguy99.foodTech.recipes.RecipeHandler;
 
 public class TileEntityGrindstone extends TileEntity implements ISidedInventory
-{
+{	
 	private ItemStack[] slot = new ItemStack[3];
 	
+	//TODO: Remove stone system as it makes no sense
 	public int maxStone = 16;
 	public int stone = 0;
 	
