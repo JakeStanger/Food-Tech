@@ -18,7 +18,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 @Mod(modid = Main.modID, version = Main.modVersion, name = Main.name)
 public class Main 
 {
-	//Mod data. Fallback if mc-mod.info fails to load
+	//Mod data. Fallback if mc-mod.info fails to load.HORSETEST3000
 	public static final String modID = "Roboguy99FoodTech";
 	public static final String modVersion = "0.0.1";
 	public static final String name = "Food Tech";
