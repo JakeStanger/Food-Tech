@@ -1,13 +1,18 @@
 package roboguy99.foodTech.tileEntities;
 
+import universalelectricity.api.UniversalClass;
+import universalelectricity.api.core.grid.INode;
+import universalelectricity.api.core.grid.INodeProvider;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.common.util.ForgeDirection;
 
-public class TileEntityWindTurbine extends TileEntity implements ISidedInventory
+@UniversalClass
+public class TileEntityWindTurbine extends TileEntity implements ISidedInventory, INodeProvider
 {
 	private ItemStack[] slot = new ItemStack[2];
 	
@@ -210,6 +215,13 @@ public class TileEntityWindTurbine extends TileEntity implements ISidedInventory
 	public int[] getAccessibleSlotsFromSide(int i) 
 	{
 		
+		return null;
+	}
+
+	@Override
+	public INode getNode(Class<? extends INode> arg0, ForgeDirection arg1) 
+	{
+		// TODO Auto-generated method stub
 		return null;
 	}
 }
