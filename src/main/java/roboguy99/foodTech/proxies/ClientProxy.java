@@ -1,11 +1,11 @@
 package roboguy99.foodTech.proxies;
 
-import roboguy99.foodTech.tileEntities.TileEntityCable;
-import roboguy99.foodTech.tileEntities.TileEntityGrindstone;
-import roboguy99.foodTech.tileEntities.TileEntityWindTurbine;
-import roboguy99.foodTech.tileEntities.render.RenderCable;
-import roboguy99.foodTech.tileEntities.render.RenderGrindstone;
-import roboguy99.foodTech.tileEntities.render.RenderWindTurbine;
+import roboguy99.foodTech.client.render.RenderCable;
+import roboguy99.foodTech.client.render.RenderGrindstone;
+import roboguy99.foodTech.client.render.RenderWindTurbine;
+import roboguy99.foodTech.common.tileEntities.TileEntityCable;
+import roboguy99.foodTech.common.tileEntities.TileEntityGrindstone;
+import roboguy99.foodTech.common.tileEntities.TileEntityWindTurbine;
 import cpw.mods.fml.client.registry.ClientRegistry;
 
 public class ClientProxy extends CommonProxy //For client-side only events
