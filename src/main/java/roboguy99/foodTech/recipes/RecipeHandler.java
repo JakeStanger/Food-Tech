@@ -33,6 +33,19 @@ public final class RecipeHandler
 		recipe.put(input, output);
 	}
 
+	
+	//My recipes
+	/**
+	 * Add a grindstone recipe
+	 * @param input - input ItemStack
+	 * @param output - output ItemStack
+	 */
+	public static void addGrindstoneRecipe(ItemStack input, ItemStack output)
+	{
+		Recipe.GRINDSTONE.put(input, output);
+	}
+	
+	//Mekanism machine recipes
 	/**
 	 * Add an Enrichment Chamber recipe.
 	 * @param input - input ItemStack
@@ -523,6 +536,10 @@ public final class RecipeHandler
 
 	public static enum Recipe
 	{
+		//My recipes
+		GRINDSTONE(new HashMap<ItemStack, ItemStack>()),
+		
+		//Default Mekanism recipes
 		ENRICHMENT_CHAMBER(new HashMap<ItemStack, ItemStack>()),
 		OSMIUM_COMPRESSOR(new HashMap<AdvancedInput, ItemStack>()),
 		COMBINER(new HashMap<AdvancedInput, ItemStack>()),
