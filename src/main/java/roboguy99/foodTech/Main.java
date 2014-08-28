@@ -25,7 +25,7 @@ public class Main
 	
 	public static Main instance;
 	
-	@SidedProxy(clientSide = "foodTech.proxies.ClientProxy", serverSide = "foodTech.proxies.CommonProxy")
+	@SidedProxy(clientSide = "roboguy99.foodTech.proxies.ClientProxy", serverSide = "roboguy99.foodTech.proxies.CommonProxy")
 	public static CommonProxy proxy;
 	
 	@EventHandler
