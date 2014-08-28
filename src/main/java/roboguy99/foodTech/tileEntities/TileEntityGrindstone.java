@@ -143,4 +143,9 @@ public class TileEntityGrindstone extends TileEntity implements ISidedInventory
 	{
 		return null;
 	}
+	
+	public void addRecipes()
+	{
+		//TODO add recipes
+	}
 }

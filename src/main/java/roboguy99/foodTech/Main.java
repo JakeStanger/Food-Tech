@@ -68,7 +68,7 @@ public class Main
 
 		public Item getTabIconItem() 
 		{
-			return Item.getItemFromBlock(CreateBlocks.blockGrindstone);
+			return Item.getItemFromBlock(CreateBlocks.blockGrindstone); //TODO: 
 		}
 	 };
 }
