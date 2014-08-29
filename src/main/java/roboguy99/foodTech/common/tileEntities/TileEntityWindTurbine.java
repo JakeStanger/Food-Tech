@@ -1,8 +1,5 @@
 package roboguy99.foodTech.common.tileEntities;
 
-import universalelectricity.api.UniversalClass;
-import universalelectricity.api.core.grid.INode;
-import universalelectricity.api.core.grid.INodeProvider;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
@@ -10,6 +7,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
+import scala.collection.concurrent.INode;
 
 @UniversalClass
 public class TileEntityWindTurbine extends TileEntity implements ISidedInventory, INodeProvider
