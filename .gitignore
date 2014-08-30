@@ -1,4 +1,7 @@
-/bin/.gradle/.settings/screenshots
+/bin
+/.gradle
+/.settings
+/screenshots
 /saves
 /resourcepacks
 /mods
