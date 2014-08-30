@@ -9,7 +9,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.client.gui.GuiHandler;
-import roboguy99.foodTech.common.tileEntities.TileEntityWindTurbine;
+import roboguy99.foodTech.common.tileEntities.generators.TileWindTurbine;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
 public class BlockWindTurbine extends BlockContainer //Class for the windTurbine block. The block is turned into a tileEntity when placed
@@ -36,7 +36,7 @@ public class BlockWindTurbine extends BlockContainer //Class for the windTurbine
 
 	public TileEntity createNewTileEntity(World var1, int var2) //Replaces the block with its tileEntity counterpart
 	{
-		return new TileEntityWindTurbine();
+		return new TileWindTurbine();
 	}
 	
 	public void breakBlock(World world, int x, int y, int z, Block block, int metadata)
