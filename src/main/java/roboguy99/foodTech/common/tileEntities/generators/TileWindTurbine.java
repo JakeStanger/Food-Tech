@@ -1,6 +1,7 @@
 package roboguy99.foodTech.common.tileEntities.generators;
 
 import net.minecraft.item.ItemStack;
+import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.common.tileEntities.prefab.TileSingleSlotMachine;
 import universalelectricity.api.UniversalClass;
 
@@ -21,8 +22,8 @@ public class TileWindTurbine extends TileSingleSlotMachine
 	{	
 		if(this.getWorldObj().getBlockMetadata(xCoord, yCoord, zCoord) > 6)
 		{
-			buffer().setEnergy(buffer().getEnergy() + 5);
-			//FoodTech.print(buffer().getEnergy());
+			buffer().setEnergy(buffer().getEnergy() + 10);
+			FoodTech.print(buffer().getEnergy());
 		}
 	}
 	

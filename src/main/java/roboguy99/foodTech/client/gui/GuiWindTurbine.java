@@ -4,7 +4,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
-import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.client.gui.container.ContainerWindTurbine;
 import roboguy99.foodTech.common.tileEntities.generators.TileWindTurbine;
 
@@ -29,8 +28,7 @@ public class GuiWindTurbine extends GuiContainer
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize); //Main gui
 		
 		int i = (int) this.windTurbine.getPowerScaled(162);
-		FoodTech.print(i);
-		drawTexturedModalRect(guiLeft+7, guiTop+10, 0, 167, guiLeft+169-i, guiTop+25); //Power bar
+		drawTexturedModalRect(guiLeft+7, guiTop+10, 0, 167, 7+i, 15); //Power bar
 	}
 		
 }
