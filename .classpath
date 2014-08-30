@@ -212,5 +212,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry exported="true" kind="lib" path="C:/Users/Jake/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.0.1180/start"/>
+	<classpathentry kind="lib" path="D:/Programming/Java/Minecraft/1.7.10/External Libs/universal-electricity-4.0.0.50-api.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
