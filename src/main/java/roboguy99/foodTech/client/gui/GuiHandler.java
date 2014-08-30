@@ -6,7 +6,7 @@ import net.minecraft.world.World;
 import roboguy99.foodTech.client.gui.container.ContainerGrindstone;
 import roboguy99.foodTech.client.gui.container.ContainerWindTurbine;
 import roboguy99.foodTech.common.tileEntities.TileEntityGrindstone;
-import roboguy99.foodTech.common.tileEntities.TileEntityWindTurbine;
+import roboguy99.foodTech.common.tileEntities.generators.TileWindTurbine;
 import cpw.mods.fml.common.network.IGuiHandler;
 
 public class GuiHandler implements IGuiHandler
@@ -21,12 +21,12 @@ public class GuiHandler implements IGuiHandler
 		switch(ID)
 		{
 			case guiIDWindTurbine:
-				while(tileEntity instanceof TileEntityWindTurbine && world.getBlockMetadata(x, y, z) < 8)
+				while(tileEntity instanceof TileWindTurbine && world.getBlockMetadata(x, y, z) < 8)
 				{
 					y++;
 				}
 				
-				return new ContainerWindTurbine(player.inventory, (TileEntityWindTurbine) world.getTileEntity(x, y, z));
+				return new ContainerWindTurbine(player.inventory, (TileWindTurbine) world.getTileEntity(x, y, z));
 			
 			case guiIDGrindstone:
 				return new ContainerGrindstone(player.inventory, (TileEntityGrindstone) world.getTileEntity(x, y, z));
@@ -42,13 +42,13 @@ public class GuiHandler implements IGuiHandler
 		switch(ID)
 		{
 			case guiIDWindTurbine:
-				while(tileEntity instanceof TileEntityWindTurbine && world.getBlockMetadata(x, y, z) < 8)
+				while(tileEntity instanceof TileWindTurbine && world.getBlockMetadata(x, y, z) < 8)
 				{
 					System.out.println(y);
 					y++;
 				}
 				
-				return new GuiWindTurbine(player.inventory, (TileEntityWindTurbine) world.getTileEntity(x, y, z));
+				return new GuiWindTurbine(player.inventory, (TileWindTurbine) world.getTileEntity(x, y, z));
 			case guiIDGrindstone:
 				return new GuiGrindstone(player.inventory, (TileEntityGrindstone) world.getTileEntity(x, y, z));
 		}

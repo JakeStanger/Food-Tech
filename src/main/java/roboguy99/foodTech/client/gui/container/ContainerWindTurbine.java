@@ -4,18 +4,17 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
-import roboguy99.foodTech.common.tileEntities.TileEntityWindTurbine;
+import roboguy99.foodTech.common.tileEntities.generators.TileWindTurbine;
 
 public class ContainerWindTurbine extends Container 
 {
-	public TileEntityWindTurbine windTurbine;
+	public TileWindTurbine windTurbine;
 	
-	public ContainerWindTurbine(InventoryPlayer inventoryPlayer, TileEntityWindTurbine windTurbine)
+	public ContainerWindTurbine(InventoryPlayer inventoryPlayer, TileWindTurbine windTurbine)
 	{
 		this.windTurbine = windTurbine;
 		
-		this.addSlotToContainer(new Slot(windTurbine, 0, 61, 33));
-		this.addSlotToContainer(new Slot(windTurbine, 1, 100, 33));
+		this.addSlotToContainer(new Slot(windTurbine, 0, 80, 49));
 		
 		for(int i = 0; i < 3; i++) //Create the inventory slots
 		{

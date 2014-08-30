@@ -4,16 +4,17 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
+import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.client.gui.container.ContainerWindTurbine;
-import roboguy99.foodTech.common.tileEntities.TileEntityWindTurbine;
+import roboguy99.foodTech.common.tileEntities.generators.TileWindTurbine;
 
 public class GuiWindTurbine extends GuiContainer
 {
 	public final ResourceLocation texture = new ResourceLocation("roboguy99", "textures/gui/windTurbine.png");
 	
-	private TileEntityWindTurbine windTurbine;
+	private TileWindTurbine windTurbine;
 	
-	public GuiWindTurbine(InventoryPlayer inventoryPlayer, TileEntityWindTurbine windTurbine) 
+	public GuiWindTurbine(InventoryPlayer inventoryPlayer, TileWindTurbine windTurbine) 
 	{
 		super(new ContainerWindTurbine(inventoryPlayer, windTurbine));
 		
@@ -27,8 +28,9 @@ public class GuiWindTurbine extends GuiContainer
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize); //Main gui
 		
-		int i = (int) this.windTurbine.getPowerScaled(49);
-		drawTexturedModalRect(guiLeft+80, guiTop+18+49-i, 176, 49-i, 16, i); //Power bar
+		int i = (int) this.windTurbine.getPowerScaled(162);
+		FoodTech.print(i);
+		drawTexturedModalRect(guiLeft+7, guiTop+10, 0, 167, guiLeft+169-i, guiTop+25); //Power bar
 	}
 		
 }
