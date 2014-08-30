@@ -8,6 +8,8 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 import scala.collection.concurrent.INode;
+import universalelectricity.api.UniversalClass;
+import universalelectricity.api.core.grid.INodeProvider;
 
 @UniversalClass
 public class TileEntityWindTurbine extends TileEntity implements ISidedInventory, INodeProvider
