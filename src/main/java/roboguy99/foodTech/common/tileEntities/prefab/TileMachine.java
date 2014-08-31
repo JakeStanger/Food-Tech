@@ -12,11 +12,20 @@ import universalelectricity.core.grid.node.NodeEnergy;
  */
 public class TileMachine extends Tile implements INodeProvider
 {
-    public NodeEnergy energyNode;
+    String fuel;
+    int bufferSize;
+    int energyPerTick;
+	
+	public NodeEnergy energyNode;
 
     public TileMachine()
     {
-        energyNode = new NodeEnergy(this);
+        this.energyNode = new NodeEnergy(this);
+        
+        //Used for item metadata
+        this.fuel = "";
+        this.bufferSize = 0;
+        this.energyPerTick = 0;
     }
 
     public EnergyStorage buffer()
@@ -55,5 +64,35 @@ public class TileMachine extends Tile implements INodeProvider
     {
         super.invalidate();
         energyNode.deconstruct();
+    }
+    
+    public void setFuel(String fuel)
+    {
+    	this.fuel = fuel;
+    }
+    
+    public void setBufferSize(int bufferSize)
+    {
+    	this.bufferSize = bufferSize;
+    }
+    
+    public void setEnergyPerTick(int energyPerTick)
+    {
+    	this.energyPerTick = energyPerTick;
+    }
+    
+    public String getFuel()
+    {
+    	return this.fuel;
+    }
+    
+    public int getBufferSize()
+    {
+    	return this.bufferSize;
+    }
+    
+    public int getEnergyPerTick()
+    {
+    	return this.energyPerTick;
     }
 }

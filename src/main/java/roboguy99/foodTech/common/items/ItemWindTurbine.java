@@ -1,13 +1,18 @@
 package roboguy99.foodTech.common.items;
 
+import java.util.List;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import roboguy99.foodTech.common.blocks.CreateBlocks;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemWindTurbine extends Item //When used, places BlockwindTurbine
-{
+{	
 	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int side, float x2, float y2, float z2)
 	{
 		if(!world.isRemote)
@@ -44,5 +49,22 @@ public class ItemWindTurbine extends Item //When used, places BlockwindTurbine
 		}
 		
 		return false;
+	}
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean bool)
+	{
+		list.add(EnumChatFormatting.BLUE + "Electrical generator");
+		list.add(EnumChatFormatting.GREEN + "Fuel requied: " + EnumChatFormatting.AQUA + "Electricity"); //TODO: Get metadata from tile entity
+		list.add(EnumChatFormatting.GREEN + "Buffer size: " + EnumChatFormatting.AQUA + "5000");
+		list.add(EnumChatFormatting.GREEN + "Energy per tick: " + EnumChatFormatting.AQUA + "+10");
+	}
+	
+	@SuppressWarnings("unused")
+	private String setMetadata()
+	{
+		return "YOFACE";
 	}
 }
