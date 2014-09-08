@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import roboguy99.foodTech.common.recipes.RecipeHandler;
 
-public class TileEntityGrindstone extends TileEntity implements ISidedInventory
+public class TileGrindstone extends TileEntity implements ISidedInventory
 {	
 	private ItemStack[] slot = new ItemStack[3];
 	

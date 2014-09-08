@@ -4,13 +4,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
-import roboguy99.foodTech.common.tile.TileEntityGrindstone;
+import roboguy99.foodTech.common.tile.TileGrindstone;
 
 public class ContainerGrindstone extends Container
 {
-	public TileEntityGrindstone grindstone;
+	public TileGrindstone grindstone;
 	
-	public ContainerGrindstone(InventoryPlayer inventoryPlayer, TileEntityGrindstone grindstone)
+	public ContainerGrindstone(InventoryPlayer inventoryPlayer, TileGrindstone grindstone)
 	{
 		this.grindstone = grindstone;
 		

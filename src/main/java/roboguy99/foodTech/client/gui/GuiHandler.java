@@ -5,7 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import roboguy99.foodTech.client.gui.container.ContainerGrindstone;
 import roboguy99.foodTech.client.gui.container.ContainerWindTurbine;
-import roboguy99.foodTech.common.tile.TileEntityGrindstone;
+import roboguy99.foodTech.common.tile.TileGrindstone;
 import roboguy99.foodTech.common.tile.generators.TileWindTurbine;
 import cpw.mods.fml.common.network.IGuiHandler;
 
@@ -29,7 +29,7 @@ public class GuiHandler implements IGuiHandler
 				return new ContainerWindTurbine(player.inventory, (TileWindTurbine) world.getTileEntity(x, y, z));
 			
 			case guiIDGrindstone:
-				return new ContainerGrindstone(player.inventory, (TileEntityGrindstone) world.getTileEntity(x, y, z));
+				return new ContainerGrindstone(player.inventory, (TileGrindstone) world.getTileEntity(x, y, z));
 				
 		}
 		return null;
@@ -50,7 +50,7 @@ public class GuiHandler implements IGuiHandler
 				
 				return new GuiWindTurbine(player.inventory, (TileWindTurbine) world.getTileEntity(x, y, z));
 			case guiIDGrindstone:
-				return new GuiGrindstone(player.inventory, (TileEntityGrindstone) world.getTileEntity(x, y, z));
+				return new GuiGrindstone(player.inventory, (TileGrindstone) world.getTileEntity(x, y, z));
 		}
 		return null;
 	}

@@ -8,11 +8,11 @@ import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import roboguy99.foodTech.FoodTech;
-import roboguy99.foodTech.common.tile.TileEntityCable;
+import roboguy99.foodTech.common.tile.TileWire;
 
 public class BlockCable extends BlockContainer
 {
-	private TileEntityCable tileEntityCable;
+	private TileWire tileEntityCable;
 
 	public BlockCable(Material material)
 	{
@@ -39,7 +39,7 @@ public class BlockCable extends BlockContainer
 	
 	public TileEntity createNewTileEntity(World world, int var2) 
 	{
-		this.tileEntityCable = new TileEntityCable();
+		this.tileEntityCable = new TileWire();
 		return this.tileEntityCable;
 	}
 	

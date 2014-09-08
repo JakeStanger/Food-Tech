@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 import roboguy99.foodTech.client.models.ModelCable;
-import roboguy99.foodTech.common.tile.TileEntityCable;
+import roboguy99.foodTech.common.tile.TileWire;
 
 public class RenderCable extends TileEntitySpecialRenderer 
 {
@@ -27,12 +27,12 @@ public class RenderCable extends TileEntitySpecialRenderer
 			
 			Minecraft.getMinecraft().renderEngine.bindTexture(textureOff);
 			
-			neighbourBlockWires[0] = ((TileEntityCable) tileEntity).getWireAboveConnected();
-			neighbourBlockWires[1] = ((TileEntityCable) tileEntity).getWireBelowConnected();
-			neighbourBlockWires[2] = ((TileEntityCable) tileEntity).getWireNorthConnected();
-			neighbourBlockWires[3] = ((TileEntityCable) tileEntity).getWireSouthConnected();
-			neighbourBlockWires[4] = ((TileEntityCable) tileEntity).getWireEastConnected();
-			neighbourBlockWires[5] = ((TileEntityCable) tileEntity).getWireWestConnected();
+			neighbourBlockWires[0] = ((TileWire) tileEntity).getWireAboveConnected();
+			neighbourBlockWires[1] = ((TileWire) tileEntity).getWireBelowConnected();
+			neighbourBlockWires[2] = ((TileWire) tileEntity).getWireNorthConnected();
+			neighbourBlockWires[3] = ((TileWire) tileEntity).getWireSouthConnected();
+			neighbourBlockWires[4] = ((TileWire) tileEntity).getWireEastConnected();
+			neighbourBlockWires[5] = ((TileWire) tileEntity).getWireWestConnected();
 			
 			this.modelCable = new ModelCable(neighbourBlockWires);
 			

@@ -5,16 +5,16 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import roboguy99.foodTech.client.gui.container.ContainerGrindstone;
-import roboguy99.foodTech.common.tile.TileEntityGrindstone;
+import roboguy99.foodTech.common.tile.TileGrindstone;
 
 public class GuiGrindstone extends GuiContainer
 {
 public final ResourceLocation texture = new ResourceLocation("roboguy99", "textures/gui/grindstone.png");
 	
-	private TileEntityGrindstone grindstone;
+	private TileGrindstone grindstone;
 	
 	
-	public GuiGrindstone(InventoryPlayer inventoryPlayer, TileEntityGrindstone grindstone)
+	public GuiGrindstone(InventoryPlayer inventoryPlayer, TileGrindstone grindstone)
 	{
 		super(new ContainerGrindstone(inventoryPlayer, grindstone));
 		

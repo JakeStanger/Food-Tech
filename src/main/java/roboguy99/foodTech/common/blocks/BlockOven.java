@@ -4,7 +4,7 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import roboguy99.foodTech.common.tile.TileEntityOven;
+import roboguy99.foodTech.common.tile.TileOven;
 
 public class BlockOven extends BlockContainer
 {
@@ -30,6 +30,6 @@ public class BlockOven extends BlockContainer
 	
 	public TileEntity createNewTileEntity(World world, int i) 
 	{
-		return new TileEntityOven();
+		return new TileOven();
 	}
 }

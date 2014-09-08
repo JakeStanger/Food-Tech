@@ -11,7 +11,7 @@ public class RegisterTileEntities //Registers custom tile entities into the game
 		FoodTech.print("Loading custom tile entities");
 		
 		GameRegistry.registerTileEntity(TileWindTurbine.class, "r99_windTurbine");
-		GameRegistry.registerTileEntity(TileEntityGrindstone.class, "r99_grindstone");
-		GameRegistry.registerTileEntity(TileEntityCable.class, "r99_cable");
+		GameRegistry.registerTileEntity(TileGrindstone.class, "r99_grindstone");
+		GameRegistry.registerTileEntity(TileWire.class, "r99_cable");
 	}
 }

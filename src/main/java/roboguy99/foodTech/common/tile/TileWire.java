@@ -5,7 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import roboguy99.foodTech.common.blocks.CreateBlocks;
 
-public class TileEntityCable extends TileEntity 
+public class TileWire extends TileEntity 
 {	
 	private boolean isWireAbove = false;
 	private boolean isWireBelow = false;
