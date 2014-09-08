@@ -1,7 +1,7 @@
-package roboguy99.foodTech.common.tileEntities.generators;
+package roboguy99.foodTech.common.tile.generators;
 
 import net.minecraft.item.ItemStack;
-import roboguy99.foodTech.common.tileEntities.prefab.TileSingleSlotMachine;
+import roboguy99.foodTech.common.tile.prefab.TileSingleSlotMachine;
 import universalelectricity.api.UniversalClass;
 
 @UniversalClass

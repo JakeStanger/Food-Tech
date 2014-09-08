@@ -4,7 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
-import roboguy99.foodTech.common.tileEntities.TileEntityGrindstone;
+import roboguy99.foodTech.common.tile.TileEntityGrindstone;
 
 public class ContainerGrindstone extends Container
 {

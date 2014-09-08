@@ -33,7 +33,6 @@ public final class RecipeHandler
 		recipe.put(input, output);
 	}
 
-	
 	//My recipes
 	/**
 	 * Add a grindstone recipe

@@ -6,7 +6,7 @@ import roboguy99.foodTech.client.gui.GuiHandler;
 import roboguy99.foodTech.common.blocks.CreateBlocks;
 import roboguy99.foodTech.common.event.RegisterEvents;
 import roboguy99.foodTech.common.items.CreateItems;
-import roboguy99.foodTech.common.tileEntities.RegisterTileEntities;
+import roboguy99.foodTech.common.tile.RegisterTileEntities;
 import roboguy99.foodTech.proxies.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;

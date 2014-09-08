@@ -1,4 +1,4 @@
-package roboguy99.foodTech.common.tileEntities;
+package roboguy99.foodTech.common.tile;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

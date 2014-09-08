@@ -7,7 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.client.gui.GuiHandler;
-import roboguy99.foodTech.common.tileEntities.TileEntityGrindstone;
+import roboguy99.foodTech.common.tile.TileEntityGrindstone;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
 public class BlockGrindstone extends BlockContainer

@@ -4,7 +4,7 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import roboguy99.foodTech.common.tileEntities.TileEntityOven;
+import roboguy99.foodTech.common.tile.TileEntityOven;
 
 public class BlockOven extends BlockContainer
 {

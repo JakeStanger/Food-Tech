@@ -1,4 +1,4 @@
-package roboguy99.foodTech.common.tileEntities;
+package roboguy99.foodTech.common.tile;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;

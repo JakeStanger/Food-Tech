@@ -5,7 +5,7 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import roboguy99.foodTech.client.gui.container.ContainerGrindstone;
-import roboguy99.foodTech.common.tileEntities.TileEntityGrindstone;
+import roboguy99.foodTech.common.tile.TileEntityGrindstone;
 
 public class GuiGrindstone extends GuiContainer
 {

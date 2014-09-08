@@ -1,4 +1,4 @@
-package roboguy99.foodTech.common.tileEntities.prefab;
+package roboguy99.foodTech.common.tile.prefab;
 
 import net.minecraftforge.common.util.ForgeDirection;
 import universalelectricity.api.EnergyStorage;

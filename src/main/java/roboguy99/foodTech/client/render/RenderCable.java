@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 import roboguy99.foodTech.client.models.ModelCable;
-import roboguy99.foodTech.common.tileEntities.TileEntityCable;
+import roboguy99.foodTech.common.tile.TileEntityCable;
 
 public class RenderCable extends TileEntitySpecialRenderer 
 {

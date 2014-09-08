@@ -8,7 +8,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import roboguy99.foodTech.FoodTech;
-import roboguy99.foodTech.common.tileEntities.TileEntityCable;
+import roboguy99.foodTech.common.tile.TileEntityCable;
 
 public class BlockCable extends BlockContainer
 {

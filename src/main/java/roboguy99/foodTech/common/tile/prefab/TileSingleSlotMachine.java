@@ -1,4 +1,4 @@
-package roboguy99.foodTech.common.tileEntities.prefab;
+package roboguy99.foodTech.common.tile.prefab;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
