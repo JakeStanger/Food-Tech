@@ -6,7 +6,7 @@ import net.minecraft.world.World;
 import roboguy99.foodTech.client.gui.container.ContainerGrindstone;
 import roboguy99.foodTech.client.gui.container.ContainerWindTurbine;
 import roboguy99.foodTech.common.tile.TileGrindstone;
-import roboguy99.foodTech.common.tile.generators.TileWindTurbine;
+import roboguy99.foodTech.common.tile.electricity.generators.TileWindTurbine;
 import cpw.mods.fml.common.network.IGuiHandler;
 
 public class GuiHandler implements IGuiHandler

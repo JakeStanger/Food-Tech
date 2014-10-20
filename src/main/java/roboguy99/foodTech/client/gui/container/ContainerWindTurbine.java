@@ -4,7 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
-import roboguy99.foodTech.common.tile.generators.TileWindTurbine;
+import roboguy99.foodTech.common.tile.electricity.generators.TileWindTurbine;
 
 public class ContainerWindTurbine extends Container 
 {

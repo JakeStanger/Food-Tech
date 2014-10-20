@@ -3,9 +3,9 @@ package roboguy99.foodTech.proxies;
 import roboguy99.foodTech.client.render.RenderCable;
 import roboguy99.foodTech.client.render.RenderGrindstone;
 import roboguy99.foodTech.client.render.RenderWindTurbine;
-import roboguy99.foodTech.common.tile.TileWire;
 import roboguy99.foodTech.common.tile.TileGrindstone;
-import roboguy99.foodTech.common.tile.generators.TileWindTurbine;
+import roboguy99.foodTech.common.tile.electricity.generators.TileWindTurbine;
+import roboguy99.foodTech.common.tile.electricity.wire.TileWire;
 import cpw.mods.fml.client.registry.ClientRegistry;
 
 public class ClientProxy extends CommonProxy //For client-side only events

@@ -19,7 +19,7 @@ public class CreateBlocks //Calls each of the custom block classes, creates any 
 		//Create instances of all of the blocks
 		blockWindTurbine = new BlockWindTurbine(Material.iron);
 		blockGrindstone = new BlockGrindstone(Material.rock);
-		blockCable = new BlockCable(Material.iron);
+		blockCable = new BlockWire(Material.iron);
 		
 		//Call property-setting functions
 		setBlockNames();

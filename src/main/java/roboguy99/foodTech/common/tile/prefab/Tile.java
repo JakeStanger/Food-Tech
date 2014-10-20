@@ -2,13 +2,12 @@ package roboguy99.foodTech.common.tile.prefab;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import universalelectricity.core.transform.vector.IVectorWorld;
 
 /**
  * Simple prefab for all tiles in this mod
  * @author Darkguardsman
  */
-public class Tile extends TileEntity implements IVectorWorld
+public class Tile extends TileEntity
 {
     protected long ticks = 0L;
 
@@ -41,24 +40,4 @@ public class Tile extends TileEntity implements IVectorWorld
     public int xi() { return xCoord;}
     public int yi() { return yCoord;}
     public int zi() { return zCoord;}
-
-    @Override
-    public double z() {
-        return zi();
-    }
-
-    @Override
-    public double x() {
-        return xi();
-    }
-
-    @Override
-    public double y() {
-        return yi();
-    }
-
-    public IVectorWorld pos()
-    {
-        return (IVectorWorld)this;
-    }
 }
