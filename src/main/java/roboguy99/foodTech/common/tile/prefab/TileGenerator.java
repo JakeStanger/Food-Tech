@@ -1,22 +1,22 @@
 package roboguy99.foodTech.common.tile.prefab;
 
-public class TileMachine extends Tile
+public class TileGenerator extends Tile
 {
+    String fuel;
     int bufferSize;
     int energyPerTick;
-    String desc;
 
-    public TileMachine()
+    public TileGenerator()
     {
         //Used for item metadata
+        this.fuel = "";
         this.bufferSize = 0;
         this.energyPerTick = 0;
-        this.desc = "";
     }
 
-    public void setDesc(String desc)
+    public void setFuel(String fuel)
     {
-    	this.desc = desc;
+    	this.fuel = fuel;
     }
     
     public void setBufferSize(int bufferSize)
@@ -29,9 +29,9 @@ public class TileMachine extends Tile
     	this.energyPerTick = energyPerTick;
     }
     
-    public String getDesc()
+    public String getFuel()
     {
-    	return this.desc;
+    	return this.fuel;
     }
     
     public int getBufferSize()

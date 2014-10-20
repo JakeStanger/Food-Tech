@@ -1,9 +1,9 @@
 package roboguy99.foodTech.common.tile.electricity.generators;
 
 import net.minecraft.item.ItemStack;
-import roboguy99.foodTech.common.tile.prefab.TileSingleSlotMachine;
+import roboguy99.foodTech.common.tile.prefab.TileSingleSlotGenerator;
 
-public class TileWindTurbine extends TileSingleSlotMachine
+public class TileWindTurbine extends TileSingleSlotGenerator
 {	
 	private int energyIncrement = 10;
 	

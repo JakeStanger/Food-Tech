@@ -5,10 +5,7 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-/**
- * Created by robert on 8/24/2014.
- */
-public abstract class TileSingleSlotMachine extends TileMachine implements ISidedInventory
+public abstract class TileDoubleSlotMachine extends TileMachine implements ISidedInventory
 {
     protected ItemStack slotStack = null;
 
@@ -30,7 +27,8 @@ public abstract class TileSingleSlotMachine extends TileMachine implements ISide
 
     @Override
     public int[] getAccessibleSlotsFromSide(int p_94128_1_) {
-        return new int[0];
+        int[] returnValue = {0, 1};
+    	return returnValue;
     }
 
     @Override
@@ -47,13 +45,13 @@ public abstract class TileSingleSlotMachine extends TileMachine implements ISide
     @Override
     public int getSizeInventory()
     {
-        return 1;
+        return 2;
     }
 
     @Override
     public ItemStack getStackInSlot(int slot)
     {
-        if(slot == 0)
+        if(slot == 0 || slot == 1)
         {
             return slotStack;
         }
@@ -63,7 +61,7 @@ public abstract class TileSingleSlotMachine extends TileMachine implements ISide
     @Override
     public ItemStack decrStackSize(int slot, int sum)
     {
-        if(slot == 0 && slotStack != null)
+        if((slot == 0 || slot == 1) && slotStack != null)
         {
             ItemStack stack;
             if(slotStack.stackSize <= sum)
@@ -87,7 +85,7 @@ public abstract class TileSingleSlotMachine extends TileMachine implements ISide
     @Override
     public ItemStack getStackInSlotOnClosing(int slot)
     {
-        if(slot == 0)
+        if(slot == 0 || slot == 1)
         {
             return slotStack;
         }
@@ -97,35 +95,39 @@ public abstract class TileSingleSlotMachine extends TileMachine implements ISide
     @Override
     public void setInventorySlotContents(int slot, ItemStack stack)
     {
-        if(slot == 0)
+        if(slot == 0 || slot == 1)
         {
             slotStack = stack;
         }
     }
 
     @Override
-    public boolean hasCustomInventoryName() {
-        return true;
-    }
-
-    @Override
-    public int getInventoryStackLimit() {
-        return 64;
-    }
-
-    @Override
-    public boolean isUseableByPlayer(EntityPlayer p_70300_1_)
+    public boolean hasCustomInventoryName() 
     {
         return true;
     }
 
     @Override
-    public void openInventory() {
+    public int getInventoryStackLimit() 
+    {
+        return 64;
+    }
+
+    @Override
+    public boolean isUseableByPlayer(EntityPlayer player)
+    {
+        return true;
+    }
+
+    @Override
+    public void openInventory() 
+    {
 
     }
 
     @Override
-    public void closeInventory() {
+    public void closeInventory() 
+    {
 
     }
 }
