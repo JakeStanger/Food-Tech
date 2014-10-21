@@ -9,7 +9,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.client.gui.GuiHandler;
-import roboguy99.foodTech.common.tile.electricity.generators.TileWindTurbine;
+import roboguy99.foodTech.common.tile.electricity.generator.TileWindTurbine;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
 public class BlockWindTurbine extends BlockContainer //Class for the windTurbine block. The block is turned into a tileEntity when placed

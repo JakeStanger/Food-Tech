@@ -5,10 +5,10 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-public class TileSingleSlotGenerator extends TileGenerator implements ISidedInventory
+public abstract class TileSingleSlotGenerator extends TileGenerator implements ISidedInventory
 {
 	protected ItemStack slotStack = null;
-	private String EVERYTHING = "Literally everything you could imagine";
+	private static final String EVERYTHING = "Literally everything you could imagine"; //In case of emergency
 	
 	@Override
     public void writeToNBT(NBTTagCompound nbt)

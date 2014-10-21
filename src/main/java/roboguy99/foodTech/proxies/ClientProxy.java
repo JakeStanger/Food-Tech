@@ -4,7 +4,7 @@ import roboguy99.foodTech.client.render.RenderCable;
 import roboguy99.foodTech.client.render.RenderGrindstone;
 import roboguy99.foodTech.client.render.RenderWindTurbine;
 import roboguy99.foodTech.common.tile.TileGrindstone;
-import roboguy99.foodTech.common.tile.electricity.generators.TileWindTurbine;
+import roboguy99.foodTech.common.tile.electricity.generator.TileWindTurbine;
 import roboguy99.foodTech.common.tile.electricity.wire.TileWire;
 import cpw.mods.fml.client.registry.ClientRegistry;
 

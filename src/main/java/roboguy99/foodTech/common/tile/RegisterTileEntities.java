@@ -1,7 +1,7 @@
 package roboguy99.foodTech.common.tile;
 
 import roboguy99.foodTech.FoodTech;
-import roboguy99.foodTech.common.tile.electricity.generators.TileWindTurbine;
+import roboguy99.foodTech.common.tile.electricity.generator.TileWindTurbine;
 import roboguy99.foodTech.common.tile.electricity.wire.TileWire;
 import cpw.mods.fml.common.registry.GameRegistry;
 

@@ -5,7 +5,7 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import roboguy99.foodTech.client.gui.container.ContainerWindTurbine;
-import roboguy99.foodTech.common.tile.electricity.generators.TileWindTurbine;
+import roboguy99.foodTech.common.tile.electricity.generator.TileWindTurbine;
 
 public class GuiWindTurbine extends GuiContainer
 {

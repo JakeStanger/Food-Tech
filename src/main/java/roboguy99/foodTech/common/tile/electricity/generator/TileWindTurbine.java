@@ -1,4 +1,4 @@
-package roboguy99.foodTech.common.tile.electricity.generators;
+package roboguy99.foodTech.common.tile.electricity.generator;
 
 import net.minecraft.item.ItemStack;
 import roboguy99.foodTech.common.tile.prefab.TileSingleSlotGenerator;
