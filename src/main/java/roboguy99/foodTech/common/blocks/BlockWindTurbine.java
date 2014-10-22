@@ -36,13 +36,13 @@ public class BlockWindTurbine extends BlockContainer //Class for the windTurbine
 
 	public TileEntity createNewTileEntity(World var1, int var2) //Replaces the block with its tileEntity counterpart
 	{
-		return new TileWindTurbine();
+		return new TileWindTurbine(10, 20);
 	}
 	
 	public void breakBlock(World world, int x, int y, int z, Block block, int metadata)
 	{
-		if (world.getBlock(x, y+1, z) == CreateBlocks.blockWindTurbine) world.setBlockToAir(x, y+1, z);
-		if (world.getBlock(x, y-1, z) == CreateBlocks.blockWindTurbine) world.setBlockToAir(x, y-1, z);
+		if (world.getBlock(x, y+1, z) == Blocks.blockWindTurbine) world.setBlockToAir(x, y+1, z);
+		if (world.getBlock(x, y-1, z) == Blocks.blockWindTurbine) world.setBlockToAir(x, y-1, z);
 	}
 	
 	public void setBlockBoundsBasedOnState(IBlockAccess world, int x, int y, int z)

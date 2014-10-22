@@ -3,7 +3,7 @@ package roboguy99.foodTech;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import roboguy99.foodTech.client.gui.GuiHandler;
-import roboguy99.foodTech.common.blocks.CreateBlocks;
+import roboguy99.foodTech.common.blocks.Blocks;
 import roboguy99.foodTech.common.event.RegisterEvents;
 import roboguy99.foodTech.common.items.CreateItems;
 import roboguy99.foodTech.common.tile.RegisterTileEntities;
@@ -36,7 +36,7 @@ public class FoodTech
 		instance = this;
 		
 		//Loads common content into the game
-		new CreateBlocks();
+		new Blocks();
 		new CreateItems();
 		
 		print("Pre-initialization stage loaded successfully");
@@ -68,7 +68,7 @@ public class FoodTech
 
 		public Item getTabIconItem() 
 		{
-			return Item.getItemFromBlock(CreateBlocks.blockGrindstone); //TODO: Update icon
+			return Item.getItemFromBlock(Blocks.blockGrindstone); //TODO: Update icon
 		}
 	 };
 }

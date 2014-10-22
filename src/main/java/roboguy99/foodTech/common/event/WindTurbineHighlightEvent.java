@@ -8,7 +8,7 @@ import net.minecraftforge.client.event.DrawBlockHighlightEvent;
 
 import org.lwjgl.opengl.GL11;
 
-import roboguy99.foodTech.common.blocks.CreateBlocks;
+import roboguy99.foodTech.common.blocks.Blocks;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class WindTurbineHighlightEvent 
@@ -16,9 +16,9 @@ public class WindTurbineHighlightEvent
 	@SubscribeEvent
 	public void onDrawHighlight(DrawBlockHighlightEvent event)
 	{
-		if(event.target.typeOfHit.equals(MovingObjectType.BLOCK) && event.player.worldObj.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ).equals(CreateBlocks.blockWindTurbine))
+		if(event.target.typeOfHit.equals(MovingObjectType.BLOCK) && event.player.worldObj.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ).equals(Blocks.blockWindTurbine))
 		{
-			if(event.player.worldObj.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ).equals(CreateBlocks.blockWindTurbine))
+			if(event.player.worldObj.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ).equals(Blocks.blockWindTurbine))
 			{
 				onDrawHighlightWindmill(event);
 			}

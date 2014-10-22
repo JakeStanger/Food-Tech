@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
-import roboguy99.foodTech.common.blocks.CreateBlocks;
+import roboguy99.foodTech.common.blocks.Blocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -39,7 +39,7 @@ public class ItemWindTurbine extends Item //When used, places BlockwindTurbine
 					
 					for(int y1 = 0; y1 < 7; y1++)
 					{
-						world.setBlock(x, y+y1+1, z, CreateBlocks.blockWindTurbine, (y1+1)==7?(y1+1+direction):(y1+1), 2);
+						world.setBlock(x, y+y1+1, z, Blocks.blockWindTurbine, (y1+1)==7?(y1+1+direction):(y1+1), 2);
 					}
 					return true;
 				}

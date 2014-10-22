@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
 import roboguy99.foodTech.client.models.windTurbine.ModelWindTurbineShaft;
 import roboguy99.foodTech.client.models.windTurbine.ModelWindTurbineTop;
 import roboguy99.foodTech.client.models.windTurbine.ModelWindTurbineTopBlade;
-import roboguy99.foodTech.common.blocks.CreateBlocks;
+import roboguy99.foodTech.common.blocks.Blocks;
 
 public class RenderWindTurbine extends TileEntitySpecialRenderer //Tells OpenGL how the windTurbine tileEntity should be drawn
 {
@@ -37,7 +37,7 @@ public class RenderWindTurbine extends TileEntitySpecialRenderer //Tells OpenGL 
 		
 		Minecraft minecraft = Minecraft.getMinecraft();
 		
-		while(tileEntity.getWorldObj().getBlockMetadata(x1, y1, z1) < 7 && tileEntity.getWorldObj().getBlock(x1, y1, z1).equals(CreateBlocks.blockWindTurbine))
+		while(tileEntity.getWorldObj().getBlockMetadata(x1, y1, z1) < 7 && tileEntity.getWorldObj().getBlock(x1, y1, z1).equals(Blocks.blockWindTurbine))
 		{
 			y1++;
 		}

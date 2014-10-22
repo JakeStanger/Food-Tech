@@ -1,50 +1,31 @@
 package roboguy99.foodTech.common.tile.electricity.generator;
 
-import net.minecraft.item.ItemStack;
-import roboguy99.foodTech.common.tile.prefab.TileSingleSlotGenerator;
+import net.minecraftforge.common.util.ForgeDirection;
+import roboguy99.foodTech.common.tile.prefab.generator.TileEntityBasicGenerator;
 
-public class TileWindTurbine extends TileSingleSlotGenerator
-{	
-	private int energyIncrement = 10;
-	
-	public TileWindTurbine()
+
+public class TileWindTurbine extends TileEntityBasicGenerator
+{
+
+	public TileWindTurbine(int output, int generated)
 	{
-		super();
-		
-		this.setFuel("Electricity");
-		this.setEnergyPerTick(this.energyIncrement);
+		super(output, generated);
 	}
-	
+
 	@Override
-	public void updateEntity()
-	{	
-		if(this.getWorldObj().getBlockMetadata(xCoord, yCoord, zCoord) > 6)
+	protected void generate()
+	{
+		if (worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord) > 7)
 		{
-			
+			storage.modifyEnergyStored(generated); //TODO Check in "generatable" conditions
 		}
 	}
 	
 	@Override
-	public boolean isItemValidForSlot(int slot, ItemStack stack)
+	public boolean canConnectEnergy(ForgeDirection from)
 	{
-		//TODO allow battery charging in generators
-		return true;
+		if (from != ForgeDirection.UP) return true;
+		else return false;
 	}
 	
-	@Override
-	public String getInventoryName()
-	{
-		return "Wind Turbine";
-	}
-	
-	/**
-	 * Returns the power, scaled by a height value.
-	 * Used for GUIs
-	 * @param scaled
-	 * @return
-	 */
-	/*public int getPowerScaled(int scaled)
-	{
-		return ENERGY * scaled / MAXENERGY
-	}*/
 }
