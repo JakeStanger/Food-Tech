@@ -7,12 +7,12 @@ import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;
 import cofh.api.energy.IEnergyProvider;
 
-public abstract class TileEntityBasicGenerator extends TileEntity implements IEnergyHandler, IEnergyProvider
+public abstract class TileBasicGenerator extends TileEntity implements IEnergyHandler, IEnergyProvider
 {
 	protected EnergyStorage storage = new EnergyStorage(10000);
 	public int generated;
 	
-	public TileEntityBasicGenerator( int generated)
+	public TileBasicGenerator( int generated)
 	{
 		this.generated = generated;
 		storage.setMaxReceive(0);
@@ -93,4 +93,9 @@ public abstract class TileEntityBasicGenerator extends TileEntity implements IEn
 	}
 	
 	protected abstract void generate();
+
+	public int getPowerScaled(int scaled)
+	{
+		return (int) this.storage.getEnergyStored() * scaled / this.storage.getMaxEnergyStored();
+	}
 }

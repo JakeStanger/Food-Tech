@@ -25,6 +25,7 @@ public final ResourceLocation texture = new ResourceLocation("roboguy99", "textu
 
 	public void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) 
 	{
+		//Draw the gui screen
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		

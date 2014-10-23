@@ -1,10 +1,10 @@
 package roboguy99.foodTech.common.tile.electricity.generator;
 
 import net.minecraftforge.common.util.ForgeDirection;
-import roboguy99.foodTech.common.tile.prefab.generator.TileEntityBasicGenerator;
+import roboguy99.foodTech.common.tile.prefab.generator.TileBasicGenerator;
 
 
-public class TileWindTurbine extends TileEntityBasicGenerator
+public class TileWindTurbine extends TileBasicGenerator
 {
 
 	public TileWindTurbine(int generated)
@@ -18,7 +18,6 @@ public class TileWindTurbine extends TileEntityBasicGenerator
 		if (worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord) == 1)
 		{
 			storage.modifyEnergyStored(generated); //TODO Check in "generatable" conditions
-			System.out.println(storage.getEnergyStored());
 		}
 	}
 	
