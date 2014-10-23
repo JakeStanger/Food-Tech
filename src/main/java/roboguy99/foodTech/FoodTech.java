@@ -31,7 +31,7 @@ public class FoodTech
 	public static CommonProxy proxy;
 	
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) //Pre-initialization loading
+	public void preInit(FMLPreInitializationEvent event) //Pre-initialisation loading
 	{					
 		print("Loading pre-initialization stage");
 	
@@ -45,7 +45,7 @@ public class FoodTech
 	}
 	
 	@EventHandler
-	public void init(FMLInitializationEvent event) //Initialization loading
+	public void init(FMLInitializationEvent event) //Initialisation loading
 	{
 		print("Initializing");
 		
