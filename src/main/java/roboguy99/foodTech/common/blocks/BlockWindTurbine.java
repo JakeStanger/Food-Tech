@@ -36,7 +36,7 @@ public class BlockWindTurbine extends BlockContainer //Class for the windTurbine
 
 	public TileEntity createNewTileEntity(World var1, int var2) //Replaces the block with its tileEntity counterpart
 	{
-		return new TileWindTurbine(10, 20);
+		return new TileWindTurbine(50);
 	}
 	
 	public void breakBlock(World world, int x, int y, int z, Block block, int metadata)

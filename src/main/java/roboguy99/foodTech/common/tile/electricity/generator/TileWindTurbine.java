@@ -7,17 +7,18 @@ import roboguy99.foodTech.common.tile.prefab.generator.TileEntityBasicGenerator;
 public class TileWindTurbine extends TileEntityBasicGenerator
 {
 
-	public TileWindTurbine(int output, int generated)
+	public TileWindTurbine(int generated)
 	{
-		super(output, generated);
+		super(generated);
 	}
 
 	@Override
 	protected void generate()
 	{
-		if (worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord) > 7)
+		if (worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord) == 1)
 		{
 			storage.modifyEnergyStored(generated); //TODO Check in "generatable" conditions
+			System.out.println(storage.getEnergyStored());
 		}
 	}
 	

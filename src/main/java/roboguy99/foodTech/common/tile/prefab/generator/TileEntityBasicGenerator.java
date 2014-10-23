@@ -10,16 +10,14 @@ import cofh.api.energy.IEnergyProvider;
 public abstract class TileEntityBasicGenerator extends TileEntity implements IEnergyHandler, IEnergyProvider
 {
 	protected EnergyStorage storage = new EnergyStorage(10000);
-	public int output;
 	public int generated;
 	
-	public TileEntityBasicGenerator(int output, int generated)
+	public TileEntityBasicGenerator( int generated)
 	{
-		this.output = output;
 		this.generated = generated;
 		storage.setMaxReceive(0);
-		storage.setMaxExtract(output);
-		storage.setMaxTransfer(output);
+		storage.setMaxExtract(generated);
+		storage.setMaxTransfer(generated);
 	}
 	
 	@Override
@@ -71,7 +69,26 @@ public abstract class TileEntityBasicGenerator extends TileEntity implements IEn
 	@Override
 	public void updateEntity()
 	{
-		super.updateEntity();
+		if (storage.getEnergyStored() > 0)
+		{
+			for(int i = 0; i < 6; i++)
+			{
+				int targetX = this.xCoord + ForgeDirection.getOrientation(i).offsetX;
+				int targetY = this.yCoord + ForgeDirection.getOrientation(i).offsetY;
+				int targetZ = this.zCoord + ForgeDirection.getOrientation(i).offsetZ;
+				
+				TileEntity tile = worldObj.getTileEntity(targetX, targetY, targetZ);
+				if(tile instanceof IEnergyHandler)
+				{
+					int maxExtract = storage.getMaxExtract(); //Gets the maximum amount of energy that can be extracted in 1 tick
+					int maxAvaliable = storage.extractEnergy(maxExtract, true); //Simulates extracting all the energy to see how much is available to be extracted
+					int energyTransfered = ((IEnergyHandler)tile).receiveEnergy(ForgeDirection.getOrientation(i).getOpposite(), maxAvaliable, false); //Sends "maxAvailable" to the target tile and records how much energy was accepted
+					
+					storage.extractEnergy(energyTransfered, false); //Extract the transferred energy from the internal storage
+				}
+			}
+		}
+		
 		generate();
 	}
 	
