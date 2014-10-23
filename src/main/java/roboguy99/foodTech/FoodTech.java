@@ -1,7 +1,5 @@
 package roboguy99.foodTech;
 
-import java.io.PrintStream;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import roboguy99.foodTech.client.gui.GuiHandler;
