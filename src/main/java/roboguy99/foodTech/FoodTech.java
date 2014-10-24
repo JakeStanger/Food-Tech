@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 import roboguy99.foodTech.client.gui.GuiHandler;
 import roboguy99.foodTech.common.block.Blocks;
 import roboguy99.foodTech.common.event.RegisterEvents;
-import roboguy99.foodTech.common.item.CreateItems;
+import roboguy99.foodTech.common.item.Items;
 import roboguy99.foodTech.common.tile.RegisterTileEntities;
 import roboguy99.foodTech.proxies.CommonProxy;
 import cpw.mods.fml.common.Mod;
@@ -37,7 +37,7 @@ public class FoodTech
 		
 		//Loads common content into the game
 		new Blocks();
-		new CreateItems();
+		new Items();
 		
 		print("Pre-initialization stage loaded successfully");
 	}
@@ -63,12 +63,12 @@ public class FoodTech
 		System.out.println("[Food Tech] " + message.toString());
 	}
 	
-	 public static CreativeTabs tabFoodTech = new CreativeTabs("tabFoodTech") 
+	 public static final CreativeTabs TAB_FOODTECH = new CreativeTabs("tabFoodTech") 
 	 {
 
 		public Item getTabIconItem() 
 		{
-			return Item.getItemFromBlock(Blocks.blockGrindstone); //TODO: Update icon
+			return Items.itemGrindstone; //TODO: Update icon
 		}
 	 };
 }

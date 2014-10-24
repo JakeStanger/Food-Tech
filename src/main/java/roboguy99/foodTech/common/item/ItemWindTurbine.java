@@ -60,10 +60,4 @@ public class ItemWindTurbine extends Item //When used, places BlockwindTurbine
 		list.add(EnumChatFormatting.GREEN + "Buffer size: " + EnumChatFormatting.AQUA + Blocks.TURBINE_BUFFERSIZE);
 		list.add(EnumChatFormatting.GREEN + "Energy per tick: " + EnumChatFormatting.AQUA + Blocks.TURBINE_GENERATED);
 	}
-	
-	@SuppressWarnings("unused")
-	private String setMetadata()
-	{
-		return "YOFACE";
-	}
 }

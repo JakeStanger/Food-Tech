@@ -30,7 +30,6 @@ public class GuiGeneratorBasic extends GuiContainer
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		
 		int i = (int) this.generator.getPowerScaled(162);
-		System.out.println(i);
 		drawTexturedModalRect(guiLeft+8, guiTop+11, 8, 168, i, 16); //Power contents bar
 	}
 }

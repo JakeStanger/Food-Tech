@@ -16,6 +16,9 @@ public class Blocks
 	public final static int TURBINE_BUFFERSIZE = 10000;
 	public final static String TURBINE_MACHINETYPE = "Electric Generator";
 	
+	//Constants for grindstone
+	public final static String GRINDSTONE_MACHINETYPE = "Basic machine";
+	
 	public Blocks()
 	{
 		FoodTech.print("Loading blocks");
@@ -27,7 +30,6 @@ public class Blocks
 		//Call property-setting functions
 		setBlockNames();
 		setBlockTextureNames();
-		setCreativeTabs();;
 		registerBlocks();
 	}
 
@@ -40,11 +42,6 @@ public class Blocks
 	public void setBlockTextureNames() //Loads the texture for each of the blocks
 	{
 		blockGrindstone.setBlockTextureName("roboguy99:blockGrindstone");
-	}
-	
-	public void setCreativeTabs()
-	{
-		blockGrindstone.setCreativeTab(FoodTech.tabFoodTech);
 	}
 	
 	public void registerBlocks() //Adds the blocks to the game

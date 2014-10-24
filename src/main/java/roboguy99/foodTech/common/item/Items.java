@@ -4,19 +4,21 @@ import net.minecraft.item.Item;
 import roboguy99.foodTech.FoodTech;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class CreateItems //Creates instances of any custom item classes, creates any standard items  and sets the properties of each item
+public class Items
 {
 	//Create variables for each of the items
 	public static Item itemWindTurbine;
 	public static Item itemDebug;
+	public static Item itemGrindstone;
 	
-	public CreateItems()
+	public Items()
 	{
 		FoodTech.print("Loading items");
 		
 		//Create instances of all the items
 		itemWindTurbine = new ItemWindTurbine();
 		itemDebug = new ItemDebug();
+		itemGrindstone = new ItemGrindstone();
 		
 		//Call property-setting functions
 		setUnlocalizedNames();
@@ -29,23 +31,27 @@ public class CreateItems //Creates instances of any custom item classes, creates
 	{
 		itemWindTurbine.setUnlocalizedName("itemWindTurbine");
 		itemDebug.setUnlocalizedName("itemDebug");
+		itemGrindstone.setUnlocalizedName("itemGrindstone");
 	}
 	
 	public void setCreativeTabs() //Sets the creative tab for each item. TODO create custom creative tab
 	{
-		itemWindTurbine.setCreativeTab(FoodTech.tabFoodTech);
-		itemDebug.setCreativeTab(FoodTech.tabFoodTech);
+		itemWindTurbine.setCreativeTab(FoodTech.TAB_FOODTECH);
+		itemDebug.setCreativeTab(FoodTech.TAB_FOODTECH);
+		itemGrindstone.setCreativeTab(FoodTech.TAB_FOODTECH);
 	}
 	
-	public void setTextureNames() //Loads the texture for each of the items
+	public void setTextureNames() //Loads the texture for each of the items. TODO Create textures for items
 	{
 		itemWindTurbine.setTextureName("diamond");
 		itemDebug.setTextureName("diamond");
+		itemGrindstone.setTextureName("diamond");
 	}
 	
 	public void registerItems() //Adds the items into the game
 	{
 		GameRegistry.registerItem(itemWindTurbine, "iteWindTurbine");
 		GameRegistry.registerItem(itemDebug, "itemDebug");
+		GameRegistry.registerItem(itemGrindstone, "itemGrindstone");
 	}
 }

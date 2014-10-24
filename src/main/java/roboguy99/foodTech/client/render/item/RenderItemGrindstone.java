@@ -8,25 +8,23 @@ import net.minecraftforge.client.IItemRenderer;
 
 import org.lwjgl.opengl.GL11;
 
-import roboguy99.foodTech.client.model.ModelPole;
+import roboguy99.foodTech.client.model.ModelGrindstone;
 
-public class RenderItemWindTurbine implements IItemRenderer
+public class RenderItemGrindstone implements IItemRenderer
 {
-	protected ModelPole model = new ModelPole();
-	private final ResourceLocation texture = new ResourceLocation("roboguy99:textures/models/grindstone.png"); //TODO Create model and texture
+	protected ModelGrindstone model = new ModelGrindstone();
+	private final ResourceLocation texture = new ResourceLocation("roboguy99:textures/models/grindstone.png");
 	
 	@Override
 	public boolean handleRenderType(ItemStack item, ItemRenderType type)
 	{
 		return true;
 	}
-
 	@Override
 	public boolean shouldUseRenderHelper(ItemRenderType type, ItemStack item, ItemRendererHelper helper)
 	{
 		return true;
 	}
-
 	@Override
 	public void renderItem(ItemRenderType type, ItemStack item, Object... data)
 	{	
@@ -36,20 +34,20 @@ public class RenderItemWindTurbine implements IItemRenderer
 				Minecraft.getMinecraft().renderEngine.bindTexture(texture);
 				GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
 				GL11.glRotatef(270F, 0.0F, -1.0F, 0.0F);
-				GL11.glTranslatef(0.0F, -2.5F, 0.0F);
-				GL11.glScalef(2F, 2F, 2F);
+				GL11.glTranslatef(0.0F, -1.0F, 0.0F);
+				GL11.glScalef(1.0F, 1.0F, 1.0F);
 	
-	            this.model.render((Entity)null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
-	        GL11.glPopMatrix();
+			    this.model.render((Entity)null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
+			GL11.glPopMatrix();
 		}
-		else if (type == ItemRenderType.EQUIPPED)
+		else if(type == ItemRenderType.EQUIPPED)
 		{
 			GL11.glPushMatrix();
 				Minecraft.getMinecraft().renderEngine.bindTexture(texture);
 				GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
 				GL11.glRotatef(270F, 0.0F, -1.0F, 0.0F);
-				GL11.glTranslatef(-0.4F, -2.9F, -0.7F);
-				GL11.glScalef(2.5F, 2.5F, 2.5F);
+				GL11.glTranslatef(0.0F, -1.3F, -0.3F);
+				GL11.glScalef(1.5F, 1.5F, 1.5F);
 	
 	            this.model.render((Entity)null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
 	        GL11.glPopMatrix();
@@ -60,7 +58,7 @@ public class RenderItemWindTurbine implements IItemRenderer
 				Minecraft.getMinecraft().renderEngine.bindTexture(texture);
 				GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
 				GL11.glRotatef(270F, 0.0F, -1.0F, 0.0F);
-				GL11.glTranslatef(-0.5F, -2.5F, -1.0F);
+				GL11.glTranslatef(-0.5F, -2.0F, -1.0F);
 				GL11.glScalef(1.5F, 1.5F, 1.5F);
 	
 	            this.model.render((Entity)null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
@@ -72,8 +70,8 @@ public class RenderItemWindTurbine implements IItemRenderer
 				Minecraft.getMinecraft().renderEngine.bindTexture(texture);
 				GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
 				GL11.glRotatef(270F, 0.0F, -1.0F, 0.0F);
-				GL11.glTranslatef(0.0F, -3.0F, -0.0F);
-				GL11.glScalef(2F, 2F, 2F);
+				GL11.glTranslatef(0.0F, -1.0F, -0.0F);
+				GL11.glScalef(0.7F, 0.7F, 0.7F);
 	
 	            this.model.render((Entity)null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
             GL11.glPopMatrix();
