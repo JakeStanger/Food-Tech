@@ -1,4 +1,4 @@
-package roboguy99.foodTech.client.render;
+package roboguy99.foodTech.client.render.block;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -8,11 +8,11 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import roboguy99.foodTech.client.models.ModelGrindstone;
+import roboguy99.foodTech.client.model.ModelGrindstone;
 
 public class RenderGrindstone extends TileEntitySpecialRenderer
 {
-    ResourceLocation textures = (new ResourceLocation("roboguy99:textures/models/grindstone.png"));
+    private final ResourceLocation textures = (new ResourceLocation("roboguy99:textures/models/grindstone.png"));
 	
 	private final ModelGrindstone model;
 	

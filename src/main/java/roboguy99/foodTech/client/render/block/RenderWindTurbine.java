@@ -1,4 +1,4 @@
-package roboguy99.foodTech.client.render;
+package roboguy99.foodTech.client.render.block;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -8,10 +8,10 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import roboguy99.foodTech.client.models.windTurbine.ModelWindTurbineShaft;
-import roboguy99.foodTech.client.models.windTurbine.ModelWindTurbineTop;
-import roboguy99.foodTech.client.models.windTurbine.ModelWindTurbineTopBlade;
-import roboguy99.foodTech.common.blocks.Blocks;
+import roboguy99.foodTech.client.model.windTurbine.ModelWindTurbineShaft;
+import roboguy99.foodTech.client.model.windTurbine.ModelWindTurbineTop;
+import roboguy99.foodTech.client.model.windTurbine.ModelWindTurbineTopBlade;
+import roboguy99.foodTech.common.block.Blocks;
 
 public class RenderWindTurbine extends TileEntitySpecialRenderer //Tells OpenGL how the windTurbine tileEntity should be drawn
 {

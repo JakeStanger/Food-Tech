@@ -8,7 +8,7 @@ import net.minecraftforge.client.event.DrawBlockHighlightEvent;
 
 import org.lwjgl.opengl.GL11;
 
-import roboguy99.foodTech.common.blocks.Blocks;
+import roboguy99.foodTech.common.block.Blocks;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class WindTurbineHighlightEvent 

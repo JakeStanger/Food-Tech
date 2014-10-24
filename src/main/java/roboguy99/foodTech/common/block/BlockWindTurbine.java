@@ -1,4 +1,4 @@
-package roboguy99.foodTech.common.blocks;
+package roboguy99.foodTech.common.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;

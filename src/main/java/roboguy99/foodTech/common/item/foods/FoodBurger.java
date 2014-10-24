@@ -1,4 +1,4 @@
-package roboguy99.foodTech.common.items.foods;
+package roboguy99.foodTech.common.item.foods;
 
 import net.minecraft.item.ItemFood;
 

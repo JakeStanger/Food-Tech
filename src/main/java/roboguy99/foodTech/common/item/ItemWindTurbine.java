@@ -1,4 +1,4 @@
-package roboguy99.foodTech.common.items;
+package roboguy99.foodTech.common.item;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
-import roboguy99.foodTech.common.blocks.Blocks;
+import roboguy99.foodTech.common.block.Blocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

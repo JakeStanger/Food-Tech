@@ -1,4 +1,4 @@
-package roboguy99.foodTech.common.items;
+package roboguy99.foodTech.common.item;
 
 import java.util.List;
 
