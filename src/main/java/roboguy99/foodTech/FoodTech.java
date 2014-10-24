@@ -63,7 +63,7 @@ public class FoodTech
 		System.out.println("[Food Tech] " + message.toString());
 	}
 	
-	 public static final CreativeTabs TAB_FOODTECH = new CreativeTabs("tabFoodTech") 
+	 public static final CreativeTabs tabFoodTech = new CreativeTabs("tabFoodTech") 
 	 {
 
 		public Item getTabIconItem() 
