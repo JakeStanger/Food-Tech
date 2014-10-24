@@ -2,6 +2,7 @@ package roboguy99.foodTech.common.item;
 
 import net.minecraft.item.Item;
 import roboguy99.foodTech.FoodTech;
+import roboguy99.foodTech.common.item.foods.ItemFlour;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Items
@@ -11,6 +12,11 @@ public class Items
 	public static Item itemDebug;
 	public static Item itemGrindstone;
 	
+	public static final String TYPE_INGREDIENT = "Ingredient";
+	
+	//Foods
+	public static Item itemFlour;
+	
 	public Items()
 	{
 		FoodTech.print("Loading items");
@@ -19,6 +25,9 @@ public class Items
 		itemWindTurbine = new ItemWindTurbine();
 		itemDebug = new ItemDebug();
 		itemGrindstone = new ItemGrindstone();
+		
+		//Foods
+		itemFlour = new ItemFlour();
 		
 		//Call property-setting functions
 		setUnlocalizedNames();
@@ -32,13 +41,17 @@ public class Items
 		itemWindTurbine.setUnlocalizedName("itemWindTurbine");
 		itemDebug.setUnlocalizedName("itemDebug");
 		itemGrindstone.setUnlocalizedName("itemGrindstone");
+		
+		//Foods
+		itemFlour.setUnlocalizedName("itemFlour");
 	}
 	
 	public void setCreativeTabs() //Sets the creative tab for each item. TODO create custom creative tab
 	{
-		itemWindTurbine.setCreativeTab(FoodTech.TAB_FOODTECH);
-		itemDebug.setCreativeTab(FoodTech.TAB_FOODTECH);
-		itemGrindstone.setCreativeTab(FoodTech.TAB_FOODTECH);
+		itemWindTurbine.setCreativeTab(FoodTech.tabFoodTech);
+		itemDebug.setCreativeTab(FoodTech.tabFoodTech);
+		itemGrindstone.setCreativeTab(FoodTech.tabFoodTech);
+		itemFlour.setCreativeTab(FoodTech.tabFoodTech);
 	}
 	
 	public void setTextureNames() //Loads the texture for each of the items. TODO Create textures for items
@@ -46,6 +59,7 @@ public class Items
 		itemWindTurbine.setTextureName("diamond");
 		itemDebug.setTextureName("diamond");
 		itemGrindstone.setTextureName("diamond");
+		itemFlour.setTextureName("diamond");
 	}
 	
 	public void registerItems() //Adds the items into the game
@@ -53,5 +67,6 @@ public class Items
 		GameRegistry.registerItem(itemWindTurbine, "iteWindTurbine");
 		GameRegistry.registerItem(itemDebug, "itemDebug");
 		GameRegistry.registerItem(itemGrindstone, "itemGrindstone");
+		GameRegistry.registerItem(itemFlour, "itemFlour");
 	}
 }
