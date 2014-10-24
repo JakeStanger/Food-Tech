@@ -5,6 +5,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.tileentity.TileEntity;
 
 public class TileGrindstone extends TileEntity implements ISidedInventory
@@ -103,9 +104,10 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 	
 	public boolean isItemValidForSlot(int i, ItemStack itemStack)
 	{
-		ItemStack slotOutput = getStackInSlot(2);
+		ItemStack slotOutput = this.getStackInSlot(2);
 		if(itemStack == slotOutput) return false;
 		return true;
+		
 	}
 	
 	public boolean isUseableByPlayer(EntityPlayer entityPlayer) 
@@ -130,12 +132,12 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 	
 	public boolean canExtractItem(int i, ItemStack var2, int j) 
 	{
-		return false;
+		return true;
 	}
 	
 	public boolean canInsertItem(int i, ItemStack itemStack, int j) 
 	{
-		return false;
+		return this.isItemValidForSlot(i, itemStack);
 	}
 	
 	public int[] getAccessibleSlotsFromSide(int i) 
@@ -143,8 +145,55 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 		return null;
 	}
 	
-	public void addRecipes()
+	public static void addRecipe()
 	{
 		//TODO add recipes
 	}
+	
+	/**
+     * Returns true if the furnace can smelt an item, i.e. has a source item, destination stack isn't full, etc.
+     */
+    private boolean canSmelt()
+    {
+        if (this.slot[0] == null)
+        {
+            return false;
+        }
+        else
+        {
+            ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.slot[0]);
+            if (itemstack == null) return false;
+            if (this.slot[2] == null) return true;
+            if (!this.slot[2].isItemEqual(itemstack)) return false;
+            int result = slot[2].stackSize + itemstack.stackSize;
+            return result <= getInventoryStackLimit() && result <= this.slot[2].getMaxStackSize(); //Forge BugFix: Make it respect stack sizes properly.
+        }
+    }
+
+    /**
+     * Turn one item from the furnace source stack into the appropriate smelted item in the furnace result stack
+     */
+    public void smeltItem()
+    {
+        if (this.canSmelt())
+        {
+            ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.slot[0]);
+
+            if (this.slot[2] == null)
+            {
+                this.slot[2] = itemstack.copy();
+            }
+            else if (this.slot[2].getItem() == itemstack.getItem())
+            {
+                this.slot[2].stackSize += itemstack.stackSize; // Forge BugFix: Results may have multiple items
+            }
+
+            --this.slot[0].stackSize;
+
+            if (this.slot[0].stackSize <= 0)
+            {
+                this.slot[0] = null;
+            }
+        }
+    }
 }
