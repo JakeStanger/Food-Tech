@@ -7,9 +7,9 @@ import roboguy99.foodTech.common.tile.prefab.generator.TileBasicGenerator;
 public class TileWindTurbine extends TileBasicGenerator
 {
 
-	public TileWindTurbine(int generated)
+	public TileWindTurbine(int generated, int buffer)
 	{
-		super(generated);
+		super(generated, buffer);
 	}
 
 	@Override

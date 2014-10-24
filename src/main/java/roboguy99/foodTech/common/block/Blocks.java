@@ -11,12 +11,17 @@ public class Blocks
 	public static Block blockWindTurbine;
 	public static Block blockGrindstone;
 	
+	//Constants for wind turbine
+	public final static int TURBINE_GENERATED = 50;
+	public final static int TURBINE_BUFFERSIZE = 10000;
+	public final static String TURBINE_MACHINETYPE = "Electric Generator";
+	
 	public Blocks()
 	{
 		FoodTech.print("Loading blocks");
 		
 		//Create instances of all of the blocks
-		blockWindTurbine = new BlockWindTurbine(Material.iron);
+		blockWindTurbine = new BlockWindTurbine(Material.iron, Blocks.TURBINE_GENERATED, Blocks.TURBINE_BUFFERSIZE, Blocks.TURBINE_MACHINETYPE);
 		blockGrindstone = new BlockGrindstone(Material.rock);
 		
 		//Call property-setting functions

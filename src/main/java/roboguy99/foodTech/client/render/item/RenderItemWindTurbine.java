@@ -69,7 +69,7 @@ public class RenderItemWindTurbine implements IItemRenderer
 	            }
             }
 
-            this.model.render((Entity)var3[0], 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
+            this.model.render((Entity)null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
         GL11.glPopMatrix();
 	}
 }

@@ -25,7 +25,7 @@ public class CreateItems //Creates instances of any custom item classes, creates
 		registerItems();
 	}
 	
-	public void setUnlocalizedNames() //Sets the unlocalized names for each of the items
+	public void setUnlocalizedNames() //Sets the unlocalised names for each of the items
 	{
 		itemWindTurbine.setUnlocalizedName("itemWindTurbine");
 		itemDebug.setUnlocalizedName("itemDebug");

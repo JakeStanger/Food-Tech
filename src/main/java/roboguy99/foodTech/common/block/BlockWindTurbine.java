@@ -14,7 +14,7 @@ import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
 public class BlockWindTurbine extends BlockContainer //Class for the windTurbine block. The block is turned into a tileEntity when placed
 {
-	public BlockWindTurbine(Material material)
+	public BlockWindTurbine(Material material, int generated, int buffer, String type)
 	{
 		super(material);
 	}
@@ -36,7 +36,7 @@ public class BlockWindTurbine extends BlockContainer //Class for the windTurbine
 
 	public TileEntity createNewTileEntity(World var1, int var2) //Replaces the block with its tileEntity counterpart
 	{
-		return new TileWindTurbine(50);
+		return new TileWindTurbine(Blocks.TURBINE_GENERATED, Blocks.TURBINE_BUFFERSIZE);
 	}
 	
 	public void breakBlock(World world, int x, int y, int z, Block block, int metadata)

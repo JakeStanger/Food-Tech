@@ -9,15 +9,16 @@ import cofh.api.energy.IEnergyProvider;
 
 public abstract class TileBasicGenerator extends TileEntity implements IEnergyHandler, IEnergyProvider
 {
-	protected EnergyStorage storage = new EnergyStorage(10000);
+	protected EnergyStorage storage = new EnergyStorage(0);
 	public int generated;
 	
-	public TileBasicGenerator( int generated)
+	public TileBasicGenerator(int generated, int buffer)
 	{
 		this.generated = generated;
 		storage.setMaxReceive(0);
 		storage.setMaxExtract(generated);
 		storage.setMaxTransfer(generated);
+		storage.setCapacity(buffer);
 	}
 	
 	@Override

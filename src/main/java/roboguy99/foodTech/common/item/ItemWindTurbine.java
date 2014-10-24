@@ -56,10 +56,9 @@ public class ItemWindTurbine extends Item //When used, places BlockwindTurbine
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean bool)
 	{
-		list.add(EnumChatFormatting.BLUE + "Electrical generator");
-		list.add(EnumChatFormatting.GREEN + "Fuel requied: " + EnumChatFormatting.AQUA + "Electricity"); //TODO: Get metadata from tile entity
-		list.add(EnumChatFormatting.GREEN + "Buffer size: " + EnumChatFormatting.AQUA + "5000");
-		list.add(EnumChatFormatting.GREEN + "Energy per tick: " + EnumChatFormatting.AQUA + "+10");
+		list.add(EnumChatFormatting.BLUE + Blocks.TURBINE_MACHINETYPE);
+		list.add(EnumChatFormatting.GREEN + "Buffer size: " + EnumChatFormatting.AQUA + Blocks.TURBINE_BUFFERSIZE);
+		list.add(EnumChatFormatting.GREEN + "Energy per tick: " + EnumChatFormatting.AQUA + Blocks.TURBINE_GENERATED);
 	}
 	
 	@SuppressWarnings("unused")
