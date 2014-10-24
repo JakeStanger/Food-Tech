@@ -8,6 +8,7 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
+import roboguy99.foodTech.client.model.windTurbine.ModelWindTurbineBase;
 import roboguy99.foodTech.client.model.windTurbine.ModelWindTurbineShaft;
 import roboguy99.foodTech.client.model.windTurbine.ModelWindTurbineTop;
 import roboguy99.foodTech.client.model.windTurbine.ModelWindTurbineTopBlade;
@@ -15,15 +16,18 @@ import roboguy99.foodTech.common.block.Blocks;
 
 public class RenderWindTurbine extends TileEntitySpecialRenderer //Tells OpenGL how the windTurbine tileEntity should be drawn
 {
+	private final ResourceLocation textureWindTurbineBase = new ResourceLocation("roboguy99", "textures/models/windTurbineBase.png");
 	private final ResourceLocation textureWindTurbineShaft = new ResourceLocation("roboguy99", "textures/models/windTurbineShaft.png");
 	private final ResourceLocation textureWindTurbineTop = new ResourceLocation("roboguy99", "textures/models/windTurbineTop.png");
 	
+	private final ModelWindTurbineBase modelBase;
 	private final ModelWindTurbineShaft modelShaft;
 	private final ModelWindTurbineTop modelTop;
 	private final ModelWindTurbineTopBlade modelTopBlade;
 	
 	public RenderWindTurbine()
 	{
+		this.modelBase = new ModelWindTurbineBase();
 		this.modelShaft = new ModelWindTurbineShaft();
 		this.modelTop = new ModelWindTurbineTop();
 		this.modelTopBlade = new ModelWindTurbineTopBlade();
@@ -44,23 +48,26 @@ public class RenderWindTurbine extends TileEntitySpecialRenderer //Tells OpenGL 
 		
 		int metadata = tileEntity.getWorldObj().getBlockMetadata(tileEntity.xCoord, tileEntity.yCoord, tileEntity.zCoord);
 		
-		if(metadata > 0 && metadata < 7)
+		if(metadata == 1)
 		{
 			GL11.glPushMatrix();
-		        
-		       GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
-
-		       Minecraft.getMinecraft().renderEngine.bindTexture(textureWindTurbineShaft);
-
-		       GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
-
-		       this.modelShaft.render((Entity)null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
-
-		       GL11.glPopMatrix();
+			  Minecraft.getMinecraft().renderEngine.bindTexture(textureWindTurbineBase);
+			  GL11.glTranslatef((float) x+1F, (float) y+0.06F, (float) z);
+			  GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
+			  this.modelBase.render((Entity)null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
+		   GL11.glPopMatrix();
+		}
+		if(metadata > 1 && metadata < 7)
+		{
+			GL11.glPushMatrix();
+			  Minecraft.getMinecraft().renderEngine.bindTexture(textureWindTurbineShaft);
+			  GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
+			  GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
+			  this.modelShaft.render((Entity)null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
+		   GL11.glPopMatrix();
 		}
 		if (metadata > 7)
 		{
-
 			Minecraft.getMinecraft().renderEngine.bindTexture(textureWindTurbineTop);
 			GL11.glPushMatrix();
 			GL11.glTranslatef((float) x + 0.5F, (float) y - 0.5F, (float) z + 0.5F);
