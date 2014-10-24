@@ -29,6 +29,6 @@ public class ItemGrindstone extends Item
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean bool)
 	{
-		list.add(EnumChatFormatting.BLUE + Blocks.GRINDSTONE_MACHINETYPE);
+		list.add(EnumChatFormatting.BLUE + Blocks.MACHINE_BASIC);
 	}
 }

@@ -14,17 +14,17 @@ public class Blocks
 	//Constants for wind turbine
 	public final static int TURBINE_GENERATED = 50;
 	public final static int TURBINE_BUFFERSIZE = 10000;
-	public final static String TURBINE_MACHINETYPE = "Electric Generator";
 	
-	//Constants for grindstone
-	public final static String GRINDSTONE_MACHINETYPE = "Basic machine";
+	//Constants for machine types
+	public final static String MACHINE_BASIC = "Basic machine";
+	public final static String MACHINE_GENERATOR = "Electric Generator";
 	
 	public Blocks()
 	{
 		FoodTech.print("Loading blocks");
 		
 		//Create instances of all of the blocks
-		blockWindTurbine = new BlockWindTurbine(Material.iron, Blocks.TURBINE_GENERATED, Blocks.TURBINE_BUFFERSIZE, Blocks.TURBINE_MACHINETYPE);
+		blockWindTurbine = new BlockWindTurbine(Material.iron, Blocks.TURBINE_GENERATED, Blocks.TURBINE_BUFFERSIZE, Blocks.MACHINE_GENERATOR);
 		blockGrindstone = new BlockGrindstone(Material.rock);
 		
 		//Call property-setting functions
