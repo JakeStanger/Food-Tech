@@ -37,5 +37,8 @@ public final ResourceLocation texture = new ResourceLocation("roboguy99", "textu
 		//Stone bar
 		int i = (int) this.grindstone.getStoneScaled(14);
 		drawTexturedModalRect(guiLeft+LEFT_INDENT, guiTop+TOP_INDENT+TEXTURE_HEIGHT-i, LEFT_INDENT_TEXTURE, TEXTURE_HEIGHT-i, TEXTURE_WIDTH, i);
+		
+        int i1 = this.grindstone.getProgressScaled(24);
+        this.drawTexturedModalRect(guiLeft + 79, guiTop + 34, 176, 14, i1 + 1, 16);
 	}
 }

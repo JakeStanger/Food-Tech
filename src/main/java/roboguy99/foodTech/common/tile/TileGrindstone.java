@@ -13,8 +13,11 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 	private ItemStack[] slot = new ItemStack[3];
 	
 	private static final int MAX_STONE = 16;
-	public int stone = 0;
-	public String customName;
+	private static final int PROCESS_TIME = 200;
+	private int stone = 0;
+	private String customName;
+	private int processTimeRemaining;
+	private int timeSpentProcessing;
 	
 	public void updateEntity()
 	{	
@@ -42,15 +45,27 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 		}
 		
 		//Check for inventory contents and process any items
-		if(!worldObj.isRemote && this.canProcess() && this.stone >= 1)
+		if(!worldObj.isRemote && this.canProcess() && this.stone >= 1 && this.processTimeRemaining == 0)
 		{
 			this.processItem();
+			this.processTimeRemaining = TileGrindstone.PROCESS_TIME;
+			this.timeSpentProcessing = 0;
+		}
+		if(this.processTimeRemaining > 0 && this.canProcess()) 
+		{
+			this.processTimeRemaining--;
+			this.timeSpentProcessing++;
 		}
 	}
 	
 	public int getStoneScaled(int scaled)
 	{
 		return (int) (this.stone * scaled / TileGrindstone.MAX_STONE);
+	}
+	
+	public int getProgressScaled(int scaled)
+	{
+		return (int) (this.timeSpentProcessing * scaled / TileGrindstone.PROCESS_TIME);
 	}
 	
 	public ItemStack decrStackSize(int i, int j) 
@@ -158,29 +173,30 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
      * Turn one item from the grindstone source stack into the appropriate processed item in the furnace result stack
      */
     public void processItem()
-    {
-        if (this.canProcess())
-        {
-            ItemStack itemstack = GrindstoneRecipes.processing().getProcessResult(this.slot[0]);
-
-            if (this.slot[2] == null)
-            {
-                this.slot[2] = itemstack.copy();
-            }
-            else if (this.slot[2].getItem() == itemstack.getItem())
-            {
-                this.slot[2].stackSize += itemstack.stackSize; // Forge BugFix: Results may have multiple items
-            }
-
-            --this.slot[0].stackSize;
-            --this.stone;
-            System.out.println(this.stone);
-
-            if (this.slot[0].stackSize <= 0)
-            {
-                this.slot[0] = null;
-            }
-        }
+    {	
+    	this.processTimeRemaining = TileGrindstone.PROCESS_TIME;
+    	
+    	if(this.canProcess())
+	    {
+    		ItemStack itemstack = GrindstoneRecipes.processing().getProcessResult(this.slot[0]);
+	
+	        if (this.slot[2] == null)
+	        {
+	            this.slot[2] = itemstack.copy();
+	        }
+	        else if (this.slot[2].getItem() == itemstack.getItem())
+	        {
+	            this.slot[2].stackSize += itemstack.stackSize; // Forge BugFix: Results may have multiple items
+	        }
+	
+	        --this.slot[0].stackSize;
+	        --this.stone;
+	
+	        if (this.slot[0].stackSize <= 0)
+	        {
+	            this.slot[0] = null;
+	        }
+	    }	
     }
     
     public String getInventoryName() 
