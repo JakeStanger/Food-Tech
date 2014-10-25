@@ -14,10 +14,10 @@ import net.minecraft.item.ItemStack;
 public class GrindstoneRecipes
 {
 	private static final GrindstoneRecipes instance = new GrindstoneRecipes();
-	private Map<Item, ItemStack> recipeList = new HashMap<Item, ItemStack>();
-	private Map<Item, Float> experienceList = new HashMap<Item, Float>();
+	private Map<ItemStack, ItemStack> recipeList = new HashMap<ItemStack, ItemStack>();
+	private Map<ItemStack, Float> experienceList = new HashMap<ItemStack, Float>();
 	
-	public static GrindstoneRecipes smelting()
+	public static GrindstoneRecipes processing()
     {
         return GrindstoneRecipes.instance;
     }
@@ -34,10 +34,10 @@ public class GrindstoneRecipes
 	
 	public void addItemRecipe(Item input, ItemStack output, float xp)
 	{
-		this.addRecipeToList(input, output, xp);
+		this.addRecipeToList(new ItemStack(input, 1, 32767), output, xp);
 	}
 	
-	public void addRecipeToList(Item input, ItemStack output, float xp)
+	public void addRecipeToList(ItemStack input, ItemStack output, float xp)
 	{
 		this.recipeList.put(input, output);
 		this.experienceList.put(input, xp);
@@ -57,7 +57,7 @@ public class GrindstoneRecipes
 
             entry = (Entry<?, ?>)iterator.next();
         }
-        while (!this.checkItem(itemStack, (ItemStack)entry.getKey()));
+        while (!this.isItemDamaged(itemStack, (ItemStack)entry.getKey()));
 
         return (ItemStack)entry.getValue();
     }
@@ -67,7 +67,7 @@ public class GrindstoneRecipes
         float ret = itemStack_.getItem().getSmeltingExperience(itemStack_);
         if (ret != -1) return ret;
 
-        Iterator<Entry<Item, Float>> iterator = this.experienceList.entrySet().iterator();
+        Iterator<Entry<ItemStack, Float>> iterator = this.experienceList.entrySet().iterator();
         Entry<?, ?> entry;
 
         do
@@ -79,19 +79,18 @@ public class GrindstoneRecipes
 
             entry = (Entry<?, ?>)iterator.next();
         }
-        while (!this.checkItem(itemStack_, (ItemStack)entry.getKey()));
+        while (!this.isItemDamaged(itemStack_, (ItemStack)entry.getKey()));
 
         return ((Float)entry.getValue()).floatValue();
     }
 	
-	private boolean checkItem(ItemStack input, ItemStack output)
+	private boolean isItemDamaged(ItemStack input, ItemStack output)
     {
         return output.getItem() == input.getItem() && (output.getItemDamage() == 32767 || output.getItemDamage() == input.getItemDamage());
     }
 	
-	public Map<Item, ItemStack> getRecipeList()
+	public Map<ItemStack, ItemStack> getRecipeList()
 	{
 		return this.recipeList;
 	}
-
 }

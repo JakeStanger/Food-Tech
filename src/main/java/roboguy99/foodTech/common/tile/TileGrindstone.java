@@ -5,8 +5,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.tileentity.TileEntity;
+import roboguy99.foodTech.GrindstoneRecipes;
 
 public class TileGrindstone extends TileEntity implements ISidedInventory
 {	
@@ -20,10 +20,23 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 	{	
 		ItemStack slotStone = getStackInSlot(1);
 		
+		//Check for stone in buffer and fill from itemstack in bottom slot
 		if(slotStone != null && slotStone.getItem() == Item.getItemFromBlock(Blocks.cobblestone) && stone < maxStone)
 		{
-			stone++;
+			this.stone++;
 			slotStone.stackSize--;
+			
+			if (slotStone.stackSize <= 0)
+            {
+                slotStone = null;
+                this.stone = 0;
+            }
+		}
+		
+		//Check for inventory contents and process any items
+		if(!worldObj.isRemote && this.canProcess())
+		{
+			this.processItem();
 		}
 	}
 	
@@ -151,17 +164,17 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 	}
 	
 	/**
-     * Returns true if the furnace can smelt an item, i.e. has a source item, destination stack isn't full, etc.
+     * Returns true if the grindstone can smelt an item, i.e. has a source item, destination stack isn't full, etc.
      */
-    private boolean canSmelt()
+    private boolean canProcess()
     {
-        if (this.slot[0] == null)
+        if (this.slot[0] == null || this.stone == 0)
         {
             return false;
         }
         else
         {
-            ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.slot[0]);
+            ItemStack itemstack = GrindstoneRecipes.processing().getProcessResult(this.slot[0]);
             if (itemstack == null) return false;
             if (this.slot[2] == null) return true;
             if (!this.slot[2].isItemEqual(itemstack)) return false;
@@ -173,11 +186,11 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
     /**
      * Turn one item from the furnace source stack into the appropriate smelted item in the furnace result stack
      */
-    public void smeltItem()
+    public void processItem()
     {
-        if (this.canSmelt())
+        if (this.canProcess())
         {
-            ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.slot[0]);
+            ItemStack itemstack = GrindstoneRecipes.processing().getProcessResult(this.slot[0]);
 
             if (this.slot[2] == null)
             {
@@ -189,6 +202,8 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
             }
 
             --this.slot[0].stackSize;
+            --this.stone;
+            System.out.println(this.stone);
 
             if (this.slot[0].stackSize <= 0)
             {
