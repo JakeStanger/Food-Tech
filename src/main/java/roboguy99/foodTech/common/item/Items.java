@@ -46,7 +46,7 @@ public class Items
 		itemFlour.setUnlocalizedName("itemFlour");
 	}
 	
-	public void setCreativeTabs() //Sets the creative tab for each item. TODO create custom creative tab
+	public void setCreativeTabs() //Sets the creative tab for each item.
 	{
 		itemWindTurbine.setCreativeTab(FoodTech.tabFoodTech);
 		itemDebug.setCreativeTab(FoodTech.tabFoodTech);

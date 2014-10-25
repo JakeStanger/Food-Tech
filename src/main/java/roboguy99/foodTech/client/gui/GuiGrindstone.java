@@ -13,6 +13,11 @@ public final ResourceLocation texture = new ResourceLocation("roboguy99", "textu
 	
 	private TileGrindstone grindstone;
 	
+	private static final int LEFT_INDENT = 57;
+	private static final int TOP_INDENT = 37;
+	private static final int LEFT_INDENT_TEXTURE = 176;
+	private static final int TEXTURE_WIDTH = 14;
+	private static final int TEXTURE_HEIGHT = 14;
 	
 	public GuiGrindstone(InventoryPlayer inventoryPlayer, TileGrindstone grindstone)
 	{
@@ -29,7 +34,8 @@ public final ResourceLocation texture = new ResourceLocation("roboguy99", "textu
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		
+		//Stone bar
 		int i = (int) this.grindstone.getStoneScaled(14);
-		drawTexturedModalRect(guiLeft+57, guiTop+14+37-i, 176, 14-i, 14, i); //Stone contents bar
+		drawTexturedModalRect(guiLeft+LEFT_INDENT, guiTop+TOP_INDENT+TEXTURE_HEIGHT-i, LEFT_INDENT_TEXTURE, TEXTURE_HEIGHT-i, TEXTURE_WIDTH, i);
 	}
 }

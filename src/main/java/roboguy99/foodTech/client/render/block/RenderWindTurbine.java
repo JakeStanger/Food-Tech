@@ -33,7 +33,7 @@ public class RenderWindTurbine extends TileEntitySpecialRenderer //Tells OpenGL 
 		this.modelTopBlade = new ModelWindTurbineTopBlade();
 	}
 	
-	public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float f) //TODO fix rendering positions
+	public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float f)
 	{	
 		int x1 = tileEntity.xCoord;
 		int y1 = tileEntity.yCoord;

@@ -12,29 +12,36 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 {	
 	private ItemStack[] slot = new ItemStack[3];
 	
-	//TODO: Remove stone system as it makes no sense
-	public int maxStone = 16;
+	private static final int MAX_STONE = 16;
 	public int stone = 0;
+	public String customName;
 	
 	public void updateEntity()
 	{	
+		boolean shouldMarkDirty = false;
 		ItemStack slotStone = getStackInSlot(1);
 		
 		//Check for stone in buffer and fill from itemstack in bottom slot
-		if(slotStone != null && slotStone.getItem() == Item.getItemFromBlock(Blocks.cobblestone) && stone < maxStone)
+		if(slotStone != null && slotStone.getItem() == Item.getItemFromBlock(Blocks.cobblestone) && stone < MAX_STONE)
 		{
-			this.stone++;
+			this.stone += MAX_STONE; //1 cobblestone = 1 full tank
 			slotStone.stackSize--;
+			shouldMarkDirty = true;
 			
 			if (slotStone.stackSize <= 0)
             {
                 slotStone = null;
-                this.stone = 0;
+                shouldMarkDirty = true;
             }
+			
+			if(shouldMarkDirty)
+			{
+				this.markDirty();
+			}
 		}
 		
 		//Check for inventory contents and process any items
-		if(!worldObj.isRemote && this.canProcess())
+		if(!worldObj.isRemote && this.canProcess() && this.stone >= 1)
 		{
 			this.processItem();
 		}
@@ -42,12 +49,7 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 	
 	public int getStoneScaled(int scaled)
 	{
-		return (int) (this.stone * scaled / this.maxStone);
-	}
-	
-	public void closeInventory() 
-	{
-		
+		return (int) (this.stone * scaled / TileGrindstone.MAX_STONE);
 	}
 	
 	public ItemStack decrStackSize(int i, int j) 
@@ -69,6 +71,7 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 					if(this.slot[i].stackSize == 0)
 					{
 						this.slot[i] = null;
+						this.setInventorySlotContents(i, itemStack);
 					}
 					
 					return itemStack;
@@ -76,21 +79,6 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 			}
 		
 		return null;
-	}
-	
-	public String getInventoryName() 
-	{
-		return null;
-	}
-	
-	public int getInventoryStackLimit() 
-	{
-		return 64;
-	}
-	
-	public int getSizeInventory() 
-	{
-		return this.slot.length;
 	}
 	
 	public ItemStack getStackInSlot(int i) 
@@ -110,27 +98,14 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 		return null;
 	}
 	
-	public boolean hasCustomInventoryName() 
+	public boolean isItemValidForSlot(int slot, ItemStack itemStack)
 	{
-		return false;
-	}
-	
-	public boolean isItemValidForSlot(int i, ItemStack itemStack)
-	{
-		ItemStack slotOutput = this.getStackInSlot(2);
-		if(itemStack == slotOutput) return false;
-		return true;
-		
+		return slot == 2 ? false : true;
 	}
 	
 	public boolean isUseableByPlayer(EntityPlayer entityPlayer) 
 	{
 		return true;
-	}
-	
-	public void openInventory() 
-	{
-		
 	}
 	
 	public void setInventorySlotContents(int i, ItemStack itemStack) 
@@ -148,19 +123,14 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 		return true;
 	}
 	
-	public boolean canInsertItem(int i, ItemStack itemStack, int j) 
+	public boolean canInsertItem(int slot, ItemStack itemStack, int side) 
 	{
-		return this.isItemValidForSlot(i, itemStack);
+		return this.isItemValidForSlot(slot, itemStack);
 	}
 	
 	public int[] getAccessibleSlotsFromSide(int i) 
 	{
 		return null;
-	}
-	
-	public static void addRecipe()
-	{
-		//TODO add recipes
 	}
 	
 	/**
@@ -184,7 +154,7 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
     }
 
     /**
-     * Turn one item from the furnace source stack into the appropriate smelted item in the furnace result stack
+     * Turn one item from the grindstone source stack into the appropriate processed item in the furnace result stack
      */
     public void processItem()
     {
@@ -211,4 +181,27 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
             }
         }
     }
+    
+    public String getInventoryName() 
+	{
+		return this.hasCustomInventoryName() ? this.customName : "container.grindstone";
+	}
+	
+	public boolean hasCustomInventoryName() 
+	{
+		return this.customName != null && this.customName.length() > 0;
+	}
+
+	public int getInventoryStackLimit() 
+	{
+		return 64;
+	}
+	
+	public int getSizeInventory() 
+	{
+		return this.slot.length;
+	}
+	
+	public void openInventory() {}
+	public void closeInventory() {}
 }

@@ -68,7 +68,7 @@ public class FoodTech
 
 		public Item getTabIconItem() 
 		{
-			return Items.itemGrindstone; //TODO: Update icon
+			return Items.itemGrindstone;
 		}
 	 };
 }

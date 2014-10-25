@@ -12,6 +12,12 @@ public class GuiGeneratorBasic extends GuiContainer
 	public final ResourceLocation texture = new ResourceLocation("roboguy99", "textures/gui/generatorbasic.png");
 	private TileBasicGenerator generator;
 	
+	private static final int BAR_LENGTH = 162;
+	private static final int BAR_HEIGHT = 16;
+	private static final int LEFT_INDENT = 8;
+	private static final int TOP_INDENT_TEXTURE = 186;
+	private static final int TOP_INDENT_BAR = 11;
+	
 	public GuiGeneratorBasic(InventoryPlayer inventoryPlayer, TileBasicGenerator generator)
 	
 	{
@@ -29,7 +35,7 @@ public class GuiGeneratorBasic extends GuiContainer
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		
-		int i = (int) this.generator.getPowerScaled(162);
-		drawTexturedModalRect(guiLeft+8, guiTop+11, 8, 168, i, 16); //Power contents bar
+		int i = (int) this.generator.getPowerScaled(BAR_LENGTH);
+		drawTexturedModalRect(guiLeft+LEFT_INDENT, guiTop+TOP_INDENT_BAR, LEFT_INDENT, TOP_INDENT_TEXTURE, i, BAR_HEIGHT); //Power contents bar
 	}
 }
