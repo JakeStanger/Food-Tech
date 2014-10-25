@@ -31,6 +31,7 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 			if (slotStone.stackSize <= 0)
             {
                 slotStone = null;
+                this.setInventorySlotContents(1, null);
                 shouldMarkDirty = true;
             }
 			
@@ -71,7 +72,7 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 					if(this.slot[i].stackSize == 0)
 					{
 						this.slot[i] = null;
-						this.setInventorySlotContents(i, itemStack);
+						this.setInventorySlotContents(i, null);
 					}
 					
 					return itemStack;
