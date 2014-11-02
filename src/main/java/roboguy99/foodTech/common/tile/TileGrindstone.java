@@ -65,6 +65,7 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 	
 	public int getProgressScaled(int scaled)
 	{
+		System.out.println(this.timeSpentProcessing);
 		return (int) (this.timeSpentProcessing * scaled / TileGrindstone.PROCESS_TIME);
 	}
 	
