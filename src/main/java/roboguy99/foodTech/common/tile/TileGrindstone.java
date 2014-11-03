@@ -14,10 +14,10 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 	
 	private static final int MAX_STONE = 16;
 	private static final int PROCESS_TIME = 200;
-	private int stone = 0;
+	public int stone = 0;
 	private String customName;
 	private int processTimeRemaining;
-	private int timeSpentProcessing;
+	public int timeSpentProcessing;
 	
 	public void updateEntity()
 	{	
@@ -32,16 +32,11 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 			shouldMarkDirty = true;
 			
 			if (slotStone.stackSize <= 0)
-            {
-                slotStone = null;
-                this.setInventorySlotContents(1, null);
-                shouldMarkDirty = true;
-            }
-			
-			if(shouldMarkDirty)
-			{
-				this.markDirty();
-			}
+	        {
+	            slotStone = null;
+	            this.setInventorySlotContents(1, null);
+	            shouldMarkDirty = true;
+	        }
 		}
 		
 		//Check for inventory contents and process any items
@@ -56,6 +51,11 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 			this.processTimeRemaining--;
 			this.timeSpentProcessing++;
 		}
+		
+		if(shouldMarkDirty)
+		{
+			this.markDirty();
+		}
 	}
 	
 	public int getStoneScaled(int scaled)
@@ -65,7 +65,6 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 	
 	public int getProgressScaled(int scaled)
 	{
-		System.out.println(this.timeSpentProcessing);
 		return (int) (this.timeSpentProcessing * scaled / TileGrindstone.PROCESS_TIME);
 	}
 	
