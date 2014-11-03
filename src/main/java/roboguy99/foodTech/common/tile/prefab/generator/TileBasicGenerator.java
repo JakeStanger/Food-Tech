@@ -11,6 +11,7 @@ public abstract class TileBasicGenerator extends TileEntity implements IEnergyHa
 {
 	protected EnergyStorage storage = new EnergyStorage(0);
 	public int generated;
+	public int power;
 	
 	public TileBasicGenerator(int generated, int buffer)
 	{
@@ -91,6 +92,7 @@ public abstract class TileBasicGenerator extends TileEntity implements IEnergyHa
 		}
 		
 		generate();
+		power = storage.getEnergyStored();
 	}
 	
 	protected abstract void generate();
