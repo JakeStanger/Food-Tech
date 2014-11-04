@@ -87,6 +87,9 @@ Todo List:
 Bugs:
 FIXME Wind turbine power gen/GUI
 
+Short-Term todos:
+TODO Finish moving all resource locations to resource manager
+
 Long-Term Goals:
 GOAL Create windmill
 GOAL Create distillation chamber

@@ -11,6 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class ResourceManager
 {
 	public static final ResourceLocation GRINDSTONE = new ResourceLocation("roboguy99:textures/models/grindstone.png");
+	public static final ResourceLocation DISTILLER = new ResourceLocation("roboguy99:textures/models/distiller.png");
 	
 	public static final ResourceLocation TURBINE_ITEM = new ResourceLocation("roboguy99:textures/models/grindstone.png"); //TODO create new texture
 	

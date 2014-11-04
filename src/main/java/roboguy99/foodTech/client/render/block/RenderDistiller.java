@@ -8,22 +8,23 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import roboguy99.foodTech.client.model.ModelGrindstone;
+import roboguy99.foodTech.client.model.ModelDistiller;
 import roboguy99.foodTech.util.ResourceManager;
 
-public class RenderGrindstone extends TileEntitySpecialRenderer
+public class RenderDistiller extends TileEntitySpecialRenderer
 {
-    private final ResourceLocation texture = ResourceManager.GRINDSTONE;
-	private final ModelGrindstone model;
+	private final ResourceLocation texture = ResourceManager.DISTILLER;
+	private final ModelDistiller model;
 	
-	public RenderGrindstone()
+	public RenderDistiller()
 	{
-		this.model = new ModelGrindstone();
+		this.model = new ModelDistiller();
 	}
 	
-	public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float scale) 
+	@Override
+	public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float scale)
 	{
-	    GL11.glPushMatrix();
+		GL11.glPushMatrix();
 	        GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
 	        Minecraft.getMinecraft().renderEngine.bindTexture(texture);
 	        GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
