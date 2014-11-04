@@ -1,4 +1,4 @@
-package roboguy99.foodTech;
+package roboguy99.foodTech.util.recipe;
 
 import java.util.HashMap;
 import java.util.Iterator;
