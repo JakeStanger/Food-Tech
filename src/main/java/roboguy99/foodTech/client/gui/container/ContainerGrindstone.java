@@ -8,8 +8,8 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import roboguy99.foodTech.GrindstoneRecipes;
 import roboguy99.foodTech.common.tile.TileGrindstone;
+import roboguy99.foodTech.util.recipe.GrindstoneRecipes;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

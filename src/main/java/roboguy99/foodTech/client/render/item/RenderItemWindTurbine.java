@@ -9,11 +9,12 @@ import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
 import roboguy99.foodTech.client.model.ModelPole;
+import roboguy99.foodTech.util.ResourceManager;
 
 public class RenderItemWindTurbine implements IItemRenderer
 {
-	protected ModelPole model = new ModelPole();
-	private final ResourceLocation texture = new ResourceLocation("roboguy99:textures/models/grindstone.png"); //TODO Create model and texture
+	protected ModelPole model = new ModelPole(); //TODO create new model
+	private final ResourceLocation texture = ResourceManager.TURBINE_ITEM;
 	
 	@Override
 	public boolean handleRenderType(ItemStack item, ItemRenderType type)

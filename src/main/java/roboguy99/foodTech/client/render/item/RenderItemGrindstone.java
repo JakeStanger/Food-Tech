@@ -9,11 +9,12 @@ import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
 import roboguy99.foodTech.client.model.ModelGrindstone;
+import roboguy99.foodTech.util.ResourceManager;
 
 public class RenderItemGrindstone implements IItemRenderer
 {
 	protected ModelGrindstone model = new ModelGrindstone();
-	private final ResourceLocation texture = new ResourceLocation("roboguy99:textures/models/grindstone.png");
+	private final ResourceLocation texture = ResourceManager.GRINDSTONE;
 	
 	@Override
 	public boolean handleRenderType(ItemStack item, ItemRenderType type)

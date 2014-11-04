@@ -6,7 +6,7 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import roboguy99.foodTech.GrindstoneRecipes;
+import roboguy99.foodTech.util.recipe.GrindstoneRecipes;
 
 public class TileGrindstone extends TileEntity implements ISidedInventory
 {	

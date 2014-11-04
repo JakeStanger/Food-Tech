@@ -9,10 +9,11 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 import roboguy99.foodTech.client.model.ModelGrindstone;
+import roboguy99.foodTech.util.ResourceManager;
 
 public class RenderGrindstone extends TileEntitySpecialRenderer
 {
-    private final ResourceLocation textures = (new ResourceLocation("roboguy99:textures/models/grindstone.png"));
+    private final ResourceLocation textures = ResourceManager.GRINDSTONE;
 	
 	private final ModelGrindstone model;
 	
