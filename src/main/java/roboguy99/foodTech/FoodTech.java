@@ -15,6 +15,14 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 
+/**
+ * The main class
+ * Food-Tech is a mod for Minecraft all about food. Rather than hunger being something you have to occasionally worry about, 
+ * this mod aims to overhaul it that with an entirely new hunger system and introduce modular foods made in a more realistic but
+ * hopefully still enjoyable fashion.
+ * @author Roboguy99
+ *
+ */
 @Mod(modid = FoodTech.modID, version = FoodTech.modVersion, name = FoodTech.name)
 public class FoodTech 
 {
@@ -87,4 +95,5 @@ GOAL Add salt and salt shaker
 GOAL Create butter churn
 GOAL Add yeast - natural on/around trees?
 GOAL Create custom cable system
+GOAL Override hunger system
 */
