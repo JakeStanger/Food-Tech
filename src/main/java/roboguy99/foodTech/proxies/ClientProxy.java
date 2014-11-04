@@ -5,6 +5,7 @@ import net.minecraftforge.client.MinecraftForgeClient;
 import roboguy99.foodTech.client.render.block.RenderDistiller;
 import roboguy99.foodTech.client.render.block.RenderGrindstone;
 import roboguy99.foodTech.client.render.block.RenderWindTurbine;
+import roboguy99.foodTech.client.render.item.RenderItemDistiller;
 import roboguy99.foodTech.client.render.item.RenderItemGrindstone;
 import roboguy99.foodTech.client.render.item.RenderItemWindTurbine;
 import roboguy99.foodTech.common.item.Items;
@@ -25,5 +26,6 @@ public class ClientProxy extends CommonProxy //For client-side only events
 		//Render 3D item models
 		MinecraftForgeClient.registerItemRenderer(Items.itemWindTurbine, (IItemRenderer)new RenderItemWindTurbine());
 		MinecraftForgeClient.registerItemRenderer(Items.itemGrindstone, (IItemRenderer)new RenderItemGrindstone());
+		MinecraftForgeClient.registerItemRenderer(Items.itemDistiller, (IItemRenderer)new RenderItemDistiller());
 	}
 }

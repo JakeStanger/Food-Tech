@@ -11,10 +11,11 @@ public class Items
 	public static Item itemWindTurbine;
 	public static Item itemDebug;
 	public static Item itemGrindstone;
+	public static Item itemDistiller;
 	
 	public static final String TYPE_INGREDIENT = "Ingredient";
 	
-	//Foods
+	//Ingredient
 	public static Item itemFlour;
 	
 	public Items()
@@ -25,8 +26,9 @@ public class Items
 		itemWindTurbine = new ItemWindTurbine();
 		itemDebug = new ItemDebug();
 		itemGrindstone = new ItemGrindstone();
+		itemDistiller = new ItemDistiller();
 		
-		//Foods
+		//Ingredients
 		itemFlour = new ItemFlour();
 		
 		//Call property-setting functions
@@ -41,8 +43,9 @@ public class Items
 		itemWindTurbine.setUnlocalizedName("itemWindTurbine");
 		itemDebug.setUnlocalizedName("itemDebug");
 		itemGrindstone.setUnlocalizedName("itemGrindstone");
+		itemDistiller.setUnlocalizedName("itemDistiller");
 		
-		//Foods
+		//Ingredients
 		itemFlour.setUnlocalizedName("itemFlour");
 	}
 	
@@ -51,6 +54,9 @@ public class Items
 		itemWindTurbine.setCreativeTab(FoodTech.tabFoodTech);
 		itemDebug.setCreativeTab(FoodTech.tabFoodTech);
 		itemGrindstone.setCreativeTab(FoodTech.tabFoodTech);
+		itemDistiller.setCreativeTab(FoodTech.tabFoodTech);
+		
+		//Ingredients
 		itemFlour.setCreativeTab(FoodTech.tabFoodTech);
 	}
 	
@@ -59,6 +65,9 @@ public class Items
 		itemWindTurbine.setTextureName("diamond");
 		itemDebug.setTextureName("diamond");
 		itemGrindstone.setTextureName("diamond");
+		itemDistiller.setTextureName("diamond");
+		
+		//Ingredients
 		itemFlour.setTextureName("diamond");
 	}
 	
@@ -67,6 +76,9 @@ public class Items
 		GameRegistry.registerItem(itemWindTurbine, "iteWindTurbine");
 		GameRegistry.registerItem(itemDebug, "itemDebug");
 		GameRegistry.registerItem(itemGrindstone, "itemGrindstone");
+		GameRegistry.registerItem(itemDistiller, "itemDistiller");
+		
+		//Ingredients
 		GameRegistry.registerItem(itemFlour, "itemFlour");
 	}
 }

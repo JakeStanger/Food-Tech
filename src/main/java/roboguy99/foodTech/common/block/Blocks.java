@@ -19,6 +19,7 @@ public class Blocks
 	//Constants for machine types
 	public final static String MACHINE_BASIC = "Basic machine";
 	public final static String MACHINE_GENERATOR = "Electric Generator";
+	public final static String MACHINE_ADVANCED = "Advanced machine";
 	
 	public Blocks()
 	{
