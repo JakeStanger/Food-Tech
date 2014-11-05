@@ -6,10 +6,11 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import roboguy99.foodTech.client.gui.container.ContainerGrindstone;
 import roboguy99.foodTech.common.tile.TileGrindstone;
+import roboguy99.foodTech.util.ResourceManager;
 
 public class GuiGrindstone extends GuiContainer
 {
-public final ResourceLocation texture = new ResourceLocation("roboguy99", "textures/gui/grindstone.png");
+	private final ResourceLocation texture = ResourceManager.GRINSTONE_GUI;
 	
 	private TileGrindstone grindstone;
 	

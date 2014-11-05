@@ -2,6 +2,7 @@ package roboguy99.foodTech.client.gui;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
+import roboguy99.foodTech.client.gui.container.ContainerDistiller;
 import roboguy99.foodTech.client.gui.container.ContainerGeneratorBasic;
 import roboguy99.foodTech.client.gui.container.ContainerGrindstone;
 import roboguy99.foodTech.common.tile.TileDistiller;
