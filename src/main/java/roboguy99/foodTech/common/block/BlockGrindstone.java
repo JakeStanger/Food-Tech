@@ -42,7 +42,7 @@ public class BlockGrindstone extends BlockContainer
 	
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ)
 	{
-		FMLNetworkHandler.openGui(player, FoodTech.instance, GuiHandler.guiIDGrindstone, world, x, y, z);
+		FMLNetworkHandler.openGui(player, FoodTech.instance, GuiHandler.GUIID_GRINDSTONE, world, x, y, z);
 		return true;
 	}
 }

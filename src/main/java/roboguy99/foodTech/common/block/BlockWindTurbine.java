@@ -57,7 +57,7 @@ public class BlockWindTurbine extends BlockContainer //Class for the windTurbine
 	{	
 		if(!world.isRemote)
 		{
-			FMLNetworkHandler.openGui(player, FoodTech.instance, GuiHandler.guiIDGeneratorBasic, world, x, y, z);
+			FMLNetworkHandler.openGui(player, FoodTech.instance, GuiHandler.GUIID_GENERATOR_BASIC, world, x, y, z);
 			return true;
 		}
 		return false;
