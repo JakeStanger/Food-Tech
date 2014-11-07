@@ -14,9 +14,10 @@ public class ContainerDistiller extends Container
 	{
 		this.distiller = distiller;
 		
-		this.addSlotToContainer(new Slot(distiller, 0, 56, 17));
-		this.addSlotToContainer(new Slot(distiller, 1, 56, 53));
-		this.addSlotToContainer(new Slot(distiller, 2, 116, 35));
+		this.addSlotToContainer(new Slot(distiller, 0, 8, 62));
+		this.addSlotToContainer(new Slot(distiller, 1, 26, 62));
+		this.addSlotToContainer(new Slot(distiller, 2, 134, 62));
+		this.addSlotToContainer(new Slot(distiller, 3, 152, 62));
 		
 		for(int i = 0; i < 3; i++) //Create the inventory slots
 		{
