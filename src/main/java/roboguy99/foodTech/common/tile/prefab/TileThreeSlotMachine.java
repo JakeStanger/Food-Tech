@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
  */
 public abstract class TileThreeSlotMachine extends Tile implements ISidedInventory
 {
-	private ItemStack[] slot = new ItemStack[3];
+	protected ItemStack[] slot = new ItemStack[3];
 	private String customName;
 	
 	@Override

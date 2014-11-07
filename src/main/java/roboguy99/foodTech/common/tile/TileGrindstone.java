@@ -7,9 +7,7 @@ import roboguy99.foodTech.common.tile.prefab.TileThreeSlotMachine;
 import roboguy99.foodTech.util.recipe.GrindstoneRecipes;
 
 public class TileGrindstone extends TileThreeSlotMachine
-{	
-	private ItemStack[] slot = new ItemStack[3];
-	
+{
 	private static final int MAX_STONE = 16;
 	private static final int PROCESS_TIME = 200;
 	public int stone = 0;
@@ -36,6 +34,12 @@ public class TileGrindstone extends TileThreeSlotMachine
 	        }
 		}
 		
+		//Decrement the time before the item is processed, and increment the time spent processing it
+		if(this.processTimeRemaining > 0 && this.canProcess()) 
+		{
+			this.processTimeRemaining--;
+			this.timeSpentProcessing++;
+		}
 		//Check for inventory contents and process any items
 		if(!worldObj.isRemote && this.canProcess() && this.stone >= 1 && this.processTimeRemaining == 0)
 		{
@@ -43,13 +47,8 @@ public class TileGrindstone extends TileThreeSlotMachine
 			this.processTimeRemaining = TileGrindstone.PROCESS_TIME;
 			this.timeSpentProcessing = 0;
 		}
-		if(this.processTimeRemaining > 0 && this.canProcess()) 
-		{
-			this.processTimeRemaining--;
-			this.timeSpentProcessing++;
-		}
 		
-		if(shouldMarkDirty)
+		if(shouldMarkDirty) //I'm not sure what this does, but I've been told to include it.
 		{
 			this.markDirty();
 		}
@@ -105,8 +104,8 @@ public class TileGrindstone extends TileThreeSlotMachine
 	            this.slot[2].stackSize += itemstack.stackSize; // Forge BugFix: Results may have multiple items
 	        }
 	
-	        --this.slot[0].stackSize;
-	        --this.stone;
+	        this.slot[0].stackSize--;
+	        this.stone--;
 	
 	        if (this.slot[0].stackSize <= 0)
 	        {
