@@ -1,25 +1,25 @@
 package roboguy99.foodTech.common.block;
 
-import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.client.gui.GuiHandler;
+import roboguy99.foodTech.common.block.prefab.BaseBlock;
 import roboguy99.foodTech.common.tile.TileDistiller;
+import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
 /**
  * Block class for the distillation chamber
  * @author Roboguy99
  *
  */
-public class BlockDistiller extends BlockContainer
+public class BlockDistiller extends BaseBlock
 {
-	public BlockDistiller(Material material)
+	public BlockDistiller(Material material, String name)
 	{
-		super(material);
+		super(material, name);
 	}
 	
 	public int getRenderType()

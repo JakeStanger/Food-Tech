@@ -1,7 +1,6 @@
 package roboguy99.foodTech.common.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -9,14 +8,16 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.client.gui.GuiHandler;
+import roboguy99.foodTech.common.block.prefab.BaseBlock;
 import roboguy99.foodTech.common.tile.electricity.generator.TileWindTurbine;
+import roboguy99.foodTech.util.GeneratorData;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
-public class BlockWindTurbine extends BlockContainer //Class for the windTurbine block. The block is turned into a tileEntity when placed
+public class BlockWindTurbine extends BaseBlock //Class for the windTurbine block. The block is turned into a tileEntity when placed
 {
-	public BlockWindTurbine(Material material, int generated, int buffer, String type)
+	public BlockWindTurbine(Material material, String name, int generated, int buffer, String type)
 	{
-		super(material);
+		super(material, name);
 	}
 	
 	public int getRenderType()
@@ -36,7 +37,7 @@ public class BlockWindTurbine extends BlockContainer //Class for the windTurbine
 
 	public TileEntity createNewTileEntity(World var1, int var2) //Replaces the block with its tileEntity counterpart
 	{
-		return new TileWindTurbine(Blocks.TURBINE_GENERATED, Blocks.TURBINE_BUFFERSIZE);
+		return new TileWindTurbine(GeneratorData.TURBINE_GENERATED, GeneratorData.TURBINE_BUFFERSIZE);
 	}
 	
 	public void breakBlock(World world, int x, int y, int z, Block block, int metadata)
