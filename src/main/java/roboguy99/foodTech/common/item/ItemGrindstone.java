@@ -2,14 +2,15 @@ package roboguy99.foodTech.common.item;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import roboguy99.foodTech.common.block.Blocks;
+import roboguy99.foodTech.util.Tooltip;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemGrindstone extends Item
 {
@@ -29,6 +30,6 @@ public class ItemGrindstone extends Item
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean bool)
 	{
-		list.add(EnumChatFormatting.GREEN + Blocks.MACHINE_BASIC);
+		list.add(EnumChatFormatting.GREEN + Tooltip.MACHINE_BASIC);
 	}
 }

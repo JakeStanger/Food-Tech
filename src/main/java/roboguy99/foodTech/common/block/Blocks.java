@@ -3,30 +3,32 @@ package roboguy99.foodTech.common.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import roboguy99.foodTech.FoodTech;
+import roboguy99.foodTech.util.GeneratorData;
+import roboguy99.foodTech.util.Tooltip;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Blocks
 {
-	//Create variables for each block
+	//Create fields for each block
 	public static Block blockWindTurbine;
+	public static Block blockWindmill;
+	
 	public static Block blockGrindstone;
+	public static Block blockCampfire;
+	
 	public static Block blockDistiller;
+	public static Block blockGrill;
+	public static Block blockOven;
+	public static Block blockChurn;
 	
-	//Constants for wind turbine
-	public final static int TURBINE_GENERATED = 50;
-	public final static int TURBINE_BUFFERSIZE = 10000;
-	
-	//Constants for machine types
-	public final static String MACHINE_BASIC = "Basic machine";
-	public final static String MACHINE_GENERATOR = "Electric Generator";
-	public final static String MACHINE_ADVANCED = "Advanced machine";
+	public static Block blockBowl;
 	
 	public Blocks()
 	{
 		FoodTech.print("Loading blocks");
 		
 		//Create instances of all of the blocks
-		blockWindTurbine = new BlockWindTurbine(Material.iron, Blocks.TURBINE_GENERATED, Blocks.TURBINE_BUFFERSIZE, Blocks.MACHINE_GENERATOR);
+		blockWindTurbine = new BlockWindTurbine(Material.iron, GeneratorData.TURBINE_GENERATED, GeneratorData.TURBINE_BUFFERSIZE, Tooltip.MACHINE_GENERATOR);
 		blockGrindstone = new BlockGrindstone(Material.rock);
 		blockDistiller = new BlockDistiller(Material.glass);
 		

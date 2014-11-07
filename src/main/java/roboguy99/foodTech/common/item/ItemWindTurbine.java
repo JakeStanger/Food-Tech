@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import roboguy99.foodTech.common.block.Blocks;
+import roboguy99.foodTech.util.GeneratorData;
+import roboguy99.foodTech.util.Tooltip;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -56,8 +58,8 @@ public class ItemWindTurbine extends Item //When used, places BlockwindTurbine
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean bool)
 	{
-		list.add(EnumChatFormatting.BLUE + Blocks.MACHINE_GENERATOR);
-		list.add(EnumChatFormatting.GREEN + "Buffer size: " + EnumChatFormatting.AQUA + Blocks.TURBINE_BUFFERSIZE);
-		list.add(EnumChatFormatting.GREEN + "Energy per tick: " + EnumChatFormatting.AQUA + Blocks.TURBINE_GENERATED);
+		list.add(EnumChatFormatting.BLUE + Tooltip.MACHINE_GENERATOR);
+		list.add(EnumChatFormatting.GREEN + "Buffer size: " + EnumChatFormatting.AQUA + GeneratorData.TURBINE_BUFFERSIZE);
+		list.add(EnumChatFormatting.GREEN + "Energy per tick: " + EnumChatFormatting.AQUA + GeneratorData.TURBINE_GENERATED);
 	}
 }
