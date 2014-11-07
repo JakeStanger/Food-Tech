@@ -1,21 +1,18 @@
 package roboguy99.foodTech.common.tile;
 
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
+import roboguy99.foodTech.common.tile.prefab.TileThreeSlotMachine;
 import roboguy99.foodTech.util.recipe.GrindstoneRecipes;
 
-public class TileGrindstone extends TileEntity implements ISidedInventory
+public class TileGrindstone extends TileThreeSlotMachine
 {	
 	private ItemStack[] slot = new ItemStack[3];
 	
 	private static final int MAX_STONE = 16;
 	private static final int PROCESS_TIME = 200;
 	public int stone = 0;
-	private String customName;
 	private int processTimeRemaining;
 	public int timeSpentProcessing;
 	
@@ -68,99 +65,18 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 		return (int) (this.timeSpentProcessing * scaled / TileGrindstone.PROCESS_TIME);
 	}
 	
-	public ItemStack decrStackSize(int i, int j) 
-	{
-			if(this.slot[i] != null)
-			{
-				ItemStack itemStack;
-				
-				if(this.slot[i].stackSize <= j)
-				{
-					itemStack = this.slot[i];
-					this.slot[i] = null;
-					return itemStack;
-				}
-				else
-				{
-					itemStack = this.slot[i].splitStack(j);
-					
-					if(this.slot[i].stackSize == 0)
-					{
-						this.slot[i] = null;
-						this.setInventorySlotContents(i, null);
-					}
-					
-					return itemStack;
-				}
-			}
-		
-		return null;
-	}
-	
-	public ItemStack getStackInSlot(int i) 
-	{
-		return this.slot[i];
-	}
-	
-	public ItemStack getStackInSlotOnClosing(int i) 
-	{
-		if(this.slot[i] != null)
-		{
-			ItemStack itemStack = this.slot[i];
-			this.slot[i] = null;
-			return itemStack;
-		}
-		
-		return null;
-	}
-	
-	public boolean isItemValidForSlot(int slot, ItemStack itemStack)
-	{
-		return slot == 2 ? false : true;
-	}
-	
-	public boolean isUseableByPlayer(EntityPlayer entityPlayer) 
-	{
-		return true;
-	}
-	
-	public void setInventorySlotContents(int i, ItemStack itemStack) 
-	{
-		this.slot[i] = itemStack;
-		
-		if(itemStack != null && itemStack.stackSize > this.getInventoryStackLimit())
-		{
-			itemStack.stackSize = this.getInventoryStackLimit();
-		}
-	}
-	
-	public boolean canExtractItem(int i, ItemStack var2, int j) 
-	{
-		return true;
-	}
-	
-	public boolean canInsertItem(int slot, ItemStack itemStack, int side) 
-	{
-		return this.isItemValidForSlot(slot, itemStack);
-	}
-	
-	public int[] getAccessibleSlotsFromSide(int i) 
-	{
-		return null;
-	}
-	
 	/**
      * Returns true if the grindstone can smelt an item, i.e. has a source item, destination stack isn't full, etc.
      */
-    private boolean canProcess()
+    protected boolean canProcess()
     {
-        if (this.slot[0] == null || this.stone == 0)
+    	if (this.slot[0] == null || this.stone == 0)
         {
             return false;
         }
-        else
+        else //TODO switch if and else around
         {
-            ItemStack itemstack = GrindstoneRecipes.processing().getProcessResult(this.slot[0]);
+        	ItemStack itemstack = GrindstoneRecipes.processing().getProcessResult(this.slot[0]);
             if (itemstack == null) return false;
             if (this.slot[2] == null) return true;
             if (!this.slot[2].isItemEqual(itemstack)) return false;
@@ -198,27 +114,4 @@ public class TileGrindstone extends TileEntity implements ISidedInventory
 	        }
 	    }	
     }
-    
-    public String getInventoryName() 
-	{
-		return this.hasCustomInventoryName() ? this.customName : "container.grindstone";
-	}
-	
-	public boolean hasCustomInventoryName() 
-	{
-		return this.customName != null && this.customName.length() > 0;
-	}
-
-	public int getInventoryStackLimit() 
-	{
-		return 64;
-	}
-	
-	public int getSizeInventory() 
-	{
-		return this.slot.length;
-	}
-	
-	public void openInventory() {}
-	public void closeInventory() {}
 }

@@ -3,9 +3,9 @@ package roboguy99.foodTech.common.tile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
+import roboguy99.foodTech.common.tile.prefab.Tile;
 
-public class TileDistiller extends TileEntity implements IInventory
+public class TileDistiller extends Tile implements IInventory
 {
 	@Override
 	public int getSizeInventory()

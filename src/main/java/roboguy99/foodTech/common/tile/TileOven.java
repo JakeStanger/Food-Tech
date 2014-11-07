@@ -1,8 +1,8 @@
 package roboguy99.foodTech.common.tile;
 
-import net.minecraft.tileentity.TileEntity;
+import roboguy99.foodTech.common.tile.prefab.Tile;
 
-public class TileOven extends TileEntity 
+public class TileOven extends Tile 
 {
 	
 }

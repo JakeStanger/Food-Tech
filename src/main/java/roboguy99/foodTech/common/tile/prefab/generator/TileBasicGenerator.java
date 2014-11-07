@@ -3,11 +3,12 @@ package roboguy99.foodTech.common.tile.prefab.generator;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
+import roboguy99.foodTech.common.tile.prefab.Tile;
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;
 import cofh.api.energy.IEnergyProvider;
 
-public abstract class TileBasicGenerator extends TileEntity implements IEnergyHandler, IEnergyProvider
+public abstract class TileBasicGenerator extends Tile implements IEnergyHandler, IEnergyProvider
 {
 	protected EnergyStorage storage = new EnergyStorage(0);
 	public int generated;

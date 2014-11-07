@@ -3,6 +3,11 @@ package roboguy99.foodTech.common.tile.prefab;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
+/**
+ * The base class for all tile entities
+ * @author Jake
+ *
+ */
 public class Tile extends TileEntity
 {
     protected long ticks = 0L;
