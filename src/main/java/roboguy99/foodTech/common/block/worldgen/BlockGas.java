@@ -1,4 +1,4 @@
-package roboguy99.foodTech.common.block;
+package roboguy99.foodTech.common.block.worldgen;
 
 import net.minecraft.block.material.Material;
 import roboguy99.foodTech.common.block.prefab.BaseBlock;
@@ -8,7 +8,7 @@ import roboguy99.foodTech.common.block.prefab.BaseBlock;
  */
 public class BlockGas extends BaseBlock
 {
-	protected BlockGas(Material material, String name)
+	public BlockGas(Material material, String name)
 	{
 		super(material, name);
 	}

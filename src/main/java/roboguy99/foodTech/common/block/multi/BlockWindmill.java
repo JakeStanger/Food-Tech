@@ -1,12 +1,12 @@
-package roboguy99.foodTech.common.block;
+package roboguy99.foodTech.common.block.multi;
 
 import net.minecraft.block.material.Material;
 import roboguy99.foodTech.common.block.prefab.BaseBlock;
 
-public class BlockCampfire extends BaseBlock
+public class BlockWindmill extends BaseBlock
 {
 
-	protected BlockCampfire(Material material, String name)
+	public BlockWindmill(Material material, String name)
 	{
 		super(material, name);
 	}

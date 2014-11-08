@@ -1,4 +1,4 @@
-package roboguy99.foodTech.common.block;
+package roboguy99.foodTech.common.block.multi;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -8,6 +8,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.client.gui.GuiHandler;
+import roboguy99.foodTech.common.block.Blocks;
 import roboguy99.foodTech.common.block.prefab.BaseBlock;
 import roboguy99.foodTech.common.tile.electricity.generator.TileWindTurbine;
 import roboguy99.foodTech.util.GeneratorData;

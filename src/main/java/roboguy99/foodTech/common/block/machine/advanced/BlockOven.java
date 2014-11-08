@@ -1,4 +1,4 @@
-package roboguy99.foodTech.common.block;
+package roboguy99.foodTech.common.block.machine.advanced;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;

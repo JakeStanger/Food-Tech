@@ -1,12 +1,12 @@
-package roboguy99.foodTech.common.block;
+package roboguy99.foodTech.common.block.machine.basic;
 
 import net.minecraft.block.material.Material;
 import roboguy99.foodTech.common.block.prefab.BaseBlock;
 
-public class BlockBowl extends BaseBlock
+public class BlockChurn extends BaseBlock
 {
 
-	protected BlockBowl(Material material, String name)
+	public BlockChurn(Material material, String name)
 	{
 		super(material, name);
 	}

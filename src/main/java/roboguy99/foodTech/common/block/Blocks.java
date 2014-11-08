@@ -2,7 +2,21 @@ package roboguy99.foodTech.common.block;
 
 import net.minecraft.block.material.Material;
 import roboguy99.foodTech.FoodTech;
+import roboguy99.foodTech.common.block.apparatus.BlockBowl;
+import roboguy99.foodTech.common.block.apparatus.BlockChoppingBoard;
+import roboguy99.foodTech.common.block.apparatus.BlockFryingPan;
+import roboguy99.foodTech.common.block.apparatus.BlockKettle;
+import roboguy99.foodTech.common.block.apparatus.BlockSaucepan;
+import roboguy99.foodTech.common.block.machine.advanced.BlockDistiller;
+import roboguy99.foodTech.common.block.machine.advanced.BlockGrill;
+import roboguy99.foodTech.common.block.machine.advanced.BlockOven;
+import roboguy99.foodTech.common.block.machine.basic.BlockCampfire;
+import roboguy99.foodTech.common.block.machine.basic.BlockChurn;
+import roboguy99.foodTech.common.block.machine.basic.BlockGrindstone;
+import roboguy99.foodTech.common.block.multi.BlockWindTurbine;
+import roboguy99.foodTech.common.block.multi.BlockWindmill;
 import roboguy99.foodTech.common.block.prefab.BaseBlock;
+import roboguy99.foodTech.common.block.worldgen.BlockGas;
 import roboguy99.foodTech.util.GeneratorData;
 import roboguy99.foodTech.util.Tooltip;
 
@@ -25,6 +39,9 @@ public class Blocks
 	//Cooking apparatus
 	public static BaseBlock blockBowl;
 	public static BaseBlock blockKettle;
+	public static BaseBlock blockSaucepan;
+	public static BaseBlock blockFryingPan;
+	public static BaseBlock blockChoppingBoard;
 	
 	//Worldgen
 	public static BaseBlock blockGas;
@@ -47,6 +64,10 @@ public class Blocks
 		
 		blockBowl = new BlockBowl(Material.wood, "blockBowl");
 		blockKettle = new BlockKettle(Material.iron, "blockKettle");
+		blockSaucepan = new BlockSaucepan(Material.iron, "blockSaucepan");
+		blockFryingPan = new BlockFryingPan(Material.iron, "blockFryingPan");
+		blockChoppingBoard = new BlockChoppingBoard(Material.wood, "blockChoppingBoard");
+		
 		blockGas = new BlockGas(Material.air, "blockGas");
 	}
 }
