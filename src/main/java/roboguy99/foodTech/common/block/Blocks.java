@@ -1,6 +1,7 @@
 package roboguy99.foodTech.common.block;
 
 import net.minecraft.block.material.Material;
+import net.minecraftforge.fluids.BlockFluidClassic;
 import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.common.block.apparatus.BlockBowl;
 import roboguy99.foodTech.common.block.apparatus.BlockChoppingBoard;
@@ -17,6 +18,8 @@ import roboguy99.foodTech.common.block.multi.BlockWindTurbine;
 import roboguy99.foodTech.common.block.multi.BlockWindmill;
 import roboguy99.foodTech.common.block.prefab.BaseBlock;
 import roboguy99.foodTech.common.block.worldgen.BlockGas;
+import roboguy99.foodTech.common.fluid.BlockFluidDistilledWater;
+import roboguy99.foodTech.common.fluid.Fluids;
 import roboguy99.foodTech.util.GeneratorData;
 import roboguy99.foodTech.util.Tooltip;
 
@@ -46,6 +49,9 @@ public class Blocks
 	//Worldgen
 	public static BaseBlock blockGas;
 	
+	//Fluids
+	public static BlockFluidClassic blockFluidDistilledWater;
+	
 	public Blocks()
 	{
 		FoodTech.print("Loading blocks");
@@ -69,5 +75,7 @@ public class Blocks
 		blockChoppingBoard = new BlockChoppingBoard(Material.wood, "blockChoppingBoard");
 		
 		blockGas = new BlockGas(Material.air, "blockGas");
+		
+		blockFluidDistilledWater = new BlockFluidDistilledWater(Fluids.fluidDistilledWater, Material.water);
 	}
 }

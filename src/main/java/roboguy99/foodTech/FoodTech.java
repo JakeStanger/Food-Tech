@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 import roboguy99.foodTech.client.gui.GuiHandler;
 import roboguy99.foodTech.common.block.Blocks;
 import roboguy99.foodTech.common.event.RegisterEvents;
+import roboguy99.foodTech.common.fluid.Fluids;
 import roboguy99.foodTech.common.item.Items;
 import roboguy99.foodTech.common.tile.RegisterTileEntities;
 import roboguy99.foodTech.proxies.CommonProxy;
@@ -44,6 +45,7 @@ public class FoodTech
 		instance = this;
 		
 		//Loads common content into the game
+		new Fluids();
 		new Blocks();
 		new Items();
 		
@@ -71,7 +73,7 @@ public class FoodTech
 		System.out.println("[Food Tech] " + message.toString());
 	}
 	
-	 public static final CreativeTabs tabFoodTech = new CreativeTabs("tabFoodTech") 
+	 public static final CreativeTabs TAB_FOODTECH = new CreativeTabs("tabFoodTech") 
 	 {
 
 		public Item getTabIconItem() 

@@ -51,13 +51,13 @@ public class Items
 	
 	public void setCreativeTabs() //Sets the creative tab for each item.
 	{
-		itemWindTurbine.setCreativeTab(FoodTech.tabFoodTech);
-		itemDebug.setCreativeTab(FoodTech.tabFoodTech);
-		itemGrindstone.setCreativeTab(FoodTech.tabFoodTech);
-		itemDistiller.setCreativeTab(FoodTech.tabFoodTech);
+		itemWindTurbine.setCreativeTab(FoodTech.TAB_FOODTECH);
+		itemDebug.setCreativeTab(FoodTech.TAB_FOODTECH);
+		itemGrindstone.setCreativeTab(FoodTech.TAB_FOODTECH);
+		itemDistiller.setCreativeTab(FoodTech.TAB_FOODTECH);
 		
 		//Ingredients
-		itemFlour.setCreativeTab(FoodTech.tabFoodTech);
+		itemFlour.setCreativeTab(FoodTech.TAB_FOODTECH);
 	}
 	
 	public void setTextureNames() //Loads the texture for each of the items. TODO Create textures for items

@@ -22,6 +22,9 @@ public class GrindstoneRecipes
         return GrindstoneRecipes.instance;
     }
 	
+	/**
+	 * Add recipes in here
+	 */
 	public GrindstoneRecipes()
 	{
 		this.addItemRecipe(Items.wheat, new ItemStack(roboguy99.foodTech.common.item.Items.itemFlour), 0.1F);
