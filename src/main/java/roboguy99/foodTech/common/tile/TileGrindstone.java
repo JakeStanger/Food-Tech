@@ -26,7 +26,7 @@ public class TileGrindstone extends TileThreeSlotMachine
 			slotStone.stackSize--;
 			shouldMarkDirty = true;
 			
-			if (slotStone.stackSize <= 0)
+			if (slotStone.stackSize == 0)
 	        {
 	            slotStone = null;
 	            this.setInventorySlotContents(1, null);
@@ -48,10 +48,7 @@ public class TileGrindstone extends TileThreeSlotMachine
 			this.timeSpentProcessing = 0;
 		}
 		
-		if(shouldMarkDirty) //I'm not sure what this does, but I've been told to include it.
-		{
-			this.markDirty();
-		}
+		if(shouldMarkDirty) this.markDirty();
 	}
 	
 	public int getStoneScaled(int scaled)

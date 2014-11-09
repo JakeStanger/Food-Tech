@@ -1,7 +1,10 @@
 package roboguy99.foodTech.common.tile;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import roboguy99.foodTech.common.tile.prefab.Tile;
 
@@ -15,11 +18,58 @@ public class TileDistiller extends Tile implements IInventory
 	public int distilledWater = 0;
 	public int processTimeRemaining;
 	public int timeSpentProcessing;
+	private int furnaceBurnTime = 0;
+	private int temperature;
 	
 	@Override
 	public void updateEntity()
 	{
+		boolean shouldMarkDirty = false;
 		
+		ItemStack slotBucketIn = this.getStackInSlot(0);
+		ItemStack slotFuel = this.getStackInSlot(1);
+		ItemStack slotSalt = this.getStackInSlot(2);
+		ItemStack slotBucketOut = this.getStackInSlot(3);
+		
+		if(slotFuel != null && this.getBurnTime(slotFuel.getItem()) > 0 && !this.isBurning())
+		{
+			slotFuel.stackSize--;
+			this.furnaceBurnTime = this.getBurnTime(slotFuel.getItem());
+			shouldMarkDirty = true;
+			
+			if(slotFuel.stackSize == 0)
+			{
+				slotFuel = null;
+				this.setInventorySlotContents(1, null);
+				shouldMarkDirty = true;
+			}
+		}
+		if(slotBucketIn != null && slotBucketIn.getItem() == Items.water_bucket && (this.water + 1000) <= 10000 && temperature >= 100)
+		{
+			slotBucketIn = null;
+			this.setInventorySlotContents(0, null);
+			
+			this.water += 1000;
+			
+			this.setInventorySlotContents(0, new ItemStack(Items.bucket));
+		}
+		else this.temperature--;
+		
+		if(this.furnaceBurnTime > 0) this.furnaceBurnTime--;
+		if(this.temperature < 300) this.temperature++;
+		if(shouldMarkDirty) this.markDirty();
+	}
+	
+	private int getBurnTime(Item item)
+	{
+		if(item == Items.coal) return 1600;
+		if(item == Item.getItemFromBlock(Blocks.coal_block)) return 16000;
+		return 0;
+	}
+	
+	private boolean isBurning()
+	{
+		return this.furnaceBurnTime > 0;
 	}
 	
 	@Override
