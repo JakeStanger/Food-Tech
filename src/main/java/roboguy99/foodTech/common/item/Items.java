@@ -4,7 +4,8 @@ import net.minecraft.item.Item;
 import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.common.block.Blocks;
 import roboguy99.foodTech.common.item.bucket.Bucket;
-import roboguy99.foodTech.common.item.foods.ItemFlour;
+import roboguy99.foodTech.common.item.foods.ingredients.ItemFlour;
+import roboguy99.foodTech.common.item.foods.ingredients.ItemSalt;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Items
@@ -19,6 +20,7 @@ public class Items
 	
 	//Ingredient
 	public static Item itemFlour;
+	public static Item itemSalt;
 	
 	//Buckets
 	public static Bucket itemBucketDistilledWater;
@@ -35,6 +37,7 @@ public class Items
 		
 		//Ingredients
 		itemFlour = new ItemFlour();
+		itemSalt = new ItemSalt();
 		
 		//Buckets
 		itemBucketDistilledWater = new Bucket(Blocks.blockFluidDistilledWater, "itemBucketDistilledWater");
@@ -55,6 +58,7 @@ public class Items
 		
 		//Ingredients
 		itemFlour.setUnlocalizedName("itemFlour");
+		itemSalt.setUnlocalizedName("itemSalt");
 	}
 	
 	public void setCreativeTabs() //Sets the creative tab for each item.
@@ -66,6 +70,7 @@ public class Items
 		
 		//Ingredients
 		itemFlour.setCreativeTab(FoodTech.TAB_FOODTECH);
+		itemSalt.setCreativeTab(FoodTech.TAB_FOODTECH);
 	}
 	
 	public void setTextureNames() //Loads the texture for each of the items. TODO Create textures for items
@@ -77,6 +82,7 @@ public class Items
 		
 		//Ingredients
 		itemFlour.setTextureName("diamond");
+		itemSalt.setTextureName("diamond");
 	}
 	
 	public void registerItems() //Adds the items into the game
@@ -88,5 +94,6 @@ public class Items
 		
 		//Ingredients
 		GameRegistry.registerItem(itemFlour, "itemFlour");
+		GameRegistry.registerItem(itemSalt, "itemSalt");
 	}
 }

@@ -53,12 +53,12 @@ public class TileGrindstone extends TileThreeSlotMachine
 	
 	public int getStoneScaled(int scaled)
 	{
-		return (int) (this.stone * scaled / TileGrindstone.MAX_STONE);
+		return (int) this.stone * scaled / TileGrindstone.MAX_STONE;
 	}
 	
 	public int getProgressScaled(int scaled)
 	{
-		return (int) (this.timeSpentProcessing * scaled / TileGrindstone.PROCESS_TIME);
+		return (int) this.timeSpentProcessing * scaled / TileGrindstone.PROCESS_TIME;
 	}
 	
 	/**

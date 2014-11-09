@@ -19,6 +19,7 @@ public class TileDistiller extends Tile implements IInventory
 	public int processTimeRemaining;
 	public int timeSpentProcessing;
 	private int furnaceBurnTime = 0;
+	public int currentItemBurnTime = 0;
 	private int temperature;
 	
 	@Override
@@ -35,6 +36,7 @@ public class TileDistiller extends Tile implements IInventory
 		{
 			slotFuel.stackSize--;
 			this.furnaceBurnTime = this.getBurnTime(slotFuel.getItem());
+			this.currentItemBurnTime = this.furnaceBurnTime;
 			shouldMarkDirty = true;
 			
 			if(slotFuel.stackSize == 0)
@@ -44,7 +46,8 @@ public class TileDistiller extends Tile implements IInventory
 				shouldMarkDirty = true;
 			}
 		}
-		if(slotBucketIn != null && slotBucketIn.getItem() == Items.water_bucket && (this.water + 1000) <= 10000 && temperature >= 100)
+		
+		if(slotBucketIn != null && slotBucketIn.getItem() == Items.water_bucket && (this.water + 1000) <= MAX_WATER)
 		{
 			slotBucketIn = null;
 			this.setInventorySlotContents(0, null);
@@ -52,9 +55,44 @@ public class TileDistiller extends Tile implements IInventory
 			this.water += 1000;
 			
 			this.setInventorySlotContents(0, new ItemStack(Items.bucket));
+			
+			shouldMarkDirty = true;
 		}
-		else this.temperature--;
 		
+		if(this.temperature > 100 && this.isBurning() && this.water > 0 && this.distilledWater < MAX_WATER)
+		{
+			this.water--;
+			this.distilledWater++;
+			
+			shouldMarkDirty = true;
+			
+			if(this.processTimeRemaining == 0)
+			{
+				if (slotSalt == null) this.setInventorySlotContents(3, new ItemStack(roboguy99.foodTech.common.item.Items.itemSalt));
+				else slotSalt.stackSize++;
+				
+				this.processTimeRemaining = TileDistiller.PROCESS_TIME;
+				this.timeSpentProcessing = 0;
+				
+				shouldMarkDirty = true;
+			}
+		}
+		
+		if(slotBucketOut != null && slotBucketOut.getItem() == Items.bucket && (this.distilledWater - 1000) >= 0)
+		{
+			slotBucketOut = null;
+			this.setInventorySlotContents(3, null);
+			
+			this.distilledWater -= 1000;
+			
+			this.setInventorySlotContents(3, new ItemStack(roboguy99.foodTech.common.item.Items.itemBucketDistilledWater));
+			
+			shouldMarkDirty = true;
+		}
+		
+		this.temperature--;
+		this.processTimeRemaining--;
+		this.timeSpentProcessing++;
 		if(this.furnaceBurnTime > 0) this.furnaceBurnTime--;
 		if(this.temperature < 300) this.temperature++;
 		if(shouldMarkDirty) this.markDirty();
@@ -70,6 +108,26 @@ public class TileDistiller extends Tile implements IInventory
 	private boolean isBurning()
 	{
 		return this.furnaceBurnTime > 0;
+	}
+	
+	public int getWaterScaled(int scaled)
+	{
+		return (int) this.water / scaled * TileDistiller.MAX_WATER;
+	}
+	
+	public int getDistilledWaterScaled(int scaled)
+	{
+		return (int) this.distilledWater / scaled * TileDistiller.MAX_WATER;
+	}
+	
+	public int getProgressScaled(int scaled)
+	{
+		return (int) this.timeSpentProcessing / scaled * TileDistiller.PROCESS_TIME;
+	}
+	
+	public int getBurnTimeRemainingScaled(int scaled)
+	{
+		return (int) this.furnaceBurnTime / scaled * this.currentItemBurnTime;
 	}
 	
 	@Override
