@@ -1,6 +1,5 @@
 package roboguy99.foodTech.common.fluid;
 
-import roboguy99.foodTech.FoodTech;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.IIcon;
@@ -16,7 +15,6 @@ public class BlockFluidDistilledWater extends BlockFluidClassic
 	public BlockFluidDistilledWater(Fluid fluid, Material material)
 	{
 		super(fluid, material);
-		this.setCreativeTab(FoodTech.TAB_FOODTECH);
 		GameRegistry.registerBlock(this, "blockFluidDistilledWater");
 	}
 	

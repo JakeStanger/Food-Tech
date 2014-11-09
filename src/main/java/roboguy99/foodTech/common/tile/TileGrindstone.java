@@ -4,7 +4,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import roboguy99.foodTech.common.tile.prefab.TileThreeSlotMachine;
-import roboguy99.foodTech.util.recipe.GrindstoneRecipes;
+import roboguy99.foodTech.util.recipe.GrindstoneRecipeHandler;
 
 public class TileGrindstone extends TileThreeSlotMachine
 {
@@ -75,7 +75,7 @@ public class TileGrindstone extends TileThreeSlotMachine
         }
         else //TODO switch if and else around
         {
-        	ItemStack itemstack = GrindstoneRecipes.processing().getProcessResult(this.slot[0]);
+        	ItemStack itemstack = GrindstoneRecipeHandler.processing().getProcessResult(this.slot[0]);
             if (itemstack == null) return false;
             if (this.slot[2] == null) return true;
             if (!this.slot[2].isItemEqual(itemstack)) return false;
@@ -93,7 +93,7 @@ public class TileGrindstone extends TileThreeSlotMachine
     	
     	if(this.canProcess())
 	    {
-    		ItemStack itemstack = GrindstoneRecipes.processing().getProcessResult(this.slot[0]);
+    		ItemStack itemstack = GrindstoneRecipeHandler.processing().getProcessResult(this.slot[0]);
 	
 	        if (this.slot[2] == null)
 	        {

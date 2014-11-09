@@ -2,6 +2,8 @@ package roboguy99.foodTech.common.item;
 
 import net.minecraft.item.Item;
 import roboguy99.foodTech.FoodTech;
+import roboguy99.foodTech.common.block.Blocks;
+import roboguy99.foodTech.common.item.bucket.Bucket;
 import roboguy99.foodTech.common.item.foods.ItemFlour;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -18,6 +20,9 @@ public class Items
 	//Ingredient
 	public static Item itemFlour;
 	
+	//Buckets
+	public static Bucket itemBucketDistilledWater;
+	
 	public Items()
 	{
 		FoodTech.print("Loading items");
@@ -30,6 +35,9 @@ public class Items
 		
 		//Ingredients
 		itemFlour = new ItemFlour();
+		
+		//Buckets
+		itemBucketDistilledWater = new Bucket(Blocks.blockFluidDistilledWater, "itemBucketDistilledWater");
 		
 		//Call property-setting functions
 		setUnlocalizedNames();

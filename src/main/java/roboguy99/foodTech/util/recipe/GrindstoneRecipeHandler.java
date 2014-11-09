@@ -6,29 +6,22 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 
-public class GrindstoneRecipes
+public class GrindstoneRecipeHandler
 {
-	private static final GrindstoneRecipes instance = new GrindstoneRecipes();
+	public static final GrindstoneRecipeHandler INSTANCE = new GrindstoneRecipeHandler();
 	private Map<ItemStack, ItemStack> recipeList = new HashMap<ItemStack, ItemStack>();
 	private Map<ItemStack, Float> experienceList = new HashMap<ItemStack, Float>();
 	
-	public static GrindstoneRecipes processing()
+	public static GrindstoneRecipeHandler processing()
     {
-        return GrindstoneRecipes.instance;
+        return GrindstoneRecipeHandler.INSTANCE;
     }
 	
-	/**
-	 * Add recipes in here
-	 */
-	public GrindstoneRecipes()
-	{
-		this.addItemRecipe(Items.wheat, new ItemStack(roboguy99.foodTech.common.item.Items.itemFlour), 0.1F);
-	}
+	public GrindstoneRecipeHandler(){}
 	
 	public void addBlockRecipe(Block input, ItemStack output, float xp)
 	{

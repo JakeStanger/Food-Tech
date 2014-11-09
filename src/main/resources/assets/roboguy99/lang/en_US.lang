@@ -4,6 +4,7 @@ item.itemDebug.name= Coder's debug tool
 item.itemGrindstone.name= Grindstone
 item.itemDistiller.name= Distillation Chamber
 item.itemFlour.name= Flour
+item.itemBucketDistilledWater= Distilled Water
 tile.blockGrindstone.name= Grindstone
 tile.blockCable.name= Cable
 tile.blockWindTurbine.name= Wind Turbine

@@ -9,7 +9,7 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import roboguy99.foodTech.common.tile.TileGrindstone;
-import roboguy99.foodTech.util.recipe.GrindstoneRecipes;
+import roboguy99.foodTech.util.recipe.GrindstoneRecipeHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -106,7 +106,7 @@ public class ContainerGrindstone extends Container
             }
             else if (index != 1 && index != 0)
             {
-                if (GrindstoneRecipes.processing().getProcessResult(itemstack1) != null)
+                if (GrindstoneRecipeHandler.processing().getProcessResult(itemstack1) != null)
                 {
                     if (!this.mergeItemStack(itemstack1, 0, 1, false))
                     {
