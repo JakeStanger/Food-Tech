@@ -91,7 +91,7 @@ public class TileDistiller extends Tile implements IInventory
 		}
 		
 		if(this.isBurning() && this.temperature < 300) this.temperature++;
-		if(!this.isBurning() && this.teperature > 0) this.temperature--;
+		if(!this.isBurning() && this.temperature > 0) this.temperature--;
 		
 		this.processTimeRemaining--;
 		this.timeSpentProcessing++;
@@ -114,7 +114,8 @@ public class TileDistiller extends Tile implements IInventory
 	
 	public int getWaterScaled(int scaled)
 	{
-		return (int) this.water / scaled * TileDistiller.MAX_WATER;
+		return scaled;
+		//return (int) this.water / scaled * TileDistiller.MAX_WATER;
 	}
 	
 	public int getDistilledWaterScaled(int scaled)

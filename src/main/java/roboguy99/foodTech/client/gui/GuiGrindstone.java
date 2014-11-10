@@ -31,10 +31,12 @@ public class GuiGrindstone extends GuiContainer
 		super(new ContainerGrindstone(inventoryPlayer, grindstone));
 		
 		this.grindstone = grindstone;
+		
 		this.xSize = 176;
 		this.ySize = 166;
 	}
 
+	@Override
 	public void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) 
 	{
 		//Draw the gui screen
