@@ -135,30 +135,30 @@ public class TileDistiller extends Tile implements IInventory
 	@Override
 	public ItemStack decrStackSize(int i, int j) 
 	{
-			if(this.slot[i] != null)
+		if(this.slot[i] != null)
+		{
+			ItemStack itemStack;
+			
+			if(this.slot[i].stackSize <= j)
 			{
-				ItemStack itemStack;
-				
-				if(this.slot[i].stackSize <= j)
-				{
-					itemStack = this.slot[i];
-					this.slot[i] = null;
-					return itemStack;
-				}
-				else
-				{
-					itemStack = this.slot[i].splitStack(j);
-					
-					if(this.slot[i].stackSize == 0)
-					{
-						this.slot[i] = null;
-						this.setInventorySlotContents(i, null);
-					}
-					
-					return itemStack;
-				}
+				itemStack = this.slot[i];
+				this.slot[i] = null;
+				return itemStack;
 			}
-		
+			else
+			{
+				itemStack = this.slot[i].splitStack(j);
+				
+				if(this.slot[i].stackSize == 0)
+				{
+					this.slot[i] = null;
+					this.setInventorySlotContents(i, null);
+				}
+				
+				return itemStack;
+			}
+		}
+	
 		return null;
 	}
 	
