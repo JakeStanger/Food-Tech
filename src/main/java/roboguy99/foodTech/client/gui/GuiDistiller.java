@@ -14,12 +14,26 @@ public class GuiDistiller extends GuiContainer
 	
 	private final ResourceLocation texture = ResourceManager.DISTILLER_GUI;
 	
-	private static final int WATER_LEFT_INDENT = 8;
-	private static final int WATER_TOP_INDENT = 11;
+	private static final int WATER_LEFT_INDENT = 7;
+	private static final int WATER_TOP_INDENT = 10;
 	private static final int WATER_TEXTURE_LEFT_INDENT = 176;
 	private static final int WATER_TEXTURE_TOP_INDENT = 31;
 	private static final int WATER_TEXTURE_WIDTH = 17;
 	private static final int WATER_TEXTURE_HEIGHT = 50;
+	
+	private static final int DISTILLED_LEFT_INDENT = 151;
+	private static final int DISTILLED_TOP_INDENT = 10;
+	private static final int DISTILLED_TEXTURE_LEFT_INDENT = 176;
+	private static final int DISTILLED_TEXTURE_TOP_INDENT = 31;
+	private static final int DISTILLED_TEXTURE_WIDTH = 17;
+	private static final int DISTILLED_TEXTURE_HEIGHT = 50;
+	
+	private static final int FIRE_LEFT_INDENT = 27;
+	private static final int FIRE_TOP_INDENT = 46;
+	private static final int FIRE_TEXTURE_LEFT_INDENT = 177;
+	private static final int FIRE_TEXTURE_TOP_INDENT = 0;
+	private static final int FIRE_TEXTURE_WIDTH = 15;
+	private static final int FIRE_TEXTURE_HEIGHT = 14;
 	
 	public GuiDistiller(InventoryPlayer inventoryPlayer, TileDistiller distiller)
 	{
@@ -45,5 +59,17 @@ public class GuiDistiller extends GuiContainer
 		drawTexturedModalRect(guiLeft+WATER_LEFT_INDENT, guiTop+WATER_TOP_INDENT+WATER_TEXTURE_HEIGHT-i, 
 				WATER_TEXTURE_LEFT_INDENT, WATER_TEXTURE_TOP_INDENT+WATER_TEXTURE_HEIGHT-i, 
 				WATER_TEXTURE_WIDTH, i);
+		
+		//Draw the distilled water bar
+				int i1 = this.distiller.getDistilledWaterScaled(DISTILLED_TEXTURE_HEIGHT);
+				drawTexturedModalRect(guiLeft+DISTILLED_LEFT_INDENT, guiTop+DISTILLED_TOP_INDENT+DISTILLED_TEXTURE_HEIGHT-i1, 
+						DISTILLED_TEXTURE_LEFT_INDENT, DISTILLED_TEXTURE_TOP_INDENT+DISTILLED_TEXTURE_HEIGHT-i1, 
+						DISTILLED_TEXTURE_WIDTH, i1);
+				
+		//Draw the distilled water bar
+		int i2 = this.distiller.getBurnTimeRemainingScaled(FIRE_TEXTURE_HEIGHT);
+		drawTexturedModalRect(guiLeft+FIRE_LEFT_INDENT, guiTop+FIRE_TOP_INDENT+FIRE_TEXTURE_HEIGHT-i2, 
+				FIRE_TEXTURE_LEFT_INDENT, FIRE_TEXTURE_TOP_INDENT+FIRE_TEXTURE_HEIGHT-i2, 
+				FIRE_TEXTURE_WIDTH, i2);
 	}
 }

@@ -21,6 +21,7 @@ public class TileDistiller extends Tile implements IInventory
 	private int furnaceBurnTime = 0;
 	public int currentItemBurnTime = 0;
 	private int temperature;
+	private static final int MAX_TEMP = 300;
 	
 	@Override
 	public void updateEntity()
@@ -90,7 +91,7 @@ public class TileDistiller extends Tile implements IInventory
 			shouldMarkDirty = true;
 		}
 		
-		if(this.isBurning() && this.temperature < 300) this.temperature++;
+		if(this.isBurning() && this.temperature < MAX_TEMP) this.temperature++;
 		if(!this.isBurning() && this.temperature > 0) this.temperature--;
 		
 		this.processTimeRemaining--;
@@ -114,8 +115,7 @@ public class TileDistiller extends Tile implements IInventory
 	
 	public int getWaterScaled(int scaled)
 	{
-		return scaled;
-		//return (int) this.water / scaled * TileDistiller.MAX_WATER;
+		return (int) this.water / scaled * TileDistiller.MAX_WATER;
 	}
 	
 	public int getDistilledWaterScaled(int scaled)
@@ -131,6 +131,11 @@ public class TileDistiller extends Tile implements IInventory
 	public int getBurnTimeRemainingScaled(int scaled)
 	{
 		return (int) this.furnaceBurnTime / scaled * this.currentItemBurnTime;
+	}
+	
+	public int getTemperature(int scaled)
+	{
+		return (int) this.temperature / scaled * TileDistiller.MAX_TEMP;
 	}
 	
 	@Override
