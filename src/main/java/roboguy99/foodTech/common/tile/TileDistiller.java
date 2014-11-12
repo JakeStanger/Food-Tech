@@ -133,7 +133,7 @@ public class TileDistiller extends Tile implements IInventory
 		return (int) this.furnaceBurnTime / scaled * this.currentItemBurnTime;
 	}
 	
-	public int getTemperature(int scaled)
+	public int getTemperatureScaled(int scaled)
 	{
 		return (int) this.temperature / scaled * TileDistiller.MAX_TEMP;
 	}
