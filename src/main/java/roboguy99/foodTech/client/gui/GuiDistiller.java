@@ -36,15 +36,17 @@ public class GuiDistiller extends GuiContainer
 	private static final int FIRE_TEXTURE_HEIGHT = 14;
 	
 	private static final int PROGRESS_LEFT_INDENT = 80;
-	private static final int PROGRESS_TOP_INDENT = 36;
+	private static final int PROGRESS_TOP_INDENT = 35;
 	private static final int PROGRESS_TEXTURE_LEFT_INDENT = 177;
-	private static final int PROGRESS_TEXTURE_TOP_INDENT = 15;
+	private static final int PROGRESS_TEXTURE_TOP_INDENT = 14;
+	private static final int PROGRESS_TEXTURE_WIDTH = 24;
 	private static final int PROGRESS_TEXTURE_HEIGHT = 17;
 	
-	private static final int TEMPERATURE_LEFT_INDENT = 46;
+	private static final int TEMPERATURE_LEFT_INDENT = 45;
 	private static final int TEMPERATURE_TOP_INDENT = 62;
 	private static final int TEMPERATURE_TEXTURE_LEFT_INDENT = 0;
 	private static final int TEMPERATURE_TEXTURE_TOP_INDENT = 167;
+	private static final int TEMPERATURE_TEXTURE_WIDTH = 86;
 	private static final int TEMPERATURE_TEXTURE_HEIGHT = 18;
 	
 	public GuiDistiller(InventoryPlayer inventoryPlayer, TileDistiller distiller)
@@ -73,10 +75,10 @@ public class GuiDistiller extends GuiContainer
 				WATER_TEXTURE_WIDTH, i);
 		
 		//Draw the distilled water bar
-				int i1 = this.distiller.getDistilledWaterScaled(DISTILLED_TEXTURE_HEIGHT);
-				drawTexturedModalRect(guiLeft+DISTILLED_LEFT_INDENT, guiTop+DISTILLED_TOP_INDENT+DISTILLED_TEXTURE_HEIGHT-i1, 
-						DISTILLED_TEXTURE_LEFT_INDENT, DISTILLED_TEXTURE_TOP_INDENT+DISTILLED_TEXTURE_HEIGHT-i1, 
-						DISTILLED_TEXTURE_WIDTH, i1);
+		int i1 = this.distiller.getDistilledWaterScaled(DISTILLED_TEXTURE_HEIGHT);
+		drawTexturedModalRect(guiLeft+DISTILLED_LEFT_INDENT, guiTop+DISTILLED_TOP_INDENT+DISTILLED_TEXTURE_HEIGHT-i1, 
+				DISTILLED_TEXTURE_LEFT_INDENT, DISTILLED_TEXTURE_TOP_INDENT+DISTILLED_TEXTURE_HEIGHT-i1, 
+				DISTILLED_TEXTURE_WIDTH, i1);
 				
 		//Draw the burn time flames
 		int i2 = this.distiller.getBurnTimeRemainingScaled(FIRE_TEXTURE_HEIGHT);
@@ -85,13 +87,13 @@ public class GuiDistiller extends GuiContainer
 				FIRE_TEXTURE_WIDTH, i2);
 		
 		//Draw the progress bar
-		int i3 = this.distiller.getProgressScaled(PROGRESS_TEXTURE_HEIGHT);
+		int i3 = this.distiller.getProgressScaled(PROGRESS_TEXTURE_WIDTH);
 		this.drawTexturedModalRect(guiLeft + PROGRESS_LEFT_INDENT, guiTop + PROGRESS_TOP_INDENT,
         		PROGRESS_TEXTURE_LEFT_INDENT, PROGRESS_TEXTURE_TOP_INDENT,
         		i3 + 1, PROGRESS_TEXTURE_HEIGHT);
 		
 		//Draw the temperature bar
-		int i4 = this.distiller.getTemperatureScaled(TEMPERATURE_TEXTURE_HEIGHT);
+		int i4 = this.distiller.getTemperatureScaled(TEMPERATURE_TEXTURE_WIDTH);
 		this.drawTexturedModalRect(guiLeft + TEMPERATURE_LEFT_INDENT, guiTop + TEMPERATURE_TOP_INDENT,
         		TEMPERATURE_TEXTURE_LEFT_INDENT, TEMPERATURE_TEXTURE_TOP_INDENT,
         		i4, TEMPERATURE_TEXTURE_HEIGHT);

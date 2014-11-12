@@ -6,6 +6,7 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.common.tile.prefab.Tile;
 
 public class TileDistiller extends Tile implements IInventory
@@ -16,12 +17,13 @@ public class TileDistiller extends Tile implements IInventory
 	private static final int PROCESS_TIME = 200;
 	public int water = 0;
 	public int distilledWater = 0;
-	public int processTimeRemaining;
-	public int timeSpentProcessing;
+	public int processTimeRemaining = TileDistiller.PROCESS_TIME;
+	public int timeSpentProcessing = 0;
 	private int furnaceBurnTime = 0;
 	public int currentItemBurnTime = 0;
-	private int temperature;
+	public int temperature;
 	private static final int MAX_TEMP = 300;
+	private int ticksUntilHeated = 0;
 	
 	@Override
 	public void updateEntity()
@@ -69,7 +71,7 @@ public class TileDistiller extends Tile implements IInventory
 			
 			if(this.processTimeRemaining == 0)
 			{
-				if (slotSalt == null) this.setInventorySlotContents(3, new ItemStack(roboguy99.foodTech.common.item.Items.itemSalt));
+				if (slotSalt == null) this.setInventorySlotContents(2, new ItemStack(roboguy99.foodTech.common.item.Items.itemSalt));
 				else slotSalt.stackSize++;
 				
 				this.processTimeRemaining = TileDistiller.PROCESS_TIME;
@@ -91,14 +93,29 @@ public class TileDistiller extends Tile implements IInventory
 			shouldMarkDirty = true;
 		}
 		
-		if(this.isBurning() && this.temperature < MAX_TEMP) this.temperature++;
+		if(this.isBurning() && this.temperature < MAX_TEMP && this.ticksUntilHeated == 0)
+		{
+			this.temperature++;
+			this.ticksUntilHeated = 1;
+		}
+		else if (this.isBurning()) this.ticksUntilHeated = 0;
+		
 		if(!this.isBurning() && this.temperature > 0) this.temperature--;
 		
-		this.processTimeRemaining--;
-		this.timeSpentProcessing++;
+		if (this.processTimeRemaining > 0) 
+		{
+			this.processTimeRemaining--;
+			this.timeSpentProcessing++;
+		}
 		
 		if(this.furnaceBurnTime > 0) this.furnaceBurnTime--;
 		if(shouldMarkDirty) this.markDirty();
+		
+		FoodTech.print("Water: " + this.water);
+		FoodTech.print("Distilled: " + this.distilledWater);
+		FoodTech.print("Burn time remaining: " + this.furnaceBurnTime);
+		FoodTech.print("Progress: " + this.timeSpentProcessing);
+		FoodTech.print("Temperature: " + this.temperature);
 	}
 	
 	private int getBurnTime(Item item)
@@ -115,27 +132,28 @@ public class TileDistiller extends Tile implements IInventory
 	
 	public int getWaterScaled(int scaled)
 	{
-		return (int) this.water / scaled * TileDistiller.MAX_WATER;
+		return (int) this.water * scaled / TileDistiller.MAX_WATER;
 	}
 	
 	public int getDistilledWaterScaled(int scaled)
 	{
-		return (int) this.distilledWater / scaled * TileDistiller.MAX_WATER;
+		return (int) this.distilledWater * scaled / TileDistiller.MAX_WATER;
 	}
 	
 	public int getProgressScaled(int scaled)
 	{
-		return (int) this.timeSpentProcessing / scaled * TileDistiller.PROCESS_TIME;
+		return (int) this.timeSpentProcessing * scaled / TileDistiller.PROCESS_TIME;
 	}
 	
 	public int getBurnTimeRemainingScaled(int scaled)
 	{
-		return (int) this.furnaceBurnTime / scaled * this.currentItemBurnTime;
+		if (this.currentItemBurnTime != 0) return (int) this.furnaceBurnTime * scaled / this.currentItemBurnTime;
+		else return 0;
 	}
 	
 	public int getTemperatureScaled(int scaled)
 	{
-		return (int) this.temperature / scaled * TileDistiller.MAX_TEMP;
+		return (int) this.temperature * scaled / TileDistiller.MAX_TEMP;
 	}
 	
 	@Override

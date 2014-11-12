@@ -17,6 +17,7 @@ public class ContainerDistiller extends Container
 	private int lastDistilledWater = 0;
 	private int lastProcessTime = 0;
 	private int lastItemBurnTime = 0;
+	private int lastTemperature = 0;
 	
 	public ContainerDistiller(InventoryPlayer inventoryPlayer, TileDistiller distiller)
 	{
@@ -53,6 +54,7 @@ public class ContainerDistiller extends Container
 		crafter.sendProgressBarUpdate(this, 1, this.distiller.distilledWater);
 		crafter.sendProgressBarUpdate(this, 2, this.distiller.timeSpentProcessing);
 		crafter.sendProgressBarUpdate(this, 3, this.distiller.currentItemBurnTime);
+		crafter.sendProgressBarUpdate(this, 4, this.distiller.temperature);
 	}
 	
 	public void detectAndSendChanges()
@@ -65,13 +67,15 @@ public class ContainerDistiller extends Container
 			
 			if(this.lastWater != this.distiller.water) crafter.sendProgressBarUpdate(this, 0, this.distiller.water);
 			if(this.lastDistilledWater != this.distiller.distilledWater) crafter.sendProgressBarUpdate(this, 1, this.distiller.distilledWater);
-			if(this.lastProcessTime != this.distiller.timeSpentProcessing) crafter.sendProgressBarUpdate(this, 2, this.distiller.processTimeRemaining);
+			if(this.lastProcessTime != this.distiller.timeSpentProcessing) crafter.sendProgressBarUpdate(this, 2, this.distiller.timeSpentProcessing);
 			if(this.lastItemBurnTime != this.distiller.currentItemBurnTime) crafter.sendProgressBarUpdate(this, 3, this.distiller.currentItemBurnTime);
+			if(this.lastTemperature != this.distiller.temperature) crafter.sendProgressBarUpdate(this, 4, this.distiller.temperature);
 			
 			this.lastWater = this.distiller.water;
 			this.lastDistilledWater = this.distiller.distilledWater;
 			this.lastProcessTime = this.distiller.timeSpentProcessing;
 			this.lastItemBurnTime = this.distiller.currentItemBurnTime;
+			this.lastTemperature = this.distiller.temperature;
 		}
 	}
 	
@@ -82,6 +86,7 @@ public class ContainerDistiller extends Container
 		if(progressBar == 1) this.distiller.distilledWater = var2;
 		if(progressBar == 2) this.distiller.timeSpentProcessing = var2;
 		if(progressBar == 3) this.distiller.currentItemBurnTime = var2;
+		if(progressBar == 4) this.distiller.temperature = var2;
 	}
 	
 	/**
