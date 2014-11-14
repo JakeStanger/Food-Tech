@@ -3,13 +3,12 @@ package roboguy99.foodTech.common.tile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.common.tile.prefab.Tile;
 
-public class TileDistiller extends Tile implements IInventory
+public class TileDistiller extends Tile implements ISidedInventory
 {
 	protected ItemStack[] slot = new ItemStack[4];
 	private String customName;
@@ -110,12 +109,6 @@ public class TileDistiller extends Tile implements IInventory
 		
 		if(this.furnaceBurnTime > 0) this.furnaceBurnTime--;
 		if(shouldMarkDirty) this.markDirty();
-		
-		FoodTech.print("Water: " + this.water);
-		FoodTech.print("Distilled: " + this.distilledWater);
-		FoodTech.print("Burn time remaining: " + this.furnaceBurnTime);
-		FoodTech.print("Progress: " + this.timeSpentProcessing);
-		FoodTech.print("Temperature: " + this.temperature);
 	}
 	
 	private int getBurnTime(Item item)
@@ -203,9 +196,12 @@ public class TileDistiller extends Tile implements IInventory
 		return null;
 	}
 	
-	public boolean isItemValidForSlot(int slot, ItemStack itemStack)
+	public boolean isItemValidForSlot(int slot, ItemStack itemstack)
 	{
-		return slot == 2 ? false : true;
+		if(slot == 0 && itemstack.getItem() == Items.water_bucket) return true; 
+		if(slot == 1 && itemstack.getItem() == Items.coal) return true;
+		if(slot == 3 && itemstack.getItem() == Items.bucket) return true;
+		return false;
 	}
 	
 	public boolean isUseableByPlayer(EntityPlayer entityPlayer) 
@@ -240,7 +236,7 @@ public class TileDistiller extends Tile implements IInventory
 	
 	public String getInventoryName() 
 	{
-		return this.hasCustomInventoryName() ? this.customName : "container.threeSlotMachine";
+		return this.hasCustomInventoryName() ? this.customName : "container.distiller";
 	}
 	
 	public boolean hasCustomInventoryName() 

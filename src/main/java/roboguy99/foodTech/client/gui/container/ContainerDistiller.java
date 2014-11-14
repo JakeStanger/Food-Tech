@@ -6,6 +6,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import roboguy99.foodTech.client.gui.OutputSlot;
 import roboguy99.foodTech.common.tile.TileDistiller;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -25,7 +26,7 @@ public class ContainerDistiller extends Container
 		
 		this.addSlotToContainer(new Slot(distiller, 0, 8, 62));
 		this.addSlotToContainer(new Slot(distiller, 1, 26, 62));
-		this.addSlotToContainer(new Slot(distiller, 2, 134, 62));
+		this.addSlotToContainer(new OutputSlot(distiller, 2, 134, 62));
 		this.addSlotToContainer(new Slot(distiller, 3, 152, 62));
 		
 		for(int i = 0; i < 3; i++) //Create the inventory slots
