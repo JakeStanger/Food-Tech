@@ -8,6 +8,7 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import roboguy99.foodTech.client.gui.slot.SlotOutput;
 import roboguy99.foodTech.common.tile.TileGrindstone;
 import roboguy99.foodTech.util.recipe.GrindstoneRecipeHandler;
 import cpw.mods.fml.relauncher.Side;
@@ -25,7 +26,7 @@ public class ContainerGrindstone extends Container
 		
 		this.addSlotToContainer(new Slot(grindstone, 0, 56, 17));
 		this.addSlotToContainer(new Slot(grindstone, 1, 56, 53));
-		this.addSlotToContainer(new Slot(grindstone, 2, 116, 35));
+		this.addSlotToContainer(new SlotOutput(grindstone, 2, 116, 35));
 		
 		for(int i = 0; i < 3; i++) //Create the inventory slots
 		{

@@ -1,13 +1,13 @@
-package roboguy99.foodTech.client.gui;
+package roboguy99.foodTech.client.gui.slot;
 
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-public class OutputSlot extends Slot
+public class SlotOutput extends Slot
 {
 	
-	public OutputSlot(IInventory inventory, int id, int x, int y)
+	public SlotOutput(IInventory inventory, int id, int x, int y)
 	{
 		super(inventory, id, x, y);
 	}
