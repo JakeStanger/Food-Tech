@@ -9,6 +9,7 @@ import roboguy99.foodTech.common.fluid.Fluids;
 import roboguy99.foodTech.common.item.Items;
 import roboguy99.foodTech.common.tile.RegisterTileEntities;
 import roboguy99.foodTech.proxies.CommonProxy;
+import roboguy99.foodTech.util.WorldGen;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -41,14 +42,8 @@ public class FoodTech
 	public void preInit(FMLPreInitializationEvent event) //Pre-initialisation loading
 	{					
 		print("Loading pre-initialization stage");
-	
 		instance = this;
-		
-		//Loads common content into the game
-		new Fluids();
-		new Blocks();
-		new Items();
-		
+		new WorldGen();
 		print("Pre-initialization stage loaded successfully");
 	}
 	
@@ -56,6 +51,11 @@ public class FoodTech
 	public void init(FMLInitializationEvent event) //Initialisation loading
 	{
 		print("Initializing");
+		
+		//Loads common content into the game
+		new Fluids();
+		new Blocks();
+		new Items();
 		
 		//Loads client content into the game
 		new RegisterTileEntities();
