@@ -59,21 +59,21 @@ public class Blocks
 		
 		//Create instances of all of the blocks
 		blockWindTurbine = new BlockWindTurbine(Material.iron, "blockWindTurbine", GeneratorData.TURBINE_GENERATED, GeneratorData.TURBINE_BUFFERSIZE, Tooltip.MACHINE_GENERATOR);
-		blockWindmill = new BlockWindmill(Material.iron, "blockWindmill");
+		blockWindmill = new BlockWindmill(Material.iron, "blockWindmill"); //TODO Make this
 		
 		blockGrindstone = new BlockGrindstone(Material.rock, "blockGrindstone");
-		blockCampfire = new BlockCampfire(Material.wood, "blockCampfire");
-		blockChurn = new BlockChurn(Material.iron, "blockChurn");
+		blockCampfire = new BlockCampfire(Material.wood, "blockCampfire"); //TODO Make this
+		blockChurn = new BlockChurn(Material.iron, "blockChurn"); //TODO Make this
 		
 		blockDistiller = new BlockDistiller(Material.glass, "blockDistiller");
-		blockGrill = new BlockGrill(Material.iron, "blockGrill");
-		blockOven = new BlockOven(Material.iron, "blockOven");
+		blockGrill = new BlockGrill(Material.iron, "blockGrill"); //TODO Make this
+		blockOven = new BlockOven(Material.iron, "blockOven"); //TODO Make this
 		
-		blockBowl = new BlockBowl(Material.wood, "blockBowl");
-		blockKettle = new BlockKettle(Material.iron, "blockKettle");
-		blockSaucepan = new BlockSaucepan(Material.iron, "blockSaucepan");
-		blockFryingPan = new BlockFryingPan(Material.iron, "blockFryingPan");
-		blockChoppingBoard = new BlockChoppingBoard(Material.wood, "blockChoppingBoard");
+		blockBowl = new BlockBowl(Material.wood, "blockBowl"); //TODO Make this
+		blockKettle = new BlockKettle(Material.iron, "blockKettle"); //TODO Make this
+		blockSaucepan = new BlockSaucepan(Material.iron, "blockSaucepan"); //TODO Make this
+		blockFryingPan = new BlockFryingPan(Material.iron, "blockFryingPan"); //TODO Make this
+		blockChoppingBoard = new BlockChoppingBoard(Material.wood, "blockChoppingBoard"); //TODO Make this
 		
 		blockGas = new BlockGas(Material.glass, "blockGas");
 		
