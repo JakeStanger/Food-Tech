@@ -88,13 +88,12 @@ Todo List:
 
 Bugs:
 FIXME Wind turbine power gen/GUI
+FIXME Grindstone doesn't actually work (needs testing)
 
 Short-Term todos:
-TODO Finish moving all resource locations to resource manager
 
 Long-Term Goals:
 GOAL Create windmill
-GOAL Create distillation chamber
 GOAL Create jug of water - compatible with forge liquid dictionary?
 GOAL Add salt and salt shaker
 GOAL Create butter churn
