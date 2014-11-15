@@ -1,25 +1,17 @@
 package roboguy99.foodTech.common.block.prefab;
 
-import net.minecraft.block.BlockContainer;
-import net.minecraft.block.material.Material;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
+import roboguy99.foodTech.FoodTech;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 
-public class BaseBlock extends BlockContainer
+public class BaseBlock extends Block
 {
-
 	protected BaseBlock(Material material, String name)
 	{
 		super(material);
 		this.setBlockName(name);
+		this.setCreativeTab(FoodTech.TAB_FOODTECH);
 		GameRegistry.registerBlock(this, name);
 	}
-
-	@Override
-	public TileEntity createNewTileEntity(World world, int var1)
-	{
-		return null;
-	}
-	
 }

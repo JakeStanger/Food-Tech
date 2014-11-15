@@ -95,9 +95,10 @@ Short-Term todos:
 Long-Term Goals:
 GOAL Create windmill
 GOAL Create jug of water - compatible with forge liquid dictionary?
-GOAL Add salt and salt shaker
+GOAL Add salt shaker
 GOAL Create butter churn
 GOAL Add yeast - natural on/around trees?
 GOAL Create custom cable system
 GOAL Override hunger system
+GOAL Add gas harvestability
 */

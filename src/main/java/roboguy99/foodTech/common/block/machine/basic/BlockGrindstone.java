@@ -6,11 +6,11 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.client.gui.GuiHandler;
-import roboguy99.foodTech.common.block.prefab.BaseBlock;
+import roboguy99.foodTech.common.block.prefab.TileBlock;
 import roboguy99.foodTech.common.tile.TileGrindstone;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
-public class BlockGrindstone extends BaseBlock
+public class BlockGrindstone extends TileBlock
 {
 	public BlockGrindstone(Material material, String name)
 	{

@@ -9,12 +9,12 @@ import net.minecraft.world.World;
 import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.client.gui.GuiHandler;
 import roboguy99.foodTech.common.block.Blocks;
-import roboguy99.foodTech.common.block.prefab.BaseBlock;
+import roboguy99.foodTech.common.block.prefab.TileBlock;
 import roboguy99.foodTech.common.tile.electricity.generator.TileWindTurbine;
 import roboguy99.foodTech.util.GeneratorData;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
-public class BlockWindTurbine extends BaseBlock //Class for the windTurbine block. The block is turned into a tileEntity when placed
+public class BlockWindTurbine extends TileBlock //Class for the windTurbine block. The block is turned into a tileEntity when placed
 {
 	public BlockWindTurbine(Material material, String name, int generated, int buffer, String type)
 	{

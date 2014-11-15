@@ -1,9 +1,9 @@
 package roboguy99.foodTech.common.block.machine.advanced;
 
 import net.minecraft.block.material.Material;
-import roboguy99.foodTech.common.block.prefab.BaseBlock;
+import roboguy99.foodTech.common.block.prefab.TileBlock;
 
-public class BlockGrill extends BaseBlock
+public class BlockGrill extends TileBlock
 {
 
 	public BlockGrill(Material material, String name)

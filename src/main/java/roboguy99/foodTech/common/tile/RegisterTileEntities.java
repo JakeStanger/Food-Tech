@@ -12,5 +12,6 @@ public class RegisterTileEntities //Registers custom tile entities into the game
 		
 		GameRegistry.registerTileEntity(TileWindTurbine.class, "r99_windTurbine");
 		GameRegistry.registerTileEntity(TileGrindstone.class, "r99_grindstone");
+		GameRegistry.registerTileEntity(TileDistiller.class, "r99_distiller");
 	}
 }

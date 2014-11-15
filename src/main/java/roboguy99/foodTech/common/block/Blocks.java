@@ -17,6 +17,7 @@ import roboguy99.foodTech.common.block.machine.basic.BlockGrindstone;
 import roboguy99.foodTech.common.block.multi.BlockWindTurbine;
 import roboguy99.foodTech.common.block.multi.BlockWindmill;
 import roboguy99.foodTech.common.block.prefab.BaseBlock;
+import roboguy99.foodTech.common.block.prefab.TileBlock;
 import roboguy99.foodTech.common.block.worldgen.BlockGas;
 import roboguy99.foodTech.common.fluid.BlockFluidDistilledWater;
 import roboguy99.foodTech.common.fluid.Fluids;
@@ -26,25 +27,25 @@ import roboguy99.foodTech.util.Tooltip;
 public class Blocks
 {
 	//Multi-BaseBlock machines
-	public static BaseBlock blockWindTurbine;
-	public static BaseBlock blockWindmill;
+	public static TileBlock blockWindTurbine;
+	public static TileBlock blockWindmill;
 	
 	//Basic machines
-	public static BaseBlock blockGrindstone;
-	public static BaseBlock blockCampfire;
-	public static BaseBlock blockChurn;
+	public static TileBlock blockGrindstone;
+	public static TileBlock blockCampfire;
+	public static TileBlock blockChurn;
 	
 	//Advanced machines
-	public static BaseBlock blockDistiller;
-	public static BaseBlock blockGrill;
-	public static BaseBlock blockOven;
+	public static TileBlock blockDistiller;
+	public static TileBlock blockGrill;
+	public static TileBlock blockOven;
 	
 	//Cooking apparatus
-	public static BaseBlock blockBowl;
-	public static BaseBlock blockKettle;
-	public static BaseBlock blockSaucepan;
-	public static BaseBlock blockFryingPan;
-	public static BaseBlock blockChoppingBoard;
+	public static TileBlock blockBowl;
+	public static TileBlock blockKettle;
+	public static TileBlock blockSaucepan;
+	public static TileBlock blockFryingPan;
+	public static TileBlock blockChoppingBoard;
 	
 	//Worldgen
 	public static BaseBlock blockGas;
@@ -74,7 +75,7 @@ public class Blocks
 		blockFryingPan = new BlockFryingPan(Material.iron, "blockFryingPan");
 		blockChoppingBoard = new BlockChoppingBoard(Material.wood, "blockChoppingBoard");
 		
-		blockGas = new BlockGas(Material.air, "blockGas");
+		blockGas = new BlockGas(Material.glass, "blockGas");
 		
 		blockFluidDistilledWater = new BlockFluidDistilledWater(Fluids.fluidDistilledWater, Material.water);
 	}

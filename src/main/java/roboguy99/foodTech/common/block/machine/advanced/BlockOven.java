@@ -3,10 +3,10 @@ package roboguy99.foodTech.common.block.machine.advanced;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import roboguy99.foodTech.common.block.prefab.BaseBlock;
+import roboguy99.foodTech.common.block.prefab.TileBlock;
 import roboguy99.foodTech.common.tile.TileOven;
 
-public class BlockOven extends BaseBlock
+public class BlockOven extends TileBlock
 {
 	public BlockOven(Material material, String name)
 	{

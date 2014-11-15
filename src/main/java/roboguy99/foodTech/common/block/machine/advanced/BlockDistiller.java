@@ -6,7 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.client.gui.GuiHandler;
-import roboguy99.foodTech.common.block.prefab.BaseBlock;
+import roboguy99.foodTech.common.block.prefab.TileBlock;
 import roboguy99.foodTech.common.tile.TileDistiller;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
@@ -15,7 +15,7 @@ import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
  * @author Roboguy99
  *
  */
-public class BlockDistiller extends BaseBlock
+public class BlockDistiller extends TileBlock
 {
 	public BlockDistiller(Material material, String name)
 	{
