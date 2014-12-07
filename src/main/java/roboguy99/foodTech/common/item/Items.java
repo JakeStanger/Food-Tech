@@ -6,23 +6,24 @@ import roboguy99.foodTech.common.block.Blocks;
 import roboguy99.foodTech.common.item.block.ItemDistiller;
 import roboguy99.foodTech.common.item.block.ItemGrindstone;
 import roboguy99.foodTech.common.item.block.ItemWindTurbine;
-import roboguy99.foodTech.common.item.bucket.Bucket;
 import roboguy99.foodTech.common.item.foods.ingredients.ItemFlour;
 import roboguy99.foodTech.common.item.foods.ingredients.ItemSalt;
+import roboguy99.foodTech.common.item.prefab.Bucket;
+import roboguy99.foodTech.common.item.prefab.ItemBlock;
+import roboguy99.foodTech.common.item.prefab.ItemIngredient;
 import roboguy99.foodTech.common.item.tool.ItemToolGas;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Items
 {
 	//Create fields for each of the items
-	public static Item itemWindTurbine;
-	public static Item itemDebug;
-	public static Item itemGrindstone;
-	public static Item itemDistiller;
+	public static ItemBlock itemWindTurbine;
+	public static ItemBlock itemDebug;
+	public static ItemBlock itemGrindstone;
+	public static ItemBlock itemDistiller;
 	
 	//Ingredient
-	public static Item itemFlour;
-	public static Item itemSalt;
+	public static ItemIngredient itemFlour;
+	public static ItemIngredient itemSalt;
 	
 	//Tools
 	public static Item itemToolGas;
@@ -35,72 +36,18 @@ public class Items
 		FoodTech.print("Loading items");
 		
 		//Create instances of all the items
-		itemWindTurbine = new ItemWindTurbine();
-		itemGrindstone = new ItemGrindstone();
-		itemDistiller = new ItemDistiller();
+		itemWindTurbine = new ItemWindTurbine("blockWindTurbine", "diamond", Blocks.blockWindTurbine);
+		itemGrindstone = new ItemGrindstone("blockGrindstone", "diamond", Blocks.blockGrindstone);
+		itemDistiller = new ItemDistiller("blockDistiller", "diamond", Blocks.blockDistiller);
 		
 		//Ingredients
-		itemFlour = new ItemFlour();
-		itemSalt = new ItemSalt();
+		itemFlour = new ItemFlour("itemFlour");
+		itemSalt = new ItemSalt("itemSalt");
 		
 		//Tools
-		itemToolGas = new ItemToolGas("itemToolGas");
+		itemToolGas = new ItemToolGas("itemToolGas"); //ItemToolGas registers itself so can stay an item for now
 		
 		//Buckets
 		itemBucketDistilledWater = new Bucket(Blocks.blockFluidDistilledWater, "itemBucketDistilledWater");
-		
-		//Call property-setting functions
-		setUnlocalizedNames();
-		setCreativeTabs();
-		setTextureNames();
-		registerItems();
-	}
-	
-	public void setUnlocalizedNames() //Sets the unlocalised names for each of the items
-	{
-		itemWindTurbine.setUnlocalizedName("itemWindTurbine");
-		itemDebug.setUnlocalizedName("itemDebug");
-		itemGrindstone.setUnlocalizedName("itemGrindstone");
-		itemDistiller.setUnlocalizedName("itemDistiller");
-		
-		//Ingredients
-		itemFlour.setUnlocalizedName("itemFlour");
-		itemSalt.setUnlocalizedName("itemSalt");
-	}
-	
-	public void setCreativeTabs() //Sets the creative tab for each item.
-	{
-		itemWindTurbine.setCreativeTab(FoodTech.TAB_FOODTECH);
-		itemDebug.setCreativeTab(FoodTech.TAB_FOODTECH);
-		itemGrindstone.setCreativeTab(FoodTech.TAB_FOODTECH);
-		itemDistiller.setCreativeTab(FoodTech.TAB_FOODTECH);
-		
-		//Ingredients
-		itemFlour.setCreativeTab(FoodTech.TAB_FOODTECH);
-		itemSalt.setCreativeTab(FoodTech.TAB_FOODTECH);
-	}
-	
-	public void setTextureNames() //Loads the texture for each of the items. TODO Create textures for items
-	{
-		itemWindTurbine.setTextureName("diamond");
-		itemDebug.setTextureName("diamond");
-		itemGrindstone.setTextureName("diamond");
-		itemDistiller.setTextureName("diamond");
-		
-		//Ingredients
-		itemFlour.setTextureName("diamond");
-		itemSalt.setTextureName("diamond");
-	}
-	
-	public void registerItems() //Adds the items into the game
-	{
-		GameRegistry.registerItem(itemWindTurbine, "iteWindTurbine");
-		GameRegistry.registerItem(itemDebug, "itemDebug");
-		GameRegistry.registerItem(itemGrindstone, "itemGrindstone");
-		GameRegistry.registerItem(itemDistiller, "itemDistiller");
-		
-		//Ingredients
-		GameRegistry.registerItem(itemFlour, "itemFlour");
-		GameRegistry.registerItem(itemSalt, "itemSalt");
 	}
 }
