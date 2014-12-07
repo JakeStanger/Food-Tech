@@ -4,8 +4,8 @@ import roboguy99.foodTech.common.item.prefab.ItemIngredient;
 
 public class ItemSalt extends ItemIngredient
 {
-	public ItemSalt(String name)
+	public ItemSalt(String name, String textureName)
 	{
-		super(name);
+		super(name, textureName);
 	}	
 }

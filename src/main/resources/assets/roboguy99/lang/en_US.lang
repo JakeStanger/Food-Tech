@@ -1,10 +1,11 @@
 itemGroup.tabFoodTech= Food Tech
-item.itemWindTurbine.name= Wind Turbine
+item.itemBlockWindTurbine.name= Wind Turbine
 item.itemDebug.name= Coder's debug tool
-item.itemGrindstone.name= Grindstone
-item.itemDistiller.name= Distillation Chamber
+item.itemBlockGrindstone.name= Grindstone
+item.itemBlockDistiller.name= Distillation Chamber
 item.itemFlour.name= Flour
 item.itemSalt.name= Salt
+item.itemToolGas.name= Portable Gas Collector
 item.itemBucketDistilledWater= Distilled Water
 tile.blockGrindstone.name= Grindstone
 tile.blockCable.name= Cable

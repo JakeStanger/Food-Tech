@@ -36,13 +36,13 @@ public class Items
 		FoodTech.print("Loading items");
 		
 		//Create instances of all the items
-		itemWindTurbine = new ItemWindTurbine("blockWindTurbine", "diamond", Blocks.blockWindTurbine);
-		itemGrindstone = new ItemGrindstone("blockGrindstone", "diamond", Blocks.blockGrindstone);
-		itemDistiller = new ItemDistiller("blockDistiller", "diamond", Blocks.blockDistiller);
+		itemWindTurbine = new ItemWindTurbine("itemBlockWindTurbine", "diamond", Blocks.blockWindTurbine);
+		itemGrindstone = new ItemGrindstone("itemBlockGrindstone", "diamond", Blocks.blockGrindstone);
+		itemDistiller = new ItemDistiller("itemBlockDistiller", "diamond", Blocks.blockDistiller);
 		
 		//Ingredients
-		itemFlour = new ItemFlour("itemFlour");
-		itemSalt = new ItemSalt("itemSalt");
+		itemFlour = new ItemFlour("itemFlour", "diamond");
+		itemSalt = new ItemSalt("itemSalt", "diamond");
 		
 		//Tools
 		itemToolGas = new ItemToolGas("itemToolGas"); //ItemToolGas registers itself so can stay an item for now

@@ -2,6 +2,7 @@ package roboguy99.foodTech.common.item.prefab;
 
 import java.util.List;
 
+import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.util.Tooltip;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -13,8 +14,11 @@ import net.minecraft.util.EnumChatFormatting;
 
 public class ItemIngredient extends Item
 {
-	public ItemIngredient(String name)
+	public ItemIngredient(String name, String textureName)
 	{
+		this.setUnlocalizedName(name);
+		this.setCreativeTab(FoodTech.TAB_FOODTECH);
+		this.setTextureName(textureName);
 		GameRegistry.registerItem(this, name);
 	}
 	

@@ -4,8 +4,8 @@ import roboguy99.foodTech.common.item.prefab.ItemIngredient;
 
 public class ItemFlour extends ItemIngredient
 {
-	public ItemFlour(String name)
+	public ItemFlour(String name, String textureName)
 	{
-		super(name);
+		super(name, textureName);
 	}
 }
