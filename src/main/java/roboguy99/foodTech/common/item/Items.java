@@ -36,7 +36,6 @@ public class Items
 		
 		//Create instances of all the items
 		itemWindTurbine = new ItemWindTurbine();
-		itemDebug = new ItemDebug();
 		itemGrindstone = new ItemGrindstone();
 		itemDistiller = new ItemDistiller();
 		
