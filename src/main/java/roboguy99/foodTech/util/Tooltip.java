@@ -11,4 +11,7 @@ public class Tooltip
 	public static final String MACHINE_GENERATOR = "Electric Generator";
 	
 	public static final String APPARATUS = "Cooking Apparatus";
+	
+	//Constants for items
+	public static final String TYPE_INGREDIENT = "Ingredient";
 }

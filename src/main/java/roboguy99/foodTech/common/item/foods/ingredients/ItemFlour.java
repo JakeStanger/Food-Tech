@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
-import roboguy99.foodTech.common.item.Items;
+import roboguy99.foodTech.util.Tooltip;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -17,6 +17,6 @@ public class ItemFlour extends Item
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean bool)
 	{
-		list.add(EnumChatFormatting.BLUE + Items.TYPE_INGREDIENT);
+		list.add(EnumChatFormatting.BLUE + Tooltip.TYPE_INGREDIENT);
 	}
 }
