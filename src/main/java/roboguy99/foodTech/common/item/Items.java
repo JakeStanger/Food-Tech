@@ -9,21 +9,23 @@ import roboguy99.foodTech.common.item.block.ItemWindTurbine;
 import roboguy99.foodTech.common.item.bucket.Bucket;
 import roboguy99.foodTech.common.item.foods.ingredients.ItemFlour;
 import roboguy99.foodTech.common.item.foods.ingredients.ItemSalt;
+import roboguy99.foodTech.common.item.tool.ItemToolGas;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Items
 {
-	//Create variables for each of the items
+	//Create fields for each of the items
 	public static Item itemWindTurbine;
 	public static Item itemDebug;
 	public static Item itemGrindstone;
 	public static Item itemDistiller;
 	
-	public static final String TYPE_INGREDIENT = "Ingredient";
-	
 	//Ingredient
 	public static Item itemFlour;
 	public static Item itemSalt;
+	
+	//Tools
+	public static Item itemToolGas;
 	
 	//Buckets
 	public static Bucket itemBucketDistilledWater;
@@ -41,6 +43,9 @@ public class Items
 		//Ingredients
 		itemFlour = new ItemFlour();
 		itemSalt = new ItemSalt();
+		
+		//Tools
+		itemToolGas = new ItemToolGas("itemToolGas");
 		
 		//Buckets
 		itemBucketDistilledWater = new Bucket(Blocks.blockFluidDistilledWater, "itemBucketDistilledWater");
