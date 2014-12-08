@@ -18,6 +18,7 @@ public class ResourceManager
 	//Textures
 	public static final ResourceLocation GRINDSTONE = new ResourceLocation(ResourceManager.MODEL_TEXTURE_PATH + "grindstone.png");
 	public static final ResourceLocation DISTILLER = new ResourceLocation(ResourceManager.MODEL_TEXTURE_PATH + "distiller.png");
+	public static final ResourceLocation OVEN = new ResourceLocation(ResourceManager.MODEL_TEXTURE_PATH + "oven.png");
 	
 	public static final ResourceLocation GAS = new ResourceLocation(ResourceManager.BLOCK_TEXTURE_PATH + "blockGas.png");
 	

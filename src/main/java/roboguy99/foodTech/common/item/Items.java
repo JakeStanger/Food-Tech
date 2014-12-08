@@ -5,6 +5,7 @@ import roboguy99.foodTech.FoodTech;
 import roboguy99.foodTech.common.block.Blocks;
 import roboguy99.foodTech.common.item.block.ItemDistiller;
 import roboguy99.foodTech.common.item.block.ItemGrindstone;
+import roboguy99.foodTech.common.item.block.ItemOven;
 import roboguy99.foodTech.common.item.block.ItemWindTurbine;
 import roboguy99.foodTech.common.item.foods.ingredients.ItemFlour;
 import roboguy99.foodTech.common.item.foods.ingredients.ItemSalt;
@@ -15,13 +16,14 @@ import roboguy99.foodTech.common.item.tool.ItemToolGas;
 
 public class Items
 {
-	//Create fields for each of the items
+	//Blocks
 	public static ItemBlock itemWindTurbine;
 	public static ItemBlock itemDebug;
 	public static ItemBlock itemGrindstone;
 	public static ItemBlock itemDistiller;
+	public static ItemBlock itemOven;
 	
-	//Ingredient
+	//Ingredients
 	public static ItemIngredient itemFlour;
 	public static ItemIngredient itemSalt;
 	
@@ -39,6 +41,7 @@ public class Items
 		itemWindTurbine = new ItemWindTurbine("itemBlockWindTurbine", "diamond", Blocks.blockWindTurbine);
 		itemGrindstone = new ItemGrindstone("itemBlockGrindstone", "diamond", Blocks.blockGrindstone);
 		itemDistiller = new ItemDistiller("itemBlockDistiller", "diamond", Blocks.blockDistiller);
+		itemOven = new ItemOven("itemBlockOven", "diamond", Blocks.blockOven);
 		
 		//Ingredients
 		itemFlour = new ItemFlour("itemFlour", "diamond");
