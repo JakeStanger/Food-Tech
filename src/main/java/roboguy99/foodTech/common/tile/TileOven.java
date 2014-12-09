@@ -18,7 +18,6 @@ public class TileOven extends TileThreeSlotMachine
 	@Override
 	protected boolean canProcess()
 	{
-		// TODO Auto-generated method stub
 		return false;
 	}
 
