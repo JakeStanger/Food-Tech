@@ -93,6 +93,7 @@ FIXME Grindstone doesn't actually work (needs testing)
 Short-Term todos:
 
 Long-Term Goals:
+GOAL Re-do GUI to be more modular
 GOAL Create windmill
 GOAL Create jug of water - compatible with forge liquid dictionary?
 GOAL Add salt shaker
