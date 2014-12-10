@@ -77,7 +77,7 @@ public class TileGrindstone extends TileThreeSlotMachine
             if (this.slot[2] == null) return true;
             if (!this.slot[2].isItemEqual(itemstack)) return false;
             int result = slot[2].stackSize + itemstack.stackSize;
-            return result <= getInventoryStackLimit() && result <= this.slot[2].getMaxStackSize(); //Forge BugFix: Make it respect stack sizes properly.
+            return result <= getInventoryStackLimit() && result <= this.slot[2].getMaxStackSize();
         }
     }
 
@@ -98,7 +98,7 @@ public class TileGrindstone extends TileThreeSlotMachine
 	        }
 	        else if (this.slot[2].getItem() == itemstack.getItem())
 	        {
-	            this.slot[2].stackSize += itemstack.stackSize; // Forge BugFix: Results may have multiple items
+	            this.slot[2].stackSize += itemstack.stackSize;
 	        }
 	
 	        this.slot[0].stackSize--;
