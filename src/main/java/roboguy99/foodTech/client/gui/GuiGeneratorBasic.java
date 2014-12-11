@@ -6,10 +6,11 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import roboguy99.foodTech.client.gui.container.ContainerGeneratorBasic;
 import roboguy99.foodTech.common.tile.prefab.generator.TileBasicGenerator;
+import roboguy99.foodTech.util.ResourceManager;
 
 public class GuiGeneratorBasic extends GuiContainer
 {
-	public final ResourceLocation texture = new ResourceLocation("roboguy99", "textures/gui/generatorbasic.png");
+	public final ResourceLocation texture = ResourceManager.BLANK_GUI;
 	private TileBasicGenerator generator;
 	
 	private static final int BAR_LENGTH = 162;
