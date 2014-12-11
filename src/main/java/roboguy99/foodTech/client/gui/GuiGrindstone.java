@@ -10,7 +10,7 @@ import roboguy99.foodTech.util.ResourceManager;
 
 public class GuiGrindstone extends GuiContainer
 {
-	private final ResourceLocation texture = ResourceManager.GRINSTONE_GUI;
+	private final ResourceLocation texture = ResourceManager.THREE_SLOT_MACHINE_GUI;
 	
 	private TileGrindstone grindstone;
 	
