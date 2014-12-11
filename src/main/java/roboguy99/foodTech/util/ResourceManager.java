@@ -14,7 +14,7 @@ public class ResourceManager
 	private static final String MODEL_TEXTURE_PATH = "roboguy99:textures/models/";
 	private static final String BLOCK_TEXTURE_PATH = "roboguy99:textures/blocks";
 	private static final String GUI_TEXTURE_PATH = "roboguy99:textures/gui/";
-	private static final String GUI_ELEMENT_TEXTURE_PATH = "roboguy99:textures/gui/elements";
+	private static final String GUI_ELEMENT_TEXTURE_PATH = "roboguy99:textures/gui/elements/";
 	
 	//Textures
 	public static final ResourceLocation GRINDSTONE = new ResourceLocation(ResourceManager.MODEL_TEXTURE_PATH + "grindstone.png");
