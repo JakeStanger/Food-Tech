@@ -1,42 +1,30 @@
 package roboguy99.foodTech.client.gui;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.util.ResourceLocation;
 import roboguy99.foodTech.client.gui.container.ContainerGeneratorBasic;
+import roboguy99.foodTech.client.gui.element.GuiElementPowerHorizontalLarge;
 import roboguy99.foodTech.common.tile.prefab.generator.TileBasicGenerator;
 import roboguy99.foodTech.util.ResourceManager;
 
-public class GuiGeneratorBasic extends GuiContainer
-{
-	public final ResourceLocation texture = ResourceManager.BLANK_GUI;
-	private TileBasicGenerator generator;
-	
-	private static final int BAR_LENGTH = 162;
-	private static final int BAR_HEIGHT = 16;
-	private static final int LEFT_INDENT = 8;
-	private static final int TOP_INDENT_TEXTURE = 186;
-	private static final int TOP_INDENT_BAR = 11;
+public class GuiGeneratorBasic extends GuiBase
+{	
+	private GuiElementPowerHorizontalLarge powerBar;
 	
 	public GuiGeneratorBasic(InventoryPlayer inventoryPlayer, TileBasicGenerator generator)
-	
 	{
-		super(new ContainerGeneratorBasic(inventoryPlayer, generator));
+		super(new ContainerGeneratorBasic(inventoryPlayer, generator), ResourceManager.BLANK_GUI);
 		
-		this.generator = generator;
 		this.xSize = 176;
 		this.ySize = 166;
-	}
-
-	@Override
-	protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3)
-	{
-		//Draw the gui screen
-		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
-		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		
-		int i = (int) this.generator.getPowerScaled(BAR_LENGTH);
-		drawTexturedModalRect(guiLeft+LEFT_INDENT, guiTop+TOP_INDENT_BAR, LEFT_INDENT, TOP_INDENT_TEXTURE, i, BAR_HEIGHT); //Power contents bar
+		this.powerBar = new GuiElementPowerHorizontalLarge(7, 48);
+	}
+	
+	@Override
+	protected void drawGuiContainerBackgroundLayer(float tick, int mouseX, int mouseY)
+	{
+		MINECRAFT.getTextureManager().bindTexture(this.texture);
+		drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
+		this.powerBar.renderHorizontal();
 	}
 }
