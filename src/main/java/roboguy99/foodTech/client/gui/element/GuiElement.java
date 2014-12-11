@@ -71,9 +71,9 @@ public class GuiElement
 				0, 0, 
 				this.textureWidth, this.textureHeight); //Draw the bar slot
 		
-		this.drawTexturedModalRect(this.x, this.y, 
-				this.textureStartX, this.textureStartY, 
-				this.progress, this.textureHeight); //Draw the progress bar in the slot
+		//this.drawTexturedModalRect(this.x, this.y, 
+				//this.textureStartX, this.textureStartY, 
+				//this.progress, this.textureHeight); //Draw the progress bar in the slot
 	}
 	
 	public void setProgress(int progress)

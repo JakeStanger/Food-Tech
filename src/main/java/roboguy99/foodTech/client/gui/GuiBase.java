@@ -26,5 +26,4 @@ public class GuiBase extends GuiContainer
 		MINECRAFT.getTextureManager().bindTexture(this.texture);
 		drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
 	}
-	
 }

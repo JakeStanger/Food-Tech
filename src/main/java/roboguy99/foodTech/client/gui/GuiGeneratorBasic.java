@@ -17,7 +17,7 @@ public class GuiGeneratorBasic extends GuiBase
 		this.xSize = 176;
 		this.ySize = 166;
 		
-		this.powerBar = new GuiElementPowerHorizontalLarge(7, 48);
+		this.powerBar = new GuiElementPowerHorizontalLarge(this.guiLeft+7, this.guiLeft+48);
 	}
 	
 	@Override

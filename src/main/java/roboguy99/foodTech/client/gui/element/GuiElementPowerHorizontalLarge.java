@@ -7,8 +7,8 @@ public class GuiElementPowerHorizontalLarge extends GuiElement
 	private static final int TEXTURE_WIDTH = 162;
 	private static final int TEXTURE_HEIGHT = 32;
 	
-	private static final int PROGRESS_START_X = 0;
-	private static final int PROGRESS_START_Y = 18;
+	private static final int PROGRESS_START_X = 100;
+	private static final int PROGRESS_START_Y = 58;
 	
 	public GuiElementPowerHorizontalLarge(int x, int y)
 	{
